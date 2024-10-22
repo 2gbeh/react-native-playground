@@ -1,12 +1,18 @@
 export type TFont = "black" | "bold" | "medium" | "regular" | "light" | "thin";
 
 export enum FONT {
-  RobotoBlack = "RobotoBlack",
-  RobotoBold = "RobotoBold",
-  RobotoMedium = "RobotoMedium",
-  RobotoRegular = "RobotoRegular",
-  RobotoLight = "RobotoLight",
-  RobotoThin = "RobotoThin",
+  RobotoBlack = "RobotoBlack", // 900
+  RobotoBold = "RobotoBold", // 700
+  RobotoMedium = "RobotoMedium", // 500
+  RobotoRegular = "RobotoRegular", // 400
+  RobotoLight = "RobotoLight", // 300
+  RobotoThin = "RobotoThin", // 100
+  GilroyBlack = "GilroyBlack",
+  GilroyBold = "GilroyBold",
+  GilroyMedium = "GilroyMedium",
+  GilroyRegular = "GilroyRegular",
+  GilroyLight = "GilroyLight",
+  GilroyThin = "GilroyThin",
 }
 
 export const FONTS = {
@@ -16,6 +22,12 @@ export const FONTS = {
   RobotoRegular: require("../assets/fonts/Roboto-Regular.ttf"),
   RobotoLight: require("../assets/fonts/Roboto-Light.ttf"),
   RobotoThin: require("../assets/fonts/Roboto-Thin.ttf"),
+  GilroyBlack: require("../assets/fonts/Gilroy-Black.ttf"),
+  GilroyBold: require("../assets/fonts/Gilroy-Bold.ttf"),
+  GilroyMedium: require("../assets/fonts/Gilroy-Medium.ttf"),
+  GilroyRegular: require("../assets/fonts/Gilroy-Regular.ttf"),
+  GilroyLight: require("../assets/fonts/Gilroy-Light.ttf"),
+  GilroyThin: require("../assets/fonts/Gilroy-Thin.ttf"),
 };
 
 // https://hexcolorpedia.com/color/?q=db1a5a

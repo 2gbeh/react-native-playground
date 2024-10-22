@@ -1,0 +1,40 @@
+// https://hexcolorpedia.com/color/?q=db1a5a
+export const COLOR = {
+  none: "transparent",
+  white: "#fff",
+  black: "#000",
+  offwhite: "#fafafa",
+  offblack: "#222",
+  //
+  primary: "#0B0C7D",
+  primary_dark: "#051438",
+  background: "#EDF0F8",
+  surface: "#DFE2E9",
+  border: "#DFE2E9",
+  text_muted: "#A6AFC2",
+  text_faded: "#677597",
+  // 
+  neutral_50: "#EFF1F4",
+  // https://rgbacolorpicker.com/rgba-to-hex
+  opacity: {
+    point5: "#0000000d",
+    point10: "#0000001a",
+    point15: "#00000026",
+    point20: "#00000033",
+    point25: "#00000040",
+    point30: "#0000004d",
+    point35: "#00000059",
+    point40: "#00000066",
+    point45: "#00000073",
+    point50: "#00000080",
+    point55: "#0000008c",
+    point60: "#00000099",
+    point65: "#000000a6",
+    point70: "#000000b3",
+    point75: "#000000bf",
+    point80: "#000000cc",
+    point85: "#000000d9",
+    point90: "#000000e6",
+    point95: "#000000f2",
+  },
+};

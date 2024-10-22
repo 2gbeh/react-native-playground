@@ -3,7 +3,7 @@
     "name": "Pamela",
     "slug": "pamela",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "any",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
@@ -39,7 +39,13 @@
             "./assets/fonts/Roboto-Medium.ttf",
             "./assets/fonts/Roboto-Regular.ttf",
             "./assets/fonts/Roboto-Light.ttf",
-            "./assets/fonts/Roboto-Thin.ttf"
+            "./assets/fonts/Roboto-Thin.ttf",
+            "./assets/fonts/Gilroy-Black.ttf",
+            "./assets/fonts/Gilroy-Bold.ttf",
+            "./assets/fonts/Gilroy-Medium.ttf",
+            "./assets/fonts/Gilroy-Regular.ttf",
+            "./assets/fonts/Gilroy-Light.ttf",
+            "./assets/fonts/Gilroy-Thin.ttf"
           ]
         }
       ],

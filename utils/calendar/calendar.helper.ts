@@ -58,7 +58,7 @@ export class CalendarHelper {
     obj.Z = this.timestamp.getTimezoneOffset() * 60; // Timezone offset in seconds (-43200 to 50400)
     obj.O = this.timestamp.getTimezoneOffset() / 60; // Timezone offset in hours (+0100)
     obj.e = this.timestamp.toUTCString().split(" ").pop(); // UTC, GMT, Atlantic/Azores .::timezone identifier
-    // 
+    //
     return obj;
   }
 }

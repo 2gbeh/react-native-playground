@@ -49,30 +49,31 @@ Join our community of developers creating universal apps.
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
 
+## Local build
 
-## Local build step
 ```bash
 $ npx expo prebuild
 
 # Visit https://docs.expo.dev/develop/development-builds/create-a-build/
+# or https://docs.expo.dev/build-reference/apk/
 $ npx expo install expo-dev-client
 
-# Add error handling - import 'expo-dev-client'; in @app/_layout.tsx
-# Create eas.json file where applicable
+# Add error handling - import 'expo-dev-client'; in ./app/_layout.tsx
+# Create eas.json file in root directory (where applicable)
 
 $ eas build --profile development --platform android
 
 > Would you like to automatially create an EAS project for @2gbeh/plateaumed-phc? ... yes
 > Generate a new Android Keystore?  ... yes
 
-🤖 Open this link on your Android devices (or scan the QR code) to install the app:
-https://expo.dev/accounts/2gbeh/projects/plateaumed-phc/builds/4485e7f8-90e1-4b31-b060-e94784dd7d9a
+# 🤖 Open this link on your Android devices (or scan the QR code) to install the app:
+# https://expo.dev/accounts/2gbeh/projects/plateaumed-phc/builds/4485e7f8-90e1-4b31-b060-e94784dd7d9a
 
 > Install and run the Android build on an emulator? ... no
 ```
 
 ```json
-// eas.json
+// ./eas.json
 {
   "build": {
     "development": {
@@ -85,9 +86,46 @@ https://expo.dev/accounts/2gbeh/projects/plateaumed-phc/builds/4485e7f8-90e1-4b3
     "production": {}
   }
 }
-
 ```
 
-> 
+## Working with SVGs
 
-> https://docs.expo.dev/build-reference/apk/
+```bash
+$ npx expo install react-native-svg
+$ npx expo install react-native-svg-transformer
+```
+
+```js
+// Create/update ./metro.config.js
+const { getDefaultConfig } = require("expo/metro-config");
+
+module.exports = (() => {
+  const config = getDefaultConfig(__dirname);
+
+  const { transformer, resolver } = config;
+
+  config.transformer = {
+    ...transformer,
+    babelTransformerPath: require.resolve("react-native-svg-transformer/expo")
+  };
+  config.resolver = {
+    ...resolver,
+    assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
+    sourceExts: [...resolver.sourceExts, "svg"]
+  };
+
+  return config;
+})();
+```
+
+```ts
+// Create/update ./declarations.d.ts
+declare module "*.svg" {
+  import { SvgProps } from "react-native-svg";
+  const content: React.FC<SvgProps>;
+  export default content;
+}
+
+// Export all svgs from a single file ./constants/ICON.ts
+export { default as BellIcon } from "../assets/icons/bell.svg";
+```
