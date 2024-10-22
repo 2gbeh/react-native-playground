@@ -53,8 +53,41 @@ Join our community of developers creating universal apps.
 ## Local build step
 ```bash
 $ npx expo prebuild
+
+# Visit https://docs.expo.dev/develop/development-builds/create-a-build/
+$ npx expo install expo-dev-client
+
+# Add error handling - import 'expo-dev-client'; in @app/_layout.tsx
+# Create eas.json file where applicable
+
+$ eas build --profile development --platform android
+
+> Would you like to automatially create an EAS project for @2gbeh/plateaumed-phc? ... yes
+> Generate a new Android Keystore?  ... yes
+
+🤖 Open this link on your Android devices (or scan the QR code) to install the app:
+https://expo.dev/accounts/2gbeh/projects/plateaumed-phc/builds/4485e7f8-90e1-4b31-b060-e94784dd7d9a
+
+> Install and run the Android build on an emulator? ... no
 ```
 
-> https://docs.expo.dev/develop/development-builds/create-a-build/
+```json
+// eas.json
+{
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {}
+  }
+}
+
+```
+
+> 
 
 > https://docs.expo.dev/build-reference/apk/
