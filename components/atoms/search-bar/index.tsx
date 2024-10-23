@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 //
 import { FONT, COLOR } from "@/constants/THEME";
 import { SearchIcon } from "@/constants/ICON";

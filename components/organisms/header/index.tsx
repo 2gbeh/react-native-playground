@@ -1,11 +1,13 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { View, Text } from "react-native";
 //
 import CentreNameLogo from "../../atoms/centre-name-logo";
 import AppClock from "../../atoms/app-clock";
 import AvatarHamburgerMenu from "../../atoms/avatar-hamburger-menu";
-import { FONT, COLOR } from "@/constants/THEME";
 import { BellIcon } from "@/constants/ICON";
+import { COLOR } from "@/constants/THEME";
+// 
+import { headerStyles as s } from "./styles";
 
 const Header = () => {
   console.log("🚀 ~ Header");
@@ -37,42 +39,3 @@ const Header = () => {
 };
 
 export default React.memo(Header);
-
-const s = StyleSheet.create({
-  _: {},
-  container: {
-    borderBottomColor: COLOR.border,
-    borderBottomWidth: 2,
-    paddingVertical: 8,
-    paddingHorizontal: 32,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  left_content: {
-    flex: 1,
-  },
-  center_content: {
-    flex: 1,
-    alignItems: "center",
-  },
-  right_content: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    columnGap: 24,
-  },
-  greeting: {
-    color: COLOR.primary_dark,
-    fontFamily: FONT.GilroyBold,
-    fontSize: 18,
-    fontWeight: "700",
-  },
-  textSize: {
-    color: COLOR.primary,
-    fontFamily: FONT.GilroyLight,
-    fontSize: 18,
-    fontWeight: "700",
-  },
-});
