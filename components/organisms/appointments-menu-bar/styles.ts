@@ -8,17 +8,6 @@ export const appointmentsMenuBarStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  nav: {
-    flexDirection: "row",
-    alignItems: "center",
-    columnGap: 12,
-  },
-  heading: {
-    color: COLOR.primary_dark,
-    fontFamily: FONT.GilroyMedium,
-    fontSize: 18,
-    fontWeight: "600",
-  },
   right_content: {
     flexDirection: "row",
     alignItems: "center",

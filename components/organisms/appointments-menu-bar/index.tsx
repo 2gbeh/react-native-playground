@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Text, Pressable } from "react-native";
+import { View, Text } from "react-native";
 import { router } from "expo-router";
 //
 import CTAButton from "../../atoms/cta-button";
 import SearchBar from "../../atoms/search-bar";
 import CreateAppointmentWidget from "@/components/molecules/create-appointment-widget";
-import { ChevronLeftIcon } from "@/constants/ICON";
+import BackButton from "@/components/atoms/back-button";
 //
 import { appointmentsMenuBarStyles as s } from "./styles";
 
@@ -15,12 +15,7 @@ const AppointmentsMenuBar = () => {
   return (
     <View style={s.container}>
       {/* HEADING */}
-      <View style={s.nav}>
-        <Pressable onPress={() => router.back()}>
-          <ChevronLeftIcon />
-        </Pressable>
-        <Text style={s.heading}>Patient list</Text>
-      </View>
+      <BackButton>Patient list</BackButton>
       <View style={s.right_content}>
         {/* TOTALED */}
         <View style={s.totaled_button}>
@@ -30,7 +25,12 @@ const AppointmentsMenuBar = () => {
 
         {/* BUTTON */}
         <CreateAppointmentWidget />
-        <CTAButton variant="outline">Add patient</CTAButton>
+        <CTAButton
+          action={() => router.push("/patient/create")}
+          variant="outline"
+        >
+          Add patient
+        </CTAButton>
 
         {/* SEARCH */}
         <SearchBar placeholder="Find patient" />
