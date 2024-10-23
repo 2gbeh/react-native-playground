@@ -1,7 +1,7 @@
 import "react-native-reanimated";
 
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Stack } from "expo-router";
+import { Stack, Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Provider as ReduxProvider } from "react-redux";
 import { RootSiblingParent } from "react-native-root-siblings";
@@ -18,7 +18,6 @@ export default function RootLayout() {
         <RootSiblingParent>
           <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name="(auth)" />
-            <Stack.Screen name="+not-found" />
           </Stack>
         </RootSiblingParent>
       {/* </ReduxProvider> */}

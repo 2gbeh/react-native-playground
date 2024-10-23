@@ -1,12 +1,6 @@
 export type TFont = "black" | "bold" | "medium" | "regular" | "light" | "thin";
 
 export enum FONT {
-  RobotoBlack = "RobotoBlack", // 900
-  RobotoBold = "RobotoBold", // 700
-  RobotoMedium = "RobotoMedium", // 500
-  RobotoRegular = "RobotoRegular", // 400
-  RobotoLight = "RobotoLight", // 300
-  RobotoThin = "RobotoThin", // 100
   GilroyBlack = "GilroyBlack",
   GilroyBold = "GilroyBold",
   GilroyMedium = "GilroyMedium",
@@ -16,12 +10,6 @@ export enum FONT {
 }
 
 export const FONTS = {
-  RobotoBlack: require("../assets/fonts/Roboto-Black.ttf"),
-  RobotoBold: require("../assets/fonts/Roboto-Bold.ttf"),
-  RobotoMedium: require("../assets/fonts/Roboto-Medium.ttf"),
-  RobotoRegular: require("../assets/fonts/Roboto-Regular.ttf"),
-  RobotoLight: require("../assets/fonts/Roboto-Light.ttf"),
-  RobotoThin: require("../assets/fonts/Roboto-Thin.ttf"),
   GilroyBlack: require("../assets/fonts/Gilroy-Black.ttf"),
   GilroyBold: require("../assets/fonts/Gilroy-Bold.ttf"),
   GilroyMedium: require("../assets/fonts/Gilroy-Medium.ttf"),
@@ -34,25 +22,26 @@ export const FONTS = {
 export const COLOR = {
   none: "transparent",
   white: "#fff",
-  offwhite: "#fafafa",
   black: "#000",
+  offwhite: "#fafafa",
   offblack: "#222",
   //
-  primary: "#25d366",
-  background: "#0b141b",
-  text: "#fff",
-  text_muted: "#8e9494",
-  icon: "#8e9494",
-  input: "#1f2c34",
-  input_focus: "#1e2831",
-  input_border: "#444",
-  border: "#ccc",
-  bubble: "#134d37",
-  bubble_dark: "#134333",
-  surface: "#293237",
-  error: "#ff5722",
-  info: "#2571ff",
-  avatar: "#6a7175",
+  primary: "#0B0C7D",
+  primary_dark: "#051438",
+  background: "#EDF0F8",
+  surface: "#DFE2E9",
+  border: "#DFE2E9",
+  text_muted: "#A6AFC2",
+  text_faded: "#677597",
+  icon_radius: "#ECECFD",
+  indicator: "#020219",
+  tab_text: "#7A90C2",
+  error: "#e11",
+  //
+  neutral_50: "#EFF1F4",
+  primary_25: "#D0D1FB",
+  primary_100: "#8585BE",
+  text_200: "#58627A",
   // https://rgbacolorpicker.com/rgba-to-hex
   opacity: {
     point5: "#0000000d",

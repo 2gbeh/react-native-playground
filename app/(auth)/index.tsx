@@ -1,48 +1,54 @@
-import { FlatList, ScrollView, StyleSheet, View } from "react-native";
+import { StyleSheet, FlatList, View, Text, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
-import { COLOR } from "@/constants/THEME";
+//
+import Header from "@/components/organisms/header";
+import Nav from "@/components/organisms/nav";
+import Hyperlink from "@/components/atoms/hyperlink";
+import PatientListCard from "@/components/molecules/patient-list-card";
+import FilterBySelector from "@/components/atoms/filter-by-selector";
+import AdminMetrics from "@/components/organisms/admin-metrics";
+import LabelTabs from "@/components/atoms/label-tabs";
+import NoContentCard from "@/components/atoms/no-content-card";
+import { FONT, COLOR } from "@/constants/THEME";
+//
+import getAllAppointments from "@/api/getAllAppointments";
 
-import {
-  AppBar,
-  SearchBar,
-  Ribbon,
-  ListItem,
-  FAB,
-  FormSheet,
-  usePosts,
-} from "@/features/post";
-
-export default function PostsScreen() {
-  const { data, showFormSheet, setShowFormSheet } = usePosts();
-  console.log("🚀 ~ PostsScreen");
+export default function DashboardScreen() {
+  console.log("🚀 ~ DashboardScreen");
   // renders
   return (
     <SafeAreaView style={s.container}>
-      <View style={s.header}>
-        {/* APP BAR */}
-        <AppBar />
-
-        {/* SEARCH BAR */}
-        <SearchBar handleSearch={(value) => console.log(value)} />
-
-        {/* RIBBON */}
-        <Ribbon total={data.length} />
+      <Header />
+      <View style={s.content}>
+        <Nav />
+        <FlatList
+          data={getAllAppointments}
+          keyExtractor={(item) => String(item.id)}
+          renderItem={({ item }) => (
+            <PatientListCard data={item} isBusy={item.clinic.id == 1} />
+          )}
+          ListHeaderComponentStyle={{ marginBottom: 16 }}
+          ListHeaderComponent={() => (
+            <View style={s.patient_list_header}>
+              <Text style={s.patient_list_heading}>Patient list</Text>
+              <Hyperlink href="/" chevron="right">
+                View all
+              </Hyperlink>
+            </View>
+          )}
+          ListFooterComponentStyle={{ marginTop: 20 }}
+          ListFooterComponent={() => (
+            <View style={{ rowGap: 16 }}>
+              <View style={s.statistics_header}>
+                <LabelTabs tabs={["Admin metrics", "Clinical metrics"]} />
+                <FilterBySelector />
+              </View>
+              <AdminMetrics />
+            </View>
+          )}
+        />
       </View>
-
-      {/* MAIN */}
-      <FlatList
-        data={data}
-        keyExtractor={(item) => String(item.id)}
-        renderItem={({ item }) => <ListItem data={item} />}
-        contentContainerStyle={s.main}
-      />
-
-      {/* FAB */}
-      <FAB action={() => setShowFormSheet(true)} />
-
-      {/* BOTTOM SHEET */}
-      <FormSheet open={showFormSheet} onClose={() => setShowFormSheet(false)} />
     </SafeAreaView>
   );
 }
@@ -53,12 +59,26 @@ const s = StyleSheet.create({
     backgroundColor: COLOR.background,
     flex: 1,
   },
-  header: {
-    rowGap: 16,
+  content: {
     paddingVertical: 16,
-    paddingHorizontal: 16,
+    paddingHorizontal: 32,
+    flex: 1,
+    rowGap: 24,
   },
-  main: {
-    paddingBottom: 24,
+  patient_list_header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  patient_list_heading: {
+    color: COLOR.primary_dark,
+    fontFamily: FONT.GilroyMedium,
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  statistics_header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });
