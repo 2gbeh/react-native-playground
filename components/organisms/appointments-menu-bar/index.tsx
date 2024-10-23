@@ -4,8 +4,9 @@ import { router } from "expo-router";
 //
 import CTAButton from "../../atoms/cta-button";
 import SearchBar from "../../atoms/search-bar";
+import CreateAppointmentWidget from "@/components/molecules/create-appointment-widget";
 import { ChevronLeftIcon } from "@/constants/ICON";
-// 
+//
 import { appointmentsMenuBarStyles as s } from "./styles";
 
 const AppointmentsMenuBar = () => {
@@ -28,7 +29,7 @@ const AppointmentsMenuBar = () => {
         </View>
 
         {/* BUTTON */}
-        <CTAButton>Create appointment</CTAButton>
+        <CreateAppointmentWidget />
         <CTAButton variant="outline">Add patient</CTAButton>
 
         {/* SEARCH */}

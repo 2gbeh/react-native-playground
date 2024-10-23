@@ -1,13 +1,11 @@
 import { PromiseHelper } from "@/utils/helpers/common/promise.helper";
 import { useState } from "react";
 
-export function useDashboardMenuBar() {
-  const [showCreateAppointmentModal, setShowCreateAppointmentModal] =
-    useState(false);
+export function useCreateAppointmentWidget() {
+  const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const toggleCreateAppointmentModal = () =>
-    setShowCreateAppointmentModal((prev) => !prev);
+  const toggleModal = () => setShowModal((prev) => !prev);
 
   async function handleSubmit() {
     setIsSubmitting(true);
@@ -15,12 +13,12 @@ export function useDashboardMenuBar() {
     // TODO(etugbeh): integrate api
     console.log("🚀 ~ useDashboardMenuBar ~ handleSubmit:");
     setIsSubmitting(false);
-    setShowCreateAppointmentModal(false)
+    setShowModal(false);
   }
 
   return {
-    showCreateAppointmentModal,
-    toggleCreateAppointmentModal,
+    showModal,
+    toggleModal,
     handleSubmit,
     isSubmitting,
   };
