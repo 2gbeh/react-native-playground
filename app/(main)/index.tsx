@@ -18,38 +18,35 @@ export default function DashboardScreen() {
   console.log("🚀 ~ DashboardScreen");
   // renders
   return (
-    <SafeAreaView style={s.container}>
-      <Header />
-      <View style={s.content}>
-        <DashboardMenuBar />
-        <FlatList
-          data={getAllAppointments}
-          keyExtractor={(item) => String(item.id)}
-          renderItem={({ item }) => (
-            <PatientListCard data={item} isBusy={item.clinic.id == 1} />
-          )}
-          ListHeaderComponentStyle={{ marginBottom: 16 }}
-          ListHeaderComponent={() => (
-            <View style={s.patient_list_header}>
-              <Text style={s.patient_list_heading}>Patient list</Text>
-              <Hyperlink href="/appointments" chevron="right">
-                View all
-              </Hyperlink>
+    <View style={s.container}>
+      <DashboardMenuBar />
+      <FlatList
+        data={getAllAppointments}
+        keyExtractor={(item) => String(item.id)}
+        renderItem={({ item }) => (
+          <PatientListCard data={item} isBusy={item.clinic.id == 1} />
+        )}
+        ListHeaderComponentStyle={{ marginBottom: 16 }}
+        ListHeaderComponent={() => (
+          <View style={s.patient_list_header}>
+            <Text style={s.patient_list_heading}>Patient list</Text>
+            <Hyperlink href="/appointments" chevron="right">
+              View all
+            </Hyperlink>
+          </View>
+        )}
+        ListFooterComponentStyle={{ marginTop: 20 }}
+        ListFooterComponent={() => (
+          <View style={{ rowGap: 16 }}>
+            <View style={s.statistics_header}>
+              <LabelTabs tabs={["Admin metrics", "Clinical metrics"]} />
+              <FilterByButtonSelector />
             </View>
-          )}
-          ListFooterComponentStyle={{ marginTop: 20 }}
-          ListFooterComponent={() => (
-            <View style={{ rowGap: 16 }}>
-              <View style={s.statistics_header}>
-                <LabelTabs tabs={["Admin metrics", "Clinical metrics"]} />
-                <FilterByButtonSelector />
-              </View>
-              <AdminMetrics />
-            </View>
-          )}
-        />
-      </View>
-    </SafeAreaView>
+            <AdminMetrics />
+          </View>
+        )}
+      />
+    </View>
   );
 }
 
@@ -57,9 +54,6 @@ const s = StyleSheet.create({
   _: {},
   container: {
     backgroundColor: COLOR.background,
-    flex: 1,
-  },
-  content: {
     paddingVertical: 16,
     paddingHorizontal: 32,
     flex: 1,

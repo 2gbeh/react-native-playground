@@ -22,7 +22,9 @@ const CentreNameLogo: React.FC<IProps> = ({ src, name }) => {
         <Avatar src={src} size={32} radius={8} />
         <Text style={s.figcaption}>{shortName}</Text>
       </View>
-      <Image source={watermark} alt="" style={s.watermark} />
+      <View style={s.divider}>
+        <Image source={watermark} alt="" style={s.watermark} />
+      </View>
     </View>
   );
 };
@@ -46,6 +48,11 @@ const s = StyleSheet.create({
     fontFamily: FONT.GilroyBold,
     fontSize: 18,
     fontWeight: "700",
+  },
+  divider: {
+    borderLeftColor: COLOR.border,
+    borderLeftWidth: 1,
+    paddingLeft: 10,
   },
   watermark: {
     width: 78,

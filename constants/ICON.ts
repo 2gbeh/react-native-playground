@@ -6,6 +6,7 @@ export { default as CancelIcon } from "../assets/icons/cancel.svg";
 export { default as ChevronDownIcon } from "../assets/icons/chevron-down.svg";
 export { default as ChevronLeftIcon } from "../assets/icons/chevron-left.svg";
 export { default as ChevronRightIcon } from "../assets/icons/chevron-right.svg";
+export { default as ChevronUpIcon } from "../assets/icons/chevron-up.svg";
 export { default as ClockIcon } from "../assets/icons/clock.svg";
 export { default as EllipsisVIcon } from "../assets/icons/ellipsis-v.svg";
 export { default as EyeIcon } from "../assets/icons/eye.svg";

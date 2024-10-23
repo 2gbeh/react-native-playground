@@ -14,20 +14,17 @@ export default function AppointmentsDashboardScreen() {
   console.log("🚀 ~ AppointmentsDashboardScreen");
   // renders
   return (
-    <SafeAreaView style={s.container}>
-      <Header />
-      <View style={s.content}>
-        <AppointmentsMenuBar />
-        <AppointmentsFilterBar />        
-        <FlatList
-          data={getAllAppointments}
-          keyExtractor={(item) => String(item.id)}
-          renderItem={({ item }) => (
-            <PatientListCard data={item} isBusy={item.clinic.id == 1} />
-          )}
-        />
-      </View>
-    </SafeAreaView>
+    <View style={s.container}>
+      <AppointmentsMenuBar />
+      <AppointmentsFilterBar />
+      <FlatList
+        data={getAllAppointments}
+        keyExtractor={(item) => String(item.id)}
+        renderItem={({ item }) => (
+          <PatientListCard data={item} isBusy={item.clinic.id == 1} />
+        )}
+      />
+    </View>
   );
 }
 
@@ -35,9 +32,6 @@ const s = StyleSheet.create({
   _: {},
   container: {
     backgroundColor: COLOR.background,
-    flex: 1,
-  },
-  content: {
     paddingVertical: 16,
     paddingHorizontal: 32,
     flex: 1,

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { Text, Pressable } from "react-native";
-// 
+//
 import {
   Variant,
   ctaButtonStyles as s,
@@ -9,16 +9,18 @@ import {
 
 interface IProps extends PropsWithChildren {
   action?: () => void;
+  disabled?: boolean;
   variant?: Variant;
 }
 
 const CTAButton: React.FC<IProps> = ({
   children,
   action = () => undefined,
+  disabled,
   variant = "solid",
 }) => {
   const { backgroundColor, borderColor, color } =
-    ctaButtonVariantStyles(variant);
+    ctaButtonVariantStyles(variant, disabled);
   console.log("🚀 ~ CTAButton");
   // renders
   return (

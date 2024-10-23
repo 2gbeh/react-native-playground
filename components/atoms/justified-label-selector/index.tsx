@@ -6,25 +6,24 @@ import { ChevronDownIcon } from "@/constants/ICON";
 
 interface IProps {
   label: string;
-  date: string;
-  time: string;
+  value: string;
 }
 
-const LabelledDateTimeWidget: React.FC<IProps> = ({ label, date, time }) => {
-  console.log("🚀 ~ LabelledDateTimeWidget");
+const JustifiedLabelSelector: React.FC<IProps> = ({ label, value }) => {
+  console.log("🚀 ~ JustifiedLabelSelector");
   // renders
   return (
     <View style={s.container}>
       <Text style={s.label}>{label}</Text>
-      <View style={s.values}>
-        <Text style={s.value}>{date}</Text>
-        <Text style={s.value}>{time}</Text>
+      <View style={s.input}>
+        <Text style={s.value}>{value}</Text>
+        <ChevronDownIcon color={COLOR.primary_dark} />
       </View>
     </View>
   );
 };
 
-export default React.memo(LabelledDateTimeWidget);
+export default React.memo(JustifiedLabelSelector);
 
 const s = StyleSheet.create({
   _: {},
@@ -46,10 +45,6 @@ const s = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     columnGap: 12,
-  },
-  values: {
-    flexDirection: "row",
-    columnGap: 32,
   },
   value: {
     color: COLOR.primary_dark,

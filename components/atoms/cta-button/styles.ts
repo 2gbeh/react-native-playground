@@ -21,16 +21,16 @@ export const ctaButtonStyles = StyleSheet.create({
   },
 });
 
-export const ctaButtonVariantStyles = (variant: Variant) =>
+export const ctaButtonVariantStyles = (variant: Variant, disabled?: boolean) =>
   ({
     solid: {
-      backgroundColor: COLOR.primary,
-      color: COLOR.white,
-      borderColor: COLOR.primary,
+      backgroundColor: disabled ? COLOR.disabled : COLOR.primary,
+      color: disabled ? COLOR.text_muted : COLOR.white,
+      borderColor: disabled ? COLOR.border : COLOR.primary,
     },
     outline: {
       backgroundColor: COLOR.white,
-      color: COLOR.primary,
-      borderColor: COLOR.primary,
+      color: disabled ? COLOR.text_muted : COLOR.primary,
+      borderColor: disabled ? COLOR.border : COLOR.primary,
     },
   }[variant]);

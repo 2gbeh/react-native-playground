@@ -4,8 +4,8 @@ import { router } from "expo-router";
 //
 import ModalWrapper from "@/components/atoms/modal-wrapper";
 import SearchBar from "@/components/atoms/search-bar";
-import LabelledInputSelector from "@/components/atoms/labelled-input-selector";
-import LabelledDatetimeWidget from "@/components/atoms/labelled-datetime-widget";
+import JustifiedLabelSelector from "@/components/atoms/justified-label-selector";
+import JustifiedLabelDatetime from "@/components/atoms/justified-label-datetime";
 import CTAButton from "@/components/atoms/cta-button";
 import Spinner from "@/components/atoms/spinner";
 //
@@ -32,10 +32,10 @@ const CreateAppointmentWidget = () => {
         <View style={s.container}>
           <SearchBar width="100%" />
           <View style={s.inputs}>
-            <LabelledInputSelector label="Clinic" value="Select clinic" />
-            <LabelledInputSelector label="Ward" value="Select" />
-            <LabelledInputSelector label="Bed" value="Select number" />
-            <LabelledDatetimeWidget
+            <JustifiedLabelSelector label="Clinic" value="Select clinic" />
+            <JustifiedLabelSelector label="Ward" value="Select" />
+            <JustifiedLabelSelector label="Bed" value="Select number" />
+            <JustifiedLabelDatetime
               label="Time"
               date="05 Feb, 2021"
               time="10:00 AM"

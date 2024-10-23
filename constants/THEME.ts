@@ -36,7 +36,7 @@ export const COLOR = {
   icon_radius: "#ECECFD",
   indicator: "#020219",
   tab_text: "#7A90C2",
-  pager_disabled: "#E6E8EB",
+  disabled: "#E6E8EB",
   error: "#e11",
   //
   neutral_50: "#EFF1F4",

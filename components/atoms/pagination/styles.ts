@@ -31,7 +31,7 @@ export const paginationStyles = StyleSheet.create({
     columnGap: 8,
   },
   button: {
-    backgroundColor: COLOR.pager_disabled,
+    backgroundColor: COLOR.disabled,
     borderColor: COLOR.border,
     borderWidth: 1,
     borderRadius: 4,
@@ -41,7 +41,7 @@ export const paginationStyles = StyleSheet.create({
     justifyContent: "center",
   },
   prev: {
-    backgroundColor: COLOR.pager_disabled,
+    backgroundColor: COLOR.disabled,
   },
   next: {
     backgroundColor: COLOR.white,
