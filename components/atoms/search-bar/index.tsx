@@ -1,18 +1,22 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, DimensionValue } from "react-native";
 //
 import { FONT, COLOR } from "@/constants/THEME";
 import { SearchIcon } from "@/constants/ICON";
 
 interface IProps {
   placeholder?: string;
+  width?: DimensionValue;
 }
 
-const SearchBar: React.FC<IProps> = ({ placeholder = "Search" }) => {
+const SearchBar: React.FC<IProps> = ({
+  placeholder = "Search",
+  width = 240,
+}) => {
   console.log("🚀 ~ SearchBar");
   // renders
   return (
-    <View style={s.container}>
+    <View style={[s.container, { width }]}>
       <SearchIcon color={COLOR.border} />
       <Text style={s.placeholder}>{placeholder}</Text>
     </View>
@@ -30,7 +34,6 @@ const s = StyleSheet.create({
     borderRadius: 10,
     // paddingVertical: 10,
     paddingHorizontal: 20,
-    width: 240,
     height: 40,
     flexDirection: "row",
     alignItems: "center",

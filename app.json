@@ -3,7 +3,7 @@
     "name": "Pamela",
     "slug": "pamela",
     "version": "1.0.0",
-    "orientation": "any",
+    "orientation": "landscape",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",

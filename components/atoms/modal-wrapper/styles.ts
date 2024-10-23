@@ -3,7 +3,7 @@ import { COLOR, FONT } from "@/constants/THEME";
 
 export const modalWrapperStyles = StyleSheet.create({
   overlay: {
-    backgroundColor: COLOR.opacity.point50,
+    backgroundColor: COLOR.opacity.point75,
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -18,7 +18,7 @@ export const modalWrapperStyles = StyleSheet.create({
     borderBottomColor: COLOR.border,
     paddingVertical: 16,
     marginHorizontal: 20,
-    marginBottom: 12,
+    // marginBottom: 12,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
