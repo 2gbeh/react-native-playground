@@ -1,2 +1,16 @@
 export { default as BellIcon } from "../assets/icons/bell.svg";
 export { default as SearchIcon } from "../assets/icons/search.svg";
+export { default as BusyIcon } from "../assets/icons/busy.svg";
+export { default as ChevronLeftIcon } from "../assets/icons/chevron-left.svg";
+export { default as ChevronRightIcon } from "../assets/icons/chevron-right.svg";
+export { default as ChevronDownIcon } from "../assets/icons/chevron-down.svg";
+export { default as BulletIcon } from "../assets/icons/bullet.svg";
+export { default as EllipsisVIcon } from "../assets/icons/ellipsis-v.svg";
+export { default as FlaskIcon } from "../assets/icons/flask.svg";
+export { default as PillIcon } from "../assets/icons/pill.svg";
+export { default as ClockIcon } from "../assets/icons/clock.svg";
+export { default as HourglassIcon } from "../assets/icons/hourglass.svg";
+export { default as EyeIcon } from "../assets/icons/eye.svg";
+export { default as UserOrientationIcon } from "../assets/icons/user-orientation.svg";
+export { default as GridIcon } from "../assets/icons/grid.svg";
+export { default as BedIcon } from "../assets/icons/bed.svg";

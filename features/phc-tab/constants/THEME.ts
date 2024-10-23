@@ -13,8 +13,14 @@ export const COLOR = {
   border: "#DFE2E9",
   text_muted: "#A6AFC2",
   text_faded: "#677597",
-  // 
+  icon_radius: "#ECECFD",
+  indicator: "#020219",
+  tab_text: "#7A90C2",
+  //
   neutral_50: "#EFF1F4",
+  primary_25: "#D0D1FB",
+  primary_100: "#8585BE",
+  text_200: "#58627A",
   // https://rgbacolorpicker.com/rgba-to-hex
   opacity: {
     point5: "#0000000d",
