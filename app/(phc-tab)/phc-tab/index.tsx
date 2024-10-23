@@ -43,7 +43,7 @@ export default function DashboardScreen() {
           ListFooterComponent={() => (
             <View style={{ rowGap: 16 }}>
               <View style={s.statistics_header}>
-                <LabelTabs />
+                <LabelTabs tabs={["Admin metrics", "Clinical metrics"]} />
                 <FilterBySelector />
               </View>
               <AdminMetrics />

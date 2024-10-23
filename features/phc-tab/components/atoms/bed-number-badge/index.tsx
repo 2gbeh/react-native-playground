@@ -1,11 +1,11 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 //
 import { FONT } from "@/constants/THEME";
 import { COLOR } from "@/features/phc-tab/constants/THEME";
 import { BedIcon } from "@/features/phc-tab/constants/ICON";
 
-interface IProps extends PropsWithChildren {
+interface IProps {
   bedNumber?: number | string;
   isActive?: boolean;
 }
