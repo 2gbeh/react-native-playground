@@ -9,7 +9,8 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 //
-import Appbar from "@/features/phc-tab/components/organisms/appbar";
+import Header from "@/features/phc-tab/components/organisms/header";
+import Nav from "@/features/phc-tab/components/organisms/nav";
 import { COLOR } from "@/features/phc-tab/constants/THEME";
 
 export default function DashboardScreen() {
@@ -17,7 +18,10 @@ export default function DashboardScreen() {
   // renders
   return (
     <SafeAreaView style={s.container}>
-      <Appbar />
+      <Header />
+      <View style={s.main}>
+        <Nav />
+      </View>
     </SafeAreaView>
   );
 }
@@ -28,9 +32,8 @@ const s = StyleSheet.create({
     backgroundColor: COLOR.background,
     flex: 1,
   },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+  main: {
+    paddingVertical: 16,
+    paddingHorizontal: 32,
   },
-  main: {},
 });

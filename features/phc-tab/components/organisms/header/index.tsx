@@ -8,8 +8,8 @@ import { FONT } from "@/constants/THEME";
 import { COLOR } from "@/features/phc-tab/constants/THEME";
 import { BellIcon } from "@/features/phc-tab/constants/ICON";
 
-const AppBar = () => {
-  console.log("🚀 ~ AppBar");
+const Header = () => {
+  console.log("🚀 ~ Header");
   // renders
   return (
     <View style={s.container}>
@@ -37,7 +37,7 @@ const AppBar = () => {
   );
 };
 
-export default React.memo(AppBar);
+export default React.memo(Header);
 
 const s = StyleSheet.create({
   _: {},
