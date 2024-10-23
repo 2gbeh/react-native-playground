@@ -5,15 +5,13 @@ import CTAButton from "../../atoms/cta-button";
 import SearchBar from "../../atoms/search-bar";
 import { FONT, COLOR } from "@/constants/THEME";
 
-const Nav = () => {
-  console.log("🚀 ~ Nav");
+const DashboardMenuBar = () => {
+  console.log("🚀 ~ DashboardMenuBar");
   // renders
   return (
     <View style={s.container}>
       {/* HEADING */}
       <Text style={s.heading}>Hospital statistics</Text>
-
-      {/* FORM */}
       <View style={s.right_content}>
         {/* BUTTON */}
         <CTAButton>Create appointment</CTAButton>
@@ -26,7 +24,7 @@ const Nav = () => {
   );
 };
 
-export default React.memo(Nav);
+export default React.memo(DashboardMenuBar);
 
 const s = StyleSheet.create({
   _: {},

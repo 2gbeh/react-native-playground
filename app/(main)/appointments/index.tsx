@@ -3,49 +3,27 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 //
 import Header from "@/components/organisms/header";
-import Nav from "@/components/organisms/nav";
-import Hyperlink from "@/components/atoms/hyperlink";
+import AppointmentsMenuBar from "@/components/organisms/appointments-menu-bar";
 import PatientListCard from "@/components/molecules/patient-list-card";
-import FilterBySelector from "@/components/atoms/filter-by-selector";
-import AdminMetrics from "@/components/organisms/admin-metrics";
-import LabelTabs from "@/components/atoms/label-tabs";
-import NoContentCard from "@/components/atoms/no-content-card";
 import { FONT, COLOR } from "@/constants/THEME";
 //
 import getAllAppointments from "@/api/getAllAppointments";
+import AppointmentsFilterBar from "@/components/organisms/appointments-filter-bar";
 
-export default function DashboardScreen() {
-  console.log("🚀 ~ DashboardScreen");
+export default function AppointmentsDashboardScreen() {
+  console.log("🚀 ~ AppointmentsDashboardScreen");
   // renders
   return (
     <SafeAreaView style={s.container}>
       <Header />
       <View style={s.content}>
-        <Nav />
+        <AppointmentsMenuBar />
+        <AppointmentsFilterBar />        
         <FlatList
           data={getAllAppointments}
           keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => (
             <PatientListCard data={item} isBusy={item.clinic.id == 1} />
-          )}
-          ListHeaderComponentStyle={{ marginBottom: 16 }}
-          ListHeaderComponent={() => (
-            <View style={s.patient_list_header}>
-              <Text style={s.patient_list_heading}>Patient list</Text>
-              <Hyperlink href="/" chevron="right">
-                View all
-              </Hyperlink>
-            </View>
-          )}
-          ListFooterComponentStyle={{ marginTop: 20 }}
-          ListFooterComponent={() => (
-            <View style={{ rowGap: 16 }}>
-              <View style={s.statistics_header}>
-                <LabelTabs tabs={["Admin metrics", "Clinical metrics"]} />
-                <FilterBySelector />
-              </View>
-              <AdminMetrics />
-            </View>
           )}
         />
       </View>

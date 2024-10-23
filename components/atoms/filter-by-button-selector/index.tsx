@@ -6,8 +6,8 @@ import { ChevronDownIcon } from "@/constants/ICON";
 
 interface IProps {}
 
-const FilterBySelector: React.FC<IProps> = () => {
-  console.log("🚀 ~ FilterBySelector");
+const FilterByButtonSelector: React.FC<IProps> = () => {
+  console.log("🚀 ~ FilterByButtonSelector");
   // renders
   return (
     <Pressable style={s.container}>
@@ -17,7 +17,7 @@ const FilterBySelector: React.FC<IProps> = () => {
   );
 };
 
-export default React.memo(FilterBySelector);
+export default React.memo(FilterByButtonSelector);
 
 const s = StyleSheet.create({
   _: {},

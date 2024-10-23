@@ -17,7 +17,7 @@ export default function RootLayout() {
       {/* <ReduxProvider store={store}> */}
         <RootSiblingParent>
           <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="(auth)" />
+            <Stack.Screen name="(main)" />
           </Stack>
         </RootSiblingParent>
       {/* </ReduxProvider> */}
