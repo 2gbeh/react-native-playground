@@ -4,6 +4,7 @@ import { FONT, COLOR } from "@/constants/THEME";
 export const headerStyles = StyleSheet.create({
   _: {},
   container: {
+    backgroundColor: COLOR.background,
     borderBottomColor: COLOR.border,
     borderBottomWidth: 2,
     paddingVertical: 8,

@@ -3,12 +3,6 @@ import { FONT, COLOR } from "@/constants/THEME";
 
 export const alertDialogStyles = StyleSheet.create({
   container: {
-    backgroundColor: COLOR.opacity.point75,
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  content: {
     backgroundColor: COLOR.background,
     borderRadius: 10,
     paddingVertical: 16,

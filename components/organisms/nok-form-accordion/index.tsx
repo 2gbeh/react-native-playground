@@ -1,14 +1,23 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 //
 import Accordion from "@/components/atoms/accordion";
 import LabelTextInput from "@/components/atoms/label-text-input";
 import LabelSelectorInput from "@/components/atoms/label-selector-input";
-import { FONT, COLOR } from "@/constants/THEME";
+// 
+import { nokFormAccordionStyles as s } from "./styles";
 
-interface IProps {}
+type DefaultValue = {
+  title?: string;
+  firstName: string;
+  lastName: string;
+};
 
-const NokFormAccordion: React.FC<IProps> = ({}) => {
+interface IProps {
+  defaultValues?: DefaultValue;
+}
+
+const NokFormAccordion: React.FC<IProps> = ({ defaultValues }) => {
   const [openAccordion, setOpenAccordion] = useState(true);
   console.log("🚀 ~ NokFormAccordion");
   // renders
@@ -20,10 +29,24 @@ const NokFormAccordion: React.FC<IProps> = ({}) => {
     >
       <View style={s.container}>
         <View style={s.content}>
-          <LabelTextInput label="First name" placeholder="Enter first name" required />
+          <LabelTextInput
+            label="First name"
+            placeholder="Enter first name"
+            defaultValue={defaultValues?.firstName}
+            required
+          />
           <LabelTextInput label="Middle name" placeholder="Enter middle name" />
-          <LabelTextInput label="Last name" placeholder="Enter last name" required />
-          <LabelSelectorInput label="Title" placeholder="Select title" />
+          <LabelTextInput
+            label="Last name"
+            placeholder="Enter last name"
+            defaultValue={defaultValues?.lastName}
+            required
+          />
+          <LabelSelectorInput
+            label="Title"
+            placeholder="Select title"
+            defaultValue={defaultValues?.title}
+          />
         </View>
       </View>
     </Accordion>
@@ -31,16 +54,3 @@ const NokFormAccordion: React.FC<IProps> = ({}) => {
 };
 
 export default React.memo(NokFormAccordion);
-
-const s = StyleSheet.create({
-  _: {},
-  container: {
-    paddingVertical: 16,
-  },
-  content: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    columnGap: 18,
-  },
-});

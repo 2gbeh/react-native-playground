@@ -1,16 +1,9 @@
 import React from "react";
-import {
-  StyleSheet,
-  Modal,
-  View,
-  Text,
-  Pressable,
-  Platform,
-} from "react-native";
+import { View, Text, Pressable } from "react-native";
+import ModalWrapper from "../modal-wrapper";
 import CTAButton from "@/components/atoms/cta-button";
 import { SuccessIcon } from "@/constants/ICON";
-import { COLOR } from "@/constants/THEME";
-// 
+//
 import { alertDialogStyles as s } from "./styles";
 
 interface IProps {
@@ -27,17 +20,15 @@ const AlertDialog = ({
   onConfirm = () => {},
 }: IProps) => {
   return (
-    <Modal visible={open} transparent={true} animationType="none">
-      <Pressable style={s.container} onPress={onClose}>
-        <View style={s.content}>
-          <Text style={s.heading}>{heading}</Text>
-          <View style={s.body}>
-            <SuccessIcon />
-            <CTAButton action={onConfirm}>Close</CTAButton>
-          </View>
+    <ModalWrapper open={open} onClose={onClose}>
+      <View style={s.container}>
+        <Text style={s.heading}>{heading}</Text>
+        <View style={s.body}>
+          <SuccessIcon />
+          <CTAButton action={onConfirm}>Close</CTAButton>
         </View>
-      </Pressable>
-    </Modal>
+      </View>
+    </ModalWrapper>
   );
 };
 

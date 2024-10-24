@@ -41,7 +41,7 @@ const CreateAppointmentWidget = () => {
         heading="Add new appointment"
         open={showModal}
         onClose={toggleModal}
-        forceClose
+        animation="slide"
       >
         <View style={s.container}>
           <SearchBar width="100%" />

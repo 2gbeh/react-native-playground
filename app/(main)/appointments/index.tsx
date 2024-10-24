@@ -1,22 +1,24 @@
-import { StyleSheet, FlatList, View, Text, Pressable } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { router } from "expo-router";
+import { FlatList, View, Text, Pressable } from "react-native";
 //
-import Header from "@/components/organisms/header";
 import AppointmentsMenuBar from "@/components/organisms/appointments-menu-bar";
 import PatientListCard from "@/components/molecules/patient-list-card";
-import { FONT, COLOR } from "@/constants/THEME";
-//
-import getAllAppointments from "@/api/getAllAppointments";
 import AppointmentsFilterBar from "@/components/organisms/appointments-filter-bar";
+//
+import { appointmentsScreenStyles as s } from "@/features/appointment/appointments/styles";
+import getAllAppointments from "@/api/getAllAppointments";
 
-export default function AppointmentsDashboardScreen() {
-  console.log("🚀 ~ AppointmentsDashboardScreen");
+export default function AppointmentsScreen() {
+  console.log("🚀 ~ AppointmentsScreen");
   // renders
   return (
     <View style={s.container}>
+      {/* ACTIONS */}
       <AppointmentsMenuBar />
+
+      {/* FILTERS */}
       <AppointmentsFilterBar />
+
+      {/* LIST */}
       <FlatList
         data={getAllAppointments}
         keyExtractor={(item) => String(item.id)}
@@ -27,30 +29,3 @@ export default function AppointmentsDashboardScreen() {
     </View>
   );
 }
-
-const s = StyleSheet.create({
-  _: {},
-  container: {
-    backgroundColor: COLOR.background,
-    paddingVertical: 16,
-    paddingHorizontal: 32,
-    flex: 1,
-    rowGap: 24,
-  },
-  patient_list_header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  patient_list_heading: {
-    color: COLOR.primary_dark,
-    fontFamily: FONT.GilroyMedium,
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  statistics_header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-});

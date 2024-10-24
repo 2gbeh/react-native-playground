@@ -6,7 +6,7 @@ import AppClock from "../../atoms/app-clock";
 import AvatarHamburgerMenu from "../../atoms/avatar-hamburger-menu";
 import { BellIcon } from "@/constants/ICON";
 import { COLOR } from "@/constants/THEME";
-// 
+//
 import { headerStyles as s } from "./styles";
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
       {/* LOGO */}
       <View style={s.left_content}>
         <CentreNameLogo
-          src="https://github.com/plateaumed.png"
+          src="/assets/images/icon.png"
           name="Edo Specialist Hospital"
         />
       </View>
@@ -32,7 +32,7 @@ const Header = () => {
         <Text style={s.greeting}>Hi, CHO Adebayo</Text>
         <BellIcon color={COLOR.primary} />
         <Text style={s.textSize}>Aa</Text>
-        <AvatarHamburgerMenu src="https://github.com/2gbeh.png" />
+        <AvatarHamburgerMenu src="/assets/images/avatar.png" />
       </View>
     </View>
   );

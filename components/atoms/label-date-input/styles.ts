@@ -21,7 +21,7 @@ export const labelDateInputStyles = StyleSheet.create({
     fontWeight: "600",
   },
   asterisk: {
-    color: COLOR.primary_dark,
+    color: COLOR.error,
     fontFamily: FONT.GilroyMedium,
     fontSize: 16,
     fontWeight: "500",
@@ -42,6 +42,12 @@ export const labelDateInputStyles = StyleSheet.create({
   },
   placeholder: {
     color: COLOR.text_muted,
+    fontFamily: FONT.GilroyMedium,
+    fontSize: 16,
+    fontWeight: "500",
+  },
+  value: {
+    color: COLOR.primary_dark,
     fontFamily: FONT.GilroyMedium,
     fontSize: 16,
     fontWeight: "500",

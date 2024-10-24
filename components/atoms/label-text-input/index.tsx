@@ -6,10 +6,16 @@ import { labelTextInputStyles as s } from "./styles";
 interface IProps {
   label: string;
   placeholder: string;
+  defaultValue?: null | string;
   required?: boolean;
 }
 
-const LabelTextInput: React.FC<IProps> = ({ label, placeholder, required }) => {
+const LabelTextInput: React.FC<IProps> = ({
+  label,
+  placeholder,
+  defaultValue,
+  required,
+}) => {
   console.log("🚀 ~ LabelTextInput");
   // renders
   return (
@@ -19,7 +25,9 @@ const LabelTextInput: React.FC<IProps> = ({ label, placeholder, required }) => {
         {required && <Text style={s.asterisk}>*</Text>}
       </View>
       <View style={s.input}>
-        <Text style={s.placeholder}>{placeholder}</Text>
+        <Text style={defaultValue ? s.value : s.placeholder}>
+          {defaultValue || placeholder}
+        </Text>
       </View>
     </View>
   );

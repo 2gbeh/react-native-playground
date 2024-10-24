@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export function useCreateAppointmentWidget() {
   const [showModal, setShowModal] = useState(false);
-  const [showAlert, setShowAlert] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const toggleModal = () => setShowModal((prev) => !prev);

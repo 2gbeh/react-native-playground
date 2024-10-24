@@ -8,10 +8,16 @@ import { labelDateInputStyles as s } from "./styles";
 interface IProps {
   label: string;
   placeholder: string;
+  defaultValue?: null | string;
   required?: boolean;
 }
 
-const LabelDateInput: React.FC<IProps> = ({ label, placeholder, required }) => {
+const LabelDateInput: React.FC<IProps> = ({
+  label,
+  placeholder,
+  defaultValue,
+  required,
+}) => {
   console.log("🚀 ~ LabelDateInput");
   // renders
   return (
@@ -21,7 +27,9 @@ const LabelDateInput: React.FC<IProps> = ({ label, placeholder, required }) => {
         {required && <Text style={s.asterisk}>*</Text>}
       </View>
       <View style={s.input}>
-        <Text style={s.placeholder}>{placeholder}</Text>
+        <Text style={defaultValue ? s.value : s.placeholder}>
+          {defaultValue || placeholder}
+        </Text>
         <CalendarIcon color={COLOR.text_muted} />
       </View>
     </View>

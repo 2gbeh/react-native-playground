@@ -10,6 +10,7 @@ interface IProps extends PropsWithChildren {
   open?: boolean;
   onClose?: () => void;
   forceClose?: boolean;
+  animation?: "none" | "fade" | "slide";
 }
 
 const ModalWrapper: React.FC<IProps> = ({
@@ -18,6 +19,7 @@ const ModalWrapper: React.FC<IProps> = ({
   open,
   onClose = () => undefined,
   forceClose = true,
+  animation = "none",
 }) => {
   console.log("🚀 ~ ModalWrapper");
   // renders
@@ -25,7 +27,7 @@ const ModalWrapper: React.FC<IProps> = ({
     <Modal
       visible={open}
       transparent={true}
-      animationType="slide"
+      animationType={animation}
       onRequestClose={onClose}
     >
       <Pressable
