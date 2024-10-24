@@ -11,12 +11,18 @@ export const alertDialogStyles = StyleSheet.create({
   content: {
     backgroundColor: COLOR.background,
     borderRadius: 10,
-    paddingTop: 15,
-    paddingBottom: 20,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    width: 320,
     alignItems: "center",
-    gap: 15,
+    rowGap: 16,
   },
-  heading: { color: COLOR.primary_dark, fontSize: 18, fontWeight: "600" },
+  heading: {
+    color: COLOR.primary_dark,
+    fontFamily: FONT.GilroyMedium,
+    fontSize: 18,
+    fontWeight: "600",
+  },
   body: {
     paddingHorizontal: 25,
     paddingBottom: Platform.OS === "web" ? 0 : 40,

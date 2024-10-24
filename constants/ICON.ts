@@ -18,4 +18,5 @@ export { default as HourglassIcon } from "../assets/icons/hourglass.svg";
 export { default as PillIcon } from "../assets/icons/pill.svg";
 export { default as SearchIcon } from "../assets/icons/search.svg";
 export { default as SortDescIcon } from "../assets/icons/sort-desc.svg";
+export { default as SuccessIcon } from "../assets/icons/success.svg";
 export { default as UserOrientationIcon } from "../assets/icons/user-orientation.svg";

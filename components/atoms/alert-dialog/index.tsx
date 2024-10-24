@@ -7,13 +7,14 @@ import {
   Pressable,
   Platform,
 } from "react-native";
-import ConfirmationSuccessSvg from "@/assets/svgs/confirmation-success.svg";
 import CTAButton from "@/components/atoms/cta-button";
+import { SuccessIcon } from "@/constants/ICON";
+import { COLOR } from "@/constants/THEME";
+// 
 import { alertDialogStyles as s } from "./styles";
 
 interface IProps {
   heading?: string;
-  buttonText?: string;
   open?: boolean;
   onClose?: () => void;
   onConfirm?: () => void;
@@ -21,7 +22,6 @@ interface IProps {
 
 const AlertDialog = ({
   heading = "Confirmation",
-  buttonText = "Close",
   open = false,
   onClose = () => {},
   onConfirm = () => {},
@@ -32,8 +32,8 @@ const AlertDialog = ({
         <View style={s.content}>
           <Text style={s.heading}>{heading}</Text>
           <View style={s.body}>
-            <ConfirmationSuccessSvg />
-            <CTAButton action={onConfirm}>{buttonText}</CTAButton>
+            <SuccessIcon />
+            <CTAButton action={onConfirm}>Close</CTAButton>
           </View>
         </View>
       </Pressable>

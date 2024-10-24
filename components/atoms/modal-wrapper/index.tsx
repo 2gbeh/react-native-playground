@@ -25,7 +25,7 @@ const ModalWrapper: React.FC<IProps> = ({
     <Modal
       visible={open}
       transparent={true}
-      animationType="fade"
+      animationType="slide"
       onRequestClose={onClose}
     >
       <Pressable

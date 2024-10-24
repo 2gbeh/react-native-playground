@@ -2,19 +2,26 @@ import React from "react";
 import { View, Text } from "react-native";
 import { router } from "expo-router";
 //
-import ModalWrapper from "@/components/atoms/modal-wrapper";
 import SearchBar from "@/components/atoms/search-bar";
 import JustifiedLabelSelector from "@/components/atoms/justified-label-selector";
 import JustifiedLabelDatetime from "@/components/atoms/justified-label-datetime";
 import CTAButton from "@/components/atoms/cta-button";
 import Spinner from "@/components/atoms/spinner";
+import ModalWrapper from "@/components/atoms/modal-wrapper";
+import AlertDialog from "@/components/atoms/alert-dialog";
 //
 import { createAppointmentWidgetStyles as s } from "./styles";
 import { useCreateAppointmentWidget } from "./states";
 
 const CreateAppointmentWidget = () => {
-  const { showModal, toggleModal, handleSubmit, isSubmitting } =
-    useCreateAppointmentWidget();
+  const {
+    showModal,
+    toggleModal,
+    showAlert,
+    toggleAlert,
+    handleSubmit,
+    isSubmitting,
+  } = useCreateAppointmentWidget();
   console.log("🚀 ~ CreateAppointmentWidget");
   // renders
   return (
@@ -23,6 +30,13 @@ const CreateAppointmentWidget = () => {
       <CTAButton action={toggleModal}>Create appointment</CTAButton>
 
       {/* MODAL */}
+      <AlertDialog
+        heading="Appointment created"
+        open={showAlert}
+        onClose={toggleAlert}
+        onConfirm={toggleAlert}
+      />
+
       <ModalWrapper
         heading="Add new appointment"
         open={showModal}
