@@ -6,14 +6,18 @@ import { labelTextInputStyles as s } from "./styles";
 interface IProps {
   label: string;
   placeholder: string;
+  required?: boolean;
 }
 
-const LabelTextInput: React.FC<IProps> = ({ label, placeholder }) => {
+const LabelTextInput: React.FC<IProps> = ({ label, placeholder, required }) => {
   console.log("🚀 ~ LabelTextInput");
   // renders
   return (
     <View style={s.container}>
-      <Text style={s.label}>{label}</Text>
+      <View style={s.label_wrapper}>
+        <Text style={s.label}>{label}</Text>
+        {required && <Text style={s.asterisk}>*</Text>}
+      </View>
       <View style={s.input}>
         <Text style={s.placeholder}>{placeholder}</Text>
       </View>

@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { FONT, COLOR } from "@/constants/THEME";
 
-export const labelSelectorInputStyles = StyleSheet.create({
+export const labelDateInputStyles = StyleSheet.create({
   _: {},
   container: {
     rowGap: 8,

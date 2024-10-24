@@ -2,6 +2,8 @@ export { default as BedIcon } from "../assets/icons/bed.svg";
 export { default as BellIcon } from "../assets/icons/bell.svg";
 export { default as BulletIcon } from "../assets/icons/bullet.svg";
 export { default as BusyIcon } from "../assets/icons/busy.svg";
+export { default as CalendarIcon } from "../assets/icons/calendar.svg";
+export { default as CameraIcon } from "../assets/icons/camera.svg";
 export { default as CancelIcon } from "../assets/icons/cancel.svg";
 export { default as ChevronDownIcon } from "../assets/icons/chevron-down.svg";
 export { default as ChevronLeftIcon } from "../assets/icons/chevron-left.svg";

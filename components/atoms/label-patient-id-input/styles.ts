@@ -1,17 +1,13 @@
 import { StyleSheet } from "react-native";
 import { FONT, COLOR } from "@/constants/THEME";
 
-export const labelSelectorInputStyles = StyleSheet.create({
+export const labelPatientIdInputStyles = StyleSheet.create({
   _: {},
   container: {
-    rowGap: 8,
     flex: 1,
-  },
-  label_wrapper: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    position: "relative",
+    columnGap: 16,
   },
   label: {
     color: COLOR.text_faded,
@@ -20,15 +16,6 @@ export const labelSelectorInputStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "600",
   },
-  asterisk: {
-    color: COLOR.primary_dark,
-    fontFamily: FONT.GilroyMedium,
-    fontSize: 16,
-    fontWeight: "500",
-    position: "absolute",
-    right: 8,
-    top: 6,
-  },
   input: {
     backgroundColor: COLOR.white,
     borderColor: COLOR.border,
@@ -36,9 +23,7 @@ export const labelSelectorInputStyles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 14,
     paddingHorizontal: 20,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    width: 220,
   },
   placeholder: {
     color: COLOR.text_muted,

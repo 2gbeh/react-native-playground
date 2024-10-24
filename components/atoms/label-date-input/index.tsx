@@ -1,9 +1,9 @@
 import React from "react";
 import { Pressable, View, Text } from "react-native";
 //
-import { ChevronDownIcon } from "@/constants/ICON";
+import { CalendarIcon } from "@/constants/ICON";
 import { COLOR } from "@/constants/THEME";
-import { labelSelectorInputStyles as s } from "./styles";
+import { labelDateInputStyles as s } from "./styles";
 
 interface IProps {
   label: string;
@@ -11,12 +11,8 @@ interface IProps {
   required?: boolean;
 }
 
-const LabelSelectorInput: React.FC<IProps> = ({
-  label,
-  placeholder,
-  required,
-}) => {
-  console.log("🚀 ~ LabelSelectorInput");
+const LabelDateInput: React.FC<IProps> = ({ label, placeholder, required }) => {
+  console.log("🚀 ~ LabelDateInput");
   // renders
   return (
     <View style={s.container}>
@@ -26,10 +22,10 @@ const LabelSelectorInput: React.FC<IProps> = ({
       </View>
       <View style={s.input}>
         <Text style={s.placeholder}>{placeholder}</Text>
-        <ChevronDownIcon color={COLOR.text_muted} />
+        <CalendarIcon color={COLOR.text_muted} />
       </View>
     </View>
   );
 };
 
-export default React.memo(LabelSelectorInput);
+export default React.memo(LabelDateInput);

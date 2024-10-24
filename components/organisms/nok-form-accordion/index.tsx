@@ -20,9 +20,9 @@ const NokFormAccordion: React.FC<IProps> = ({}) => {
     >
       <View style={s.container}>
         <View style={s.content}>
-          <LabelTextInput label="First name" placeholder="Enter first name" />
+          <LabelTextInput label="First name" placeholder="Enter first name" required />
           <LabelTextInput label="Middle name" placeholder="Enter middle name" />
-          <LabelTextInput label="Last name" placeholder="Enter last name" />
+          <LabelTextInput label="Last name" placeholder="Enter last name" required />
           <LabelSelectorInput label="Title" placeholder="Select title" />
         </View>
       </View>
