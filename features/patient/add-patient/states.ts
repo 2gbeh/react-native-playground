@@ -8,43 +8,73 @@ export function useAddPatientScreen() {
   const [autofill, setAutofill] = useState(false);
   const [submittingAction1, setSubmittingAction1] = useState(false);
   const [submittingAction2, setSubmittingAction2] = useState(false);
-  const [showAlert, setShowAlert] = useState(true);
-
+  const [creating, setCreating] = useState(false);
+  const [showAlert1, setShowAlert1] = useState(false);
+  const [showAlert2, setShowAlert2] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  //
   const defaultValues = autofill ? mockInitialValues : initialValues;
-  const canSubmit = autofill && !submittingAction1 && !submittingAction2;
-
+  // const canSubmit = autofill && !submittingAction1 && !submittingAction2;
+  const canSubmit = autofill;
+  //
   const toggleAutofill = () => setAutofill((prev) => !prev);
-
+  const toggleModal = () => setShowModal((prev) => !prev);
+  //
   function handleAfterSave() {
-    setShowAlert(false);
-    router.back()
+    setShowAlert1(false);
+    router.back();
   }
-
+  function handleAfterCreate() {
+    setShowAlert2(false);
+    router.back();
+  }
+  //
   async function handleSave() {
-    setSubmittingAction1(true);
-    await PromiseHelper.mockApiCall();
-    setSubmittingAction1(false);
-    setAutofill(false);
-    setShowAlert(true);
+    if (!submittingAction1) {
+      setSubmittingAction1(true);
+      // TODO(etugbeh): integrate api
+      await PromiseHelper.mockApiCall();
+      setSubmittingAction1(false);
+      setAutofill(false);
+      setShowAlert1(true);
+    }
   }
-
+  async function handleContinue() {
+    if (!submittingAction2) {
+      setSubmittingAction2(true);
+      // TODO(etugbeh): integrate api
+      await PromiseHelper.mockApiCall();
+      setSubmittingAction2(false);
+      setAutofill(false);
+      setShowModal(true);
+    }
+  }
   async function handleCreate() {
-    setSubmittingAction2(true);
-    await PromiseHelper.mockApiCall();
-    setSubmittingAction2(false);
-    // router.back();
+    if (!creating) {
+      setCreating(true);
+      // TODO(etugbeh): integrate api
+      await PromiseHelper.mockApiCall();
+      setCreating(false);
+      setShowModal(false);
+      setShowAlert2(true);
+    }
   }
 
   return {
-    autofill,
     toggleAutofill,
     defaultValues,
     canSubmit,
     handleSave,
-    handleCreate,
+    handleContinue,
     submittingAction1,
     submittingAction2,
-    showAlert,
+    showAlert1,
     handleAfterSave,
+    showModal,
+    toggleModal,
+    handleCreate,
+    creating,
+    showAlert2,
+    handleAfterCreate,
   };
 }

@@ -2,9 +2,10 @@ import React from "react";
 import { View, Text, Pressable } from "react-native";
 import ModalWrapper from "../modal-wrapper";
 import CTAButton from "@/components/atoms/cta-button";
-import { SuccessIcon } from "@/constants/ICON";
+import { CheckCircleOutlineIcon } from "@/constants/ICON";
 //
 import { alertDialogStyles as s } from "./styles";
+import { COLOR } from "@/constants/THEME";
 
 interface IProps {
   heading?: string;
@@ -23,10 +24,10 @@ const AlertDialog = ({
     <ModalWrapper open={open} onClose={onClose}>
       <View style={s.container}>
         <Text style={s.heading}>{heading}</Text>
-        <View style={s.body}>
-          <SuccessIcon />
-          <CTAButton action={onConfirm}>Close</CTAButton>
+        <View style={s.success_card}>
+          <CheckCircleOutlineIcon color={COLOR.success} strokeWidth={10} />
         </View>
+        <CTAButton action={onConfirm}>Close</CTAButton>
       </View>
     </ModalWrapper>
   );

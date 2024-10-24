@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
 
-export const createAppointmentWidgetStyles = StyleSheet.create({
+export const createAppointmentFormStyles = StyleSheet.create({
   _: {},
   container: {
+    width: 600,
     rowGap: 24,
   },
   inputs: {
@@ -12,5 +13,8 @@ export const createAppointmentWidgetStyles = StyleSheet.create({
     flexDirection: "row",
     paddingVertical: 16,
     columnGap: 32,
+  },
+  button: {
+    flex: 1,
   },
 });

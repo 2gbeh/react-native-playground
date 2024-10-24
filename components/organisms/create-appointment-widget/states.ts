@@ -4,17 +4,17 @@ import { useState } from "react";
 export function useCreateAppointmentWidget() {
   const [showModal, setShowModal] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const toggleModal = () => setShowModal((prev) => !prev);
   const toggleAlert = () => setShowAlert((prev) => !prev);
 
   async function handleSubmit() {
-    setIsSubmitting(true);
+    setSubmitting(true);
     await PromiseHelper.mockApiCall();
     // TODO(etugbeh): integrate api
     console.log("🚀 ~ useDashboardMenuBar ~ handleSubmit:");
-    setIsSubmitting(false);
+    setSubmitting(false);
     setShowModal(false);
     setShowAlert(true)
   }
@@ -25,6 +25,6 @@ export function useCreateAppointmentWidget() {
     showAlert,
     toggleAlert,
     handleSubmit,
-    isSubmitting,
+    submitting,
   };
 }

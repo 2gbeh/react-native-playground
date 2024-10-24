@@ -3,24 +3,25 @@ import { FONT, COLOR } from "@/constants/THEME";
 
 export const alertDialogStyles = StyleSheet.create({
   container: {
-    backgroundColor: COLOR.background,
-    borderRadius: 10,
-    paddingVertical: 16,
-    paddingHorizontal: 20,
+    paddingBottom: 8,
     width: 320,
-    alignItems: "center",
     rowGap: 16,
   },
   heading: {
     color: COLOR.primary_dark,
+    textAlign: "center",
     fontFamily: FONT.GilroyMedium,
     fontSize: 18,
     fontWeight: "600",
   },
-  body: {
-    paddingHorizontal: 25,
-    paddingBottom: Platform.OS === "web" ? 0 : 40,
-    width: "100%",
-    gap: 20,
+  success_card: {
+    backgroundColor: COLOR.white,
+    borderColor: COLOR.success,
+    borderTopWidth: 8,
+    borderRadius: 10,
+    paddingVertical: 24,
+    paddingHorizontal: 16,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

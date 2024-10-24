@@ -10,7 +10,6 @@ export const ctaButtonStyles = StyleSheet.create({
     borderRadius: 10,
     // paddingVertical: 12,
     paddingHorizontal: 16,
-    height: 40,
     alignItems: "center",
     justifyContent: "center",
   },

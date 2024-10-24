@@ -10,6 +10,8 @@ import {
 interface IProps extends PropsWithChildren {
   action?: () => void;
   disabled?: boolean;
+  minWidth?: number;
+  height?: number;
   variant?: Variant;
 }
 
@@ -17,16 +19,21 @@ const CTAButton: React.FC<IProps> = ({
   children,
   action = () => undefined,
   disabled,
+  minWidth = 40,
+  height = 40,
   variant = "solid",
 }) => {
-  const { backgroundColor, borderColor, color } =
-    ctaButtonVariantStyles(variant, disabled);
+  const { backgroundColor, borderColor, color } = ctaButtonVariantStyles(
+    variant,
+    disabled
+  );
   console.log("🚀 ~ CTAButton");
   // renders
   return (
     <Pressable
       onPress={action}
-      style={[{ backgroundColor, borderColor }, s.button]}
+      style={[{ backgroundColor, borderColor, height, minWidth }, s.button]}
+      disabled={disabled}
     >
       <Text style={[{ color }, s.button_text]}>{children}</Text>
     </Pressable>

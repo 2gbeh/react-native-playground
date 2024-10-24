@@ -2,9 +2,8 @@ import React from "react";
 import { View, Text, Pressable } from "react-native";
 //
 import { COLOR } from "@/constants/THEME";
-import { ChevronLeftIcon } from "@/constants/ICON";
-import { ChevronRightIcon } from "lucide-react-native";
-// 
+import { ChevronLeftIcon, ChevronRightIcon } from "@/constants/ICON";
+//
 import { paginationStyles as s } from "./styles";
 
 const Pagination = () => {

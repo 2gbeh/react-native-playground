@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { router } from "expo-router";
 //
 import SearchBar from "@/components/atoms/search-bar";
-import CreateAppointmentWidget from "@/components/molecules/create-appointment-widget";
+import CreateAppointmentWidget from "@/components/organisms/create-appointment-widget";
 import CTAButton from "@/components/atoms/cta-button";
 //
 import { dashboardMenuBarStyles as s } from "./styles";

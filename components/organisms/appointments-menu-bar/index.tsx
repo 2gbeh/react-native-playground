@@ -4,7 +4,7 @@ import { router } from "expo-router";
 //
 import CTAButton from "../../atoms/cta-button";
 import SearchBar from "../../atoms/search-bar";
-import CreateAppointmentWidget from "@/components/molecules/create-appointment-widget";
+import CreateAppointmentWidget from "@/components/organisms/create-appointment-widget";
 import BackButton from "@/components/atoms/back-button";
 //
 import { appointmentsMenuBarStyles as s } from "./styles";

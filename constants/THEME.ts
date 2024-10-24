@@ -38,6 +38,7 @@ export const COLOR = {
   tab_text: "#7A90C2",
   disabled: "#E6E8EB",
   error: "#e11",
+  success: "#3FB772",
   //
   neutral_50: "#EFF1F4",
   primary_25: "#D0D1FB",

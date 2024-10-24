@@ -10,7 +10,10 @@ import NokFormAccordion from "@/components/organisms/nok-form-accordion";
 import LabelPatientIdInput from "@/components/atoms/label-patient-id-input";
 import AvatarUploader from "@/components/atoms/avatar-uploader";
 import LabelDateInput from "@/components/atoms/label-date-input";
+import WhiteSpace from "@/components/atoms/white-space";
 import AlertDialog from "@/components/atoms/alert-dialog";
+import ModalWrapper from "@/components/atoms/modal-wrapper";
+import CreateAppointmentForm from "@/components/molecules/create-appointment-form";
 import Spinner from "@/components/atoms/spinner";
 //
 import { addPatientScreenStyles as s } from "@/features/patient/add-patient/styles";
@@ -18,16 +21,21 @@ import { useAddPatientScreen } from "@/features/patient/add-patient/states";
 
 export default function AddPatientScreen() {
   const {
-    autofill,
     toggleAutofill,
     defaultValues,
     canSubmit,
     handleSave,
-    handleCreate,
+    handleContinue,
     submittingAction1,
     submittingAction2,
-    showAlert,
+    showAlert1,
     handleAfterSave,
+    showModal,
+    toggleModal,
+    handleCreate,
+    creating,
+    showAlert2,
+    handleAfterCreate,
   } = useAddPatientScreen();
   console.log("🚀 ~ AddPatientScreen");
   // renders
@@ -114,9 +122,7 @@ export default function AddPatientScreen() {
             </View>
             <View style={s.input_wrapper}>
               <LabelGovtIdInput label="Government issued ID " />
-              <View style={{ flex: 1 }}></View>
-              <View style={{ flex: 1 }}></View>
-              <View style={{ flex: 1 }}></View>
+              <WhiteSpace length={3} />
             </View>
 
             {/* NEXT OF KIN */}
@@ -131,23 +137,48 @@ export default function AddPatientScreen() {
               variant="outline"
               action={handleSave}
               disabled={!canSubmit}
+              minWidth={145}
             >
-              {submittingAction1 ? "Please wait..." : "Save and close"}
+              {submittingAction1 ? <Spinner primary /> : "Save and close"}
             </CTAButton>
-            <CTAButton action={handleCreate} disabled={!canSubmit}>
-              {submittingAction2 ? "Please wait..." : "Create appointment"}
+            <CTAButton
+              action={handleContinue}
+              disabled={!canSubmit}
+              minWidth={185}
+            >
+              {submittingAction2 ? <Spinner /> : "Create appointment"}
             </CTAButton>
           </View>
         </View>
       </View>
 
-      {/* ALERT */}
+      {/* MODALS */}
       <AlertDialog
         heading="Patient created"
-        open={showAlert}
+        open={showAlert1}
         onClose={handleAfterSave}
         onConfirm={handleAfterSave}
       />
+
+      <AlertDialog
+        heading="Appointment created"
+        open={showAlert2}
+        onClose={handleAfterCreate}
+        onConfirm={handleAfterCreate}
+      />
+
+      <ModalWrapper
+        heading="Add new appointment"
+        open={showModal}
+        onClose={toggleModal}
+        animation="slide"
+      >
+        <CreateAppointmentForm
+          OnSave={toggleModal}
+          onSubmit={handleCreate}
+          submitting={creating}
+        />
+      </ModalWrapper>
     </>
   );
 }

@@ -11,7 +11,6 @@ export const modalWrapperStyles = StyleSheet.create({
   container: {
     backgroundColor: COLOR.background,
     borderRadius: 10,
-    width: 600,
   },
   header: {
     borderBottomWidth: 1,
@@ -40,7 +39,9 @@ export const modalWrapperStyles = StyleSheet.create({
     justifyContent: "center",
   },
   content: {
-    paddingVertical: 12,
-    paddingHorizontal: 24,
+    backgroundColor: COLOR.background,
+    borderRadius: 10,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
   },
 });
