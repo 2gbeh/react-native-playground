@@ -18,6 +18,7 @@ import Spinner from "@/components/atoms/spinner";
 //
 import { addPatientScreenStyles as s } from "@/features/patient/add-patient/styles";
 import { useAddPatientScreen } from "@/features/patient/add-patient/states";
+import Warning from "@/components/atoms/warning";
 
 export default function AddPatientScreen() {
   const {
@@ -41,15 +42,20 @@ export default function AddPatientScreen() {
   // renders
   return (
     <>
-      <View style={s.container}>
-        {/* NAV */}
-        <BackButton>Add patient</BackButton>
+      {/* NAV */}
+      <BackButton>Add patient</BackButton>
 
-        {/* FORMS */}
-        <ScrollView>
-          <Pressable style={s.form_wrapper} onPress={toggleAutofill}>
-            <View style={s.form_header}>
-              <AvatarUploader defaultValue={defaultValues.avatar} />
+      {/* FORMS */}
+      <ScrollView>
+        <Pressable style={s.form_wrapper} onPress={toggleAutofill}>
+          {/* UPLOAD AVATAR */}{" "}
+          <View style={s.form_header}>
+            <AvatarUploader defaultValue={defaultValues.avatar} />
+            <View style={{ rowGap: 8 }}>
+              <Warning
+                show={canSubmit}
+                message="Click to view patient info. Patient with details exists"
+              />
               <View style={s.form_header_input}>
                 <LabelPatientIdInput
                   label="Patient ID"
@@ -57,98 +63,97 @@ export default function AddPatientScreen() {
                 />
               </View>
             </View>
-            <View style={s.input_wrapper}>
-              <LabelSelectorInput
-                label="Title"
-                placeholder="Select title"
-                defaultValue={defaultValues.title}
-              />
-              <LabelTextInput
-                label="First name"
-                placeholder="Enter first name"
-                defaultValue={defaultValues.firstName}
-                required
-              />
-              <LabelTextInput
-                label="Middle name"
-                placeholder="Enter middle name"
-              />
-              <LabelTextInput
-                label="Last name"
-                placeholder="Enter last name"
-                defaultValue={defaultValues.lastName}
-                required
-              />
-            </View>
-            <View style={s.input_wrapper}>
-              <LabelDateInput
-                label="Date of birth"
-                placeholder="Enter date of birth"
-                defaultValue={defaultValues.dateOfBirth}
-                required
-              />
-              <LabelSelectorInput
-                label="Gender"
-                placeholder="Select gender"
-                defaultValue={defaultValues.gender}
-                required
-              />
-              <LabelTextInput
-                label="Phone number"
-                placeholder="Enter phone number"
-                defaultValue={defaultValues.phoneNumber}
-                required
-              />
-            </View>
-            <View style={s.input_wrapper}>
-              <LabelTextInput
-                label="Address"
-                placeholder="Enter address"
-                defaultValue={defaultValues.address}
-                required
-              />
-              <LabelSelectorInput
-                label="Nationality"
-                placeholder="Select nationality"
-                defaultValue={defaultValues.nationality}
-                required
-              />
-              <LabelSelectorInput
-                label="State of origin"
-                placeholder="Select state of origin"
-                defaultValue={defaultValues.stateOfOrigin}
-                required
-              />
-            </View>
-            <View style={s.input_wrapper}>
-              <LabelGovtIdInput label="Government issued ID " />
-              <WhiteSpace length={3} />
-            </View>
-
-            {/* NEXT OF KIN */}
-            <NokFormAccordion defaultValues={defaultValues.nextOfKin} />
-          </Pressable>
-        </ScrollView>
-
-        {/* BUTTONS */}
-        <View style={s.footer}>
-          <View style={s.buttons}>
-            <CTAButton
-              variant="outline"
-              action={handleSave}
-              disabled={!canSubmit}
-              minWidth={145}
-            >
-              {submittingAction1 ? <Spinner primary /> : "Save and close"}
-            </CTAButton>
-            <CTAButton
-              action={handleContinue}
-              disabled={!canSubmit}
-              minWidth={185}
-            >
-              {submittingAction2 ? <Spinner /> : "Create appointment"}
-            </CTAButton>
           </View>
+          <View style={s.input_wrapper}>
+            <LabelSelectorInput
+              label="Title"
+              placeholder="Select title"
+              defaultValue={defaultValues.title}
+            />
+            <LabelTextInput
+              label="First name"
+              placeholder="Enter first name"
+              defaultValue={defaultValues.firstName}
+              required
+            />
+            <LabelTextInput
+              label="Middle name"
+              placeholder="Enter middle name"
+            />
+            <LabelTextInput
+              label="Last name"
+              placeholder="Enter last name"
+              defaultValue={defaultValues.lastName}
+              required
+            />
+          </View>
+          <View style={s.input_wrapper}>
+            <LabelDateInput
+              label="Date of birth"
+              placeholder="Enter date of birth"
+              defaultValue={defaultValues.dateOfBirth}
+              required
+            />
+            <LabelSelectorInput
+              label="Gender"
+              placeholder="Select gender"
+              defaultValue={defaultValues.gender}
+              required
+            />
+            <LabelTextInput
+              label="Phone number"
+              placeholder="Enter phone number"
+              defaultValue={defaultValues.phoneNumber}
+              required
+            />
+          </View>
+          <View style={s.input_wrapper}>
+            <LabelTextInput
+              label="Address"
+              placeholder="Enter address"
+              defaultValue={defaultValues.address}
+              required
+            />
+            <LabelSelectorInput
+              label="Nationality"
+              placeholder="Select nationality"
+              defaultValue={defaultValues.nationality}
+              required
+            />
+            <LabelSelectorInput
+              label="State of origin"
+              placeholder="Select state of origin"
+              defaultValue={defaultValues.stateOfOrigin}
+              required
+            />
+          </View>
+          <View style={s.input_wrapper}>
+            <LabelGovtIdInput label="Government issued ID " />
+            <WhiteSpace length={3} />
+          </View>
+          {/* NEXT OF KIN */}
+          <NokFormAccordion defaultValues={defaultValues.nextOfKin} />
+        </Pressable>
+      </ScrollView>
+
+      {/* BUTTONS */}
+      <View style={s.footer}>
+        <View style={s.buttons}>
+          <CTAButton
+            variant="outline"
+            action={handleSave}
+            disabled={!canSubmit}
+            minWidth={145}
+          >
+            {submittingAction1 ? <Spinner primary /> : "Save and close"}
+          </CTAButton>
+          <CTAButton
+            action={handleContinue}
+            disabled={!canSubmit}
+            minWidth={185}
+          >
+            {submittingAction2 ? <Spinner /> : "Create appointment"}
+          </CTAButton>
         </View>
       </View>
 

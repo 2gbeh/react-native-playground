@@ -3,13 +3,7 @@ import { FONT, COLOR } from "@/constants/THEME";
 
 export const addPatientScreenStyles = StyleSheet.create({
   _: {},
-  container: {
-    backgroundColor: COLOR.background,
-    paddingVertical: 16,
-    paddingHorizontal: 32,
-    flex: 1,
-    rowGap: 24,
-  },
+  container: {},
   form_wrapper: {
     rowGap: 16,
   },

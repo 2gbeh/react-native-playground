@@ -15,7 +15,7 @@ export default function DashboardScreen() {
   console.log("🚀 ~ DashboardScreen");
   // renders
   return (
-    <View style={s.container}>
+    <>
       {/* ACTIONS */}
       <DashboardMenuBar />
 
@@ -46,6 +46,6 @@ export default function DashboardScreen() {
           </View>
         )}
       />
-    </View>
+    </>
   );
 }

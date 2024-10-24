@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Pressable } from "react-native";
+import { router } from "expo-router";
 //
 import NameAgeSex from "../../atoms/name-age-sex";
 import InvestigationsSelectorSheet from "../investigations-selector-sheet";
@@ -18,6 +19,9 @@ interface IProps {
 }
 
 const PatientListCard: React.FC<IProps> = ({ data, isBusy }) => {
+  const isGeneralOutpatient = data.clinic.id == 1;
+  const isAntenatal = data.clinic.id == 2;
+  const isLabor = data.clinic.id == 3;
   console.log("🚀 ~ PatientListCard");
   // renders
   return (
@@ -32,19 +36,30 @@ const PatientListCard: React.FC<IProps> = ({ data, isBusy }) => {
 
         {/* MENU */}
         <View style={s.static.right_content}>
-          {data.clinic.id == 1 ? (
+          {isGeneralOutpatient ? (
             <InvestigationsSelectorSheet />
-          ) : data.clinic.id == 2 ? (
+          ) : isAntenatal ? (
             <MedicationSelectorSheet />
           ) : null}
-          <Pressable style={{ cursor: "pointer" }}>
+          <Pressable>
             <EllipsisVIcon />
           </Pressable>
         </View>
       </View>
 
       {/* LIST */}
-      <View style={s.static.grid}>
+      <Pressable
+        onPress={() =>
+          router.push(
+            isAntenatal
+              ? "/all-inputs/antenatal"
+              : isLabor
+              ? "/all-inputs/labor"
+              : "/all-inputs/general-outpatient"
+          )
+        }
+        style={s.static.grid}
+      >
         <View style={s.static.grid_item}>
           <Text style={s.static.label}>Patient ID</Text>
           <Text style={s.static.value}>{data.id}</Text>
@@ -83,7 +98,7 @@ const PatientListCard: React.FC<IProps> = ({ data, isBusy }) => {
             {u.formatDateTime(data.treatment.updated_at)}
           </Text>
         </View>
-      </View>
+      </Pressable>
     </View>
   );
 };

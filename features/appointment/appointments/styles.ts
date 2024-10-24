@@ -3,13 +3,7 @@ import { FONT, COLOR } from "@/constants/THEME";
 
 export const appointmentsScreenStyles = StyleSheet.create({
   _: {},
-  container: {
-    backgroundColor: COLOR.background,
-    paddingVertical: 16,
-    paddingHorizontal: 32,
-    flex: 1,
-    rowGap: 24,
-  },
+  container: {},
   patient_list_header: {
     flexDirection: "row",
     alignItems: "center",

@@ -5,13 +5,13 @@ import { FONT, COLOR } from "@/constants/THEME";
 
 interface IProps {}
 
-const Example: React.FC<IProps> = ({}) => {
-  console.log("🚀 ~ Example");
+const Component: React.FC<IProps> = ({}) => {
+  console.log("🚀 ~ Component");
   // renders
   return <View style={s.container}></View>;
 };
 
-export default React.memo(Example);
+export default React.memo(Component);
 
 const s = StyleSheet.create({
   _: {},

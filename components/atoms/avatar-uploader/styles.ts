@@ -11,7 +11,7 @@ export const avatarUploaderStyles = StyleSheet.create({
     columnGap: 32,
   },
   form: {
-    rowGap: 16,
+    rowGap: 8,
   },
   button: {
     backgroundColor: COLOR.primary,

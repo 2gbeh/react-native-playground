@@ -14,7 +14,6 @@ export const labelTabsStyles = {
       position: "relative",
     },
     button: {
-      cursor: "pointer",
       alignItems: "center",
       rowGap: 8,
     },

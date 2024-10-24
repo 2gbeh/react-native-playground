@@ -11,7 +11,7 @@ export default function AppointmentsScreen() {
   console.log("🚀 ~ AppointmentsScreen");
   // renders
   return (
-    <View style={s.container}>
+    <>
       {/* ACTIONS */}
       <AppointmentsMenuBar />
 
@@ -26,6 +26,6 @@ export default function AppointmentsScreen() {
           <PatientListCard data={item} isBusy={item.clinic.id == 1} />
         )}
       />
-    </View>
+    </>
   );
 }

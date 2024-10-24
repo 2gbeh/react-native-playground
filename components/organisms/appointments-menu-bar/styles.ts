@@ -18,7 +18,7 @@ export const appointmentsMenuBarStyles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 8,
     paddingHorizontal: 16,
-    height: 48,
+    height: 40,
     flexDirection: "row",
     alignItems: "center",
     columnGap: 6,

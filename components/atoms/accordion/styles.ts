@@ -1,23 +1,26 @@
 import { StyleSheet } from "react-native";
 import { FONT, COLOR } from "@/constants/THEME";
 
-export const dashboardScreenStyles = StyleSheet.create({
+export const accordionStyle = StyleSheet.create({
   _: {},
-  container: {},
-  patient_list_header: {
+  container: {
+    marginTop: 16,
+  },
+  section: {
+    backgroundColor: COLOR.surface,
+    borderColor: COLOR.border,
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
   },
-  patient_list_heading: {
+  label: {
     color: COLOR.primary_dark,
     fontFamily: FONT.GilroyMedium,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "600",
-  },
-  statistics_header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
   },
 });

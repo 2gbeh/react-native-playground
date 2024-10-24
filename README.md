@@ -58,7 +58,7 @@ $ npx expo prebuild
 # or https://docs.expo.dev/build-reference/apk/
 $ npx expo install expo-dev-client
 
-# Add error handling - import 'expo-dev-client'; in ./app/_layout.tsx
+# Add error handling - import "expo-dev-client"; in ./app/_layout.tsx
 # Create eas.json file in root directory (where applicable)
 
 $ eas build --profile development --platform android
