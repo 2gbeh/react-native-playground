@@ -7,13 +7,13 @@ import {
   AIAccordion,
   AIText,
   AIBubblePicker,
-  AIAudioRecorder,
+  AIPredictiveText,
 } from "@/components/atoms/all-inputs";
 
 interface IProps {}
 
 const Examination: React.FC<IProps> = ({}) => {
-  const [openAccordion, setOpenAccordion] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState(true);
   console.log("🚀 ~ Examination");
   // renders
   return (
@@ -24,7 +24,24 @@ const Examination: React.FC<IProps> = ({}) => {
           heading="Record physical examination findings"
           open={openAccordion}
           onToggle={() => setOpenAccordion((prev) => !prev)}
-        ></AIAccordion>
+        >
+          <AIText>
+            Select suggestions based on Standing Orders or type text
+          </AIText>
+          <AIPredictiveText />
+          <AIBubblePicker
+            list={[
+              "General appearance",
+              "Chest",
+              "Temperature",
+              "Heads",
+              "Weight",
+            ]}
+          />
+          <View style={s.footer}>
+            <CTAButton variant="success" disabled>Save</CTAButton>
+          </View>
+        </AIAccordion>
       </CardWrapper>
     </View>
   );

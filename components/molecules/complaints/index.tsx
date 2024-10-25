@@ -27,8 +27,7 @@ const Complaints: React.FC<IProps> = ({}) => {
           onToggle={() => setOpenAccordion((prev) => !prev)}
         >
           <AIText>
-            Search for complaints in Standing Orders or select a common
-            complaint
+            Search for complaints in Standing Orders or select a common complaint
           </AIText>
           <SearchBar
             placeholder="i.e. migraine, severe headcahe etc"
