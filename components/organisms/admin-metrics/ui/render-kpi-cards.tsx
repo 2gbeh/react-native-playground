@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 //
-import KpiCard from "@/components/atoms/cards/kpi-card";
+import KPICard from "@/components/atoms/cards/kpi-card";
 import { COLOR } from "@/constants/THEME";
 import {
   ClockIcon,
@@ -10,34 +10,34 @@ import {
   UserOrientationIcon,
 } from "@/constants/ICON";
 
-export function renderKpiCards() {
-  console.log("🚀 ~ renderKpiCards");
+export function renderKPICards() {
+  console.log("🚀 ~ renderKPICards");
   // renders
   return (
     <View style={s.container}>
       <View style={s.grid_item}>
-        <KpiCard
+        <KPICard
           label="Avg time per patient"
           value="25mins"
           icon={<ClockIcon color={COLOR.primary} />}
         />
       </View>
       <View style={s.grid_item}>
-        <KpiCard
+        <KPICard
           label="Avg wait time"
           value="5mins"
           icon={<HourglassIcon color={COLOR.primary} />}
         />
       </View>
       <View style={s.grid_item}>
-        <KpiCard
+        <KPICard
           label="Patients seen"
           value="32"
           icon={<EyeIcon color={COLOR.primary} />}
         />
       </View>
       <View style={s.grid_item}>
-        <KpiCard
+        <KPICard
           label="Patients waiting"
           value="64"
           icon={<UserOrientationIcon color={COLOR.primary} />}

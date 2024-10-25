@@ -1,18 +1,18 @@
 import React from "react";
 import { View, Text, Pressable } from "react-native";
 //
-import { centerHomeFilterStyles as s } from "./styles";
+import { centreHomeFilterStyles as s } from "./styles";
 
 interface IProps {
   tabIndex?: number;
   onChange?: (tabIndex: number) => void;
 }
 
-const CenterHomeFilter: React.FC<IProps> = ({
+const CentreHomeFilter: React.FC<IProps> = ({
   tabIndex = 0,
   onChange = () => undefined,
 }) => {
-  console.log("🚀 ~ CenterHomeFilter");
+  console.log("🚀 ~ CentreHomeFilter");
   // renders
   return (
     <View style={s.static.container}>
@@ -32,4 +32,4 @@ const CenterHomeFilter: React.FC<IProps> = ({
   );
 };
 
-export default React.memo(CenterHomeFilter);
+export default React.memo(CentreHomeFilter);

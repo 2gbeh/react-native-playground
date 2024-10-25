@@ -1,10 +1,12 @@
 import React from "react";
 import { View } from "react-native";
 //
-import SearchBar from "@/components/atoms/form-controls/search-bar";
-import JustifiedLabelSelector from "@/components/atoms/form-controls/justified-label-selector";
-import JustifiedLabelDatetime from "@/components/atoms/form-controls/justified-label-datetime";
-import CTAButton from "@/components/atoms/buttons/cta-button";
+import {
+  SearchBar,
+  JustifiedLabelSelector,
+  JustifiedLabelDatetime,
+} from "@/components/atoms/form-controls";
+import  CTAButton  from "@/components/atoms/buttons/cta-button";
 import Spinner from "@/components/atoms/spinner";
 //
 import { createAppointmentFormStyles as s } from "./styles";

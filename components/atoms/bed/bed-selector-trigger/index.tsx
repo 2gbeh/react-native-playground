@@ -1,5 +1,6 @@
 import React from "react";
 import { Pressable } from "react-native";
+//
 import { BedIcon, EditIcon } from "@/constants/ICON";
 import { FONT, COLOR } from "@/constants/THEME";
 
@@ -7,8 +8,10 @@ interface IProps {
   handleClick?: () => void;
 }
 
-const BedSelector: React.FC<IProps> = ({ handleClick = () => undefined }) => {
-  console.log("🚀 ~ BedSelector");
+const BedSelectorTrigger: React.FC<IProps> = ({
+  handleClick = () => undefined,
+}) => {
+  console.log("🚀 ~ BedSelectorTrigger");
   // renders
   return (
     <Pressable
@@ -30,4 +33,4 @@ const BedSelector: React.FC<IProps> = ({ handleClick = () => undefined }) => {
   );
 };
 
-export default React.memo(BedSelector);
+export default React.memo(BedSelectorTrigger);

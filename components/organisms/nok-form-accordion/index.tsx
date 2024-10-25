@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { View } from "react-native";
 //
 import Accordion from "@/components/atoms/accordion";
-import LabelTextInput from "@/components/atoms/label-text-input";
-import LabelSelectorInput from "@/components/atoms/form-controls/label-selector-input";
+import { LabelSelectorInput, LabelTextInput } from "@/components/atoms/form-controls";
 //
 import { nokFormAccordionStyles as s } from "./styles";
 

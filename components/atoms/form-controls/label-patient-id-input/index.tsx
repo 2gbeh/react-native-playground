@@ -8,8 +8,8 @@ interface IProps {
   placeholder: string;
 }
 
-const LabelPatientIdInput: React.FC<IProps> = ({ label, placeholder }) => {
-  console.log("🚀 ~ LabelPatientIdInput");
+const LabelPatientIDInput: React.FC<IProps> = ({ label, placeholder }) => {
+  console.log("🚀 ~ LabelPatientIDInput");
   // renders
   return (
     <View style={s.container}>
@@ -21,4 +21,4 @@ const LabelPatientIdInput: React.FC<IProps> = ({ label, placeholder }) => {
   );
 };
 
-export default React.memo(LabelPatientIdInput);
+export default React.memo(LabelPatientIDInput);

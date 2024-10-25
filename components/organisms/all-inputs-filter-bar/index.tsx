@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 //
 import BackButton from "@/components/atoms/buttons/back-button";
-import CenterHomeFilter from "@/components/atoms/filters/center-home-filter";
-import BedSelector from "@/components/atoms/bed/bed-selector-button";
+import CentreHomeFilter from "@/components/atoms/filters/centre-home-filter";
+import BedSelectorTrigger from "@/components/atoms/bed/bed-selector-trigger";
 import AvatarNameBio from "@/components/atoms/avatar-name-bio";
 
 interface IProps {}
@@ -16,11 +16,11 @@ const AllInputsFilterBar: React.FC<IProps> = ({}) => {
     <View style={s.container}>
       <View style={s.left_content}>
         <BackButton>All inputs</BackButton>
-        <CenterHomeFilter
+        <CentreHomeFilter
           tabIndex={tabIndex}
           onChange={(i) => setTabIndex(i)}
         />
-        <BedSelector />
+        <BedSelectorTrigger />
       </View>
       <AvatarNameBio
         name="Blessing Zaria"

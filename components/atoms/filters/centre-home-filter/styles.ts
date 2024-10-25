@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { COLOR, FONT } from "@/constants/THEME";
 
-export const centerHomeFilterStyles = {
+export const centreHomeFilterStyles = {
   static: StyleSheet.create({
     container: {
       backgroundColor: COLOR.neutral_25,

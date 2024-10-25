@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text } from "react-native";
 //
-import CentreNameLogo from "../../atoms/centre-name-logo";
-import AppClock from "../../atoms/app-clock";
-import AvatarHamburgerMenu from "../../atoms/avatar-hamburger-menu";
+import CentreNameLogo from "@/components/atoms/centre-name-logo";
+import AppClock from "@/components/atoms/app-clock";
+import AvatarHamburgerMenu from "@/components/atoms/avatar-hamburger-menu";
 import { BellIcon } from "@/constants/ICON";
 import { COLOR } from "@/constants/THEME";
 //

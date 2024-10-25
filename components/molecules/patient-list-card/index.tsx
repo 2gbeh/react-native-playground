@@ -2,12 +2,12 @@ import React from "react";
 import { View, Text, Pressable } from "react-native";
 import { router } from "expo-router";
 //
-import NameBio from "../../atoms/name-bio";
+import NameBio from "@/components/atoms/name-bio";
 import InvestigationsSelectorSheet from "../investigations-selector-sheet";
 import MedicationSelectorSheet from "../medication-selector-sheet";
-import BedNumberBadge from "../../atoms/bed/bed-number-badge";
-import { COLOR } from "@/constants/THEME";
+import BedNumberBadge from "@/components/atoms/bed/bed-number-badge";
 import { BusyIcon, EllipsisVIcon } from "@/constants/ICON";
+import { COLOR } from "@/constants/THEME";
 import { IAppointment } from "@/api/getAllAppointments";
 //
 import { patientListCardStyles as s } from "./styles";

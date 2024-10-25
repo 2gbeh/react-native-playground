@@ -9,8 +9,8 @@ interface IProps {
   icon: React.ReactNode;
 }
 
-const KpiCard: React.FC<IProps> = ({ label, value, icon }) => {
-  console.log("🚀 ~ KpiCard");
+const KPICard: React.FC<IProps> = ({ label, value, icon }) => {
+  console.log("🚀 ~ KPICard");
   // renders
   return (
     <View style={s.container}>
@@ -23,4 +23,4 @@ const KpiCard: React.FC<IProps> = ({ label, value, icon }) => {
   );
 };
 
-export default React.memo(KpiCard);
+export default React.memo(KPICard);

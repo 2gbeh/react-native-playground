@@ -10,8 +10,8 @@ interface IProps {
   time: string;
 }
 
-const JustifiedLabelDateTime: React.FC<IProps> = ({ label, date, time }) => {
-  console.log("🚀 ~ JustifiedLabelDateTime");
+const JustifiedLabelDatetime: React.FC<IProps> = ({ label, date, time }) => {
+  console.log("🚀 ~ JustifiedLabelDatetime");
   // renders
   return (
     <View style={s.container}>
@@ -24,7 +24,7 @@ const JustifiedLabelDateTime: React.FC<IProps> = ({ label, date, time }) => {
   );
 };
 
-export default React.memo(JustifiedLabelDateTime);
+export default React.memo(JustifiedLabelDatetime);
 
 const s = StyleSheet.create({
   _: {},

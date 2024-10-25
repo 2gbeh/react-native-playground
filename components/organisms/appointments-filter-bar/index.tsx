@@ -1,19 +1,21 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 //
-import Pagination from "@/components/atoms/filters/pagination";
-import FilterByButtonSelector from "@/components/atoms/filters/filter-by-button-selector";
-import FilterByLabelSelector from "@/components/atoms/filters/filter-by-label-selector";
-import FilterByFunnelSelector from "@/components/atoms/filters/filter-by-funnel-selector";
+import {
+  ButtonSelectorFilter,
+  GhostSelectorFilter,
+  SortSelectorFilter,
+  Pagination,
+} from "@/components/atoms/filters";
 
 const AppointmentsFilterBar = () => {
   console.log("🚀 ~ AppointmentsFilterBar");
   // renders
   return (
     <View style={s.container}>
-      <FilterByButtonSelector />
-      <FilterByLabelSelector />
-      <FilterByFunnelSelector />
+      <ButtonSelectorFilter />
+      <GhostSelectorFilter />
+      <SortSelectorFilter />
       <Pagination />
     </View>
   );

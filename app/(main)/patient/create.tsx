@@ -1,20 +1,21 @@
 import { View, ScrollView, Pressable } from "react-native";
 import { router } from "expo-router";
 //
-import BackButton from "@/components/atoms/buttons/back-button";
-import LabelTextInput from "@/components/atoms/label-text-input";
-import LabelSelectorInput from "@/components/atoms/form-controls/label-selector-input";
-import CTAButton from "@/components/atoms/buttons/cta-button";
-import LabelGovtIdInput from "@/components/atoms/form-controls/label-govt-id-input";
+import { BackButton, CTAButton } from "@/components/atoms/buttons";
 import NokFormAccordion from "@/components/organisms/nok-form-accordion";
-import LabelPatientIdInput from "@/components/atoms/form-controls/label-patient-id-input";
 import AvatarUploader from "@/components/atoms/avatar-uploader";
-import LabelDateInput from "@/components/atoms/form-controls/label-date-input";
+import {
+  LabelTextInput,
+  LabelSelectorInput,
+  LabelGovtIDInput,
+  LabelPatientIDInput,
+  LabelDateInput,
+} from "@/components/atoms/form-controls";
 import WhiteSpace from "@/components/atoms/white-space";
 import AlertDialog from "@/components/atoms/alert-dialog";
 import ModalWrapper from "@/components/atoms/modal-wrapper";
-import CreateAppointmentForm from "@/components/molecules/create-appointment-form";
 import Spinner from "@/components/atoms/spinner";
+import CreateAppointmentForm from "@/components/molecules/create-appointment-form";
 //
 import { addPatientScreenStyles as s } from "@/features/patient/add-patient/styles";
 import { useAddPatientScreen } from "@/features/patient/add-patient/states";
@@ -57,7 +58,7 @@ export default function AddPatientScreen() {
                 message="Click to view patient info. Patient with details exists"
               />
               <View style={s.form_header_input}>
-                <LabelPatientIdInput
+                <LabelPatientIDInput
                   label="Patient ID"
                   placeholder="HOPS0123456"
                 />
@@ -128,7 +129,7 @@ export default function AddPatientScreen() {
             />
           </View>
           <View style={s.input_wrapper}>
-            <LabelGovtIdInput label="Government issued ID " />
+            <LabelGovtIDInput label="Government issued ID " />
             <WhiteSpace length={3} />
           </View>
           {/* NEXT OF KIN */}

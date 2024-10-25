@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 //
-import NoContentCard from "../../atoms/cards/no-content-card";
-import { FONT, COLOR } from "@/constants/THEME";
+import NoContentCard from "@/components/atoms/cards/no-content-card";
 import { GridIcon } from "@/constants/ICON";
+import { FONT, COLOR } from "@/constants/THEME";
 //
-import { renderKpiCards } from "./ui/render-kpi-cards";
+import { renderKPICards } from "./ui/render-kpi-cards";
 
 interface IProps {}
 
@@ -15,7 +15,7 @@ const AdminMetrics: React.FC<IProps> = () => {
   return (
     <>
       {/* KPIs */}
-      {renderKpiCards()}
+      {renderKPICards()}
 
       {/* CHARTS */}
       <NoContentCard

@@ -9,8 +9,8 @@ interface IProps {
   label: string;
 }
 
-const LabelGovtIdInput: React.FC<IProps> = ({ label }) => {
-  console.log("🚀 ~ LabelGovtIdInput");
+const LabelGovtIDInput: React.FC<IProps> = ({ label }) => {
+  console.log("🚀 ~ LabelGovtIDInput");
   // renders
   return (
     <View style={s.container}>
@@ -28,4 +28,4 @@ const LabelGovtIdInput: React.FC<IProps> = ({ label }) => {
   );
 };
 
-export default React.memo(LabelGovtIdInput);
+export default React.memo(LabelGovtIDInput);

@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 //
-import CTAButton from "@/components/atoms/buttons/cta-button";
+import  CTAButton from "@/components/atoms/buttons/cta-button";
 import ModalWrapper from "@/components/atoms/modal-wrapper";
 import CreateAppointmentForm from "@/components/molecules/create-appointment-form";
 import AlertDialog from "@/components/atoms/alert-dialog";

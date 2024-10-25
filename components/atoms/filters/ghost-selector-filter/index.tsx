@@ -6,8 +6,8 @@ import { ChevronDownIcon } from "@/constants/ICON";
 
 interface IProps {}
 
-const FilterByLabelSelector: React.FC<IProps> = () => {
-  console.log("🚀 ~ FilterByLabelSelector");
+const GhostSelectorFilter: React.FC<IProps> = () => {
+  console.log("🚀 ~ GhostSelectorFilter");
   // renders
   return (
     <Pressable style={s.container}>
@@ -17,7 +17,7 @@ const FilterByLabelSelector: React.FC<IProps> = () => {
   );
 };
 
-export default React.memo(FilterByLabelSelector);
+export default React.memo(GhostSelectorFilter);
 
 const s = StyleSheet.create({
   _: {},

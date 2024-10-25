@@ -3,7 +3,7 @@ import { FlatList, View, Text, Pressable } from "react-native";
 import DashboardMenuBar from "@/components/organisms/dashboard-menu-bar";
 import Hyperlink from "@/components/atoms/hyperlink";
 import PatientListCard from "@/components/molecules/patient-list-card";
-import FilterByButtonSelector from "@/components/atoms/filters/filter-by-button-selector";
+import ButtonSelectorFilter from "@/components/atoms/filters/button-selector-filter";
 import AdminMetrics from "@/components/organisms/admin-metrics";
 import LabelTabs from "@/components/atoms/label-tabs";
 import NoContentCard from "@/components/atoms/cards/no-content-card";
@@ -40,7 +40,7 @@ export default function DashboardScreen() {
           <View style={{ rowGap: 16 }}>
             <View style={s.statistics_header}>
               <LabelTabs tabs={["Admin metrics", "Clinical metrics"]} />
-              <FilterByButtonSelector />
+              <ButtonSelectorFilter />
             </View>
             <AdminMetrics />
           </View>

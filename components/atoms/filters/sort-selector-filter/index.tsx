@@ -6,8 +6,8 @@ import { SortDescIcon } from "@/constants/ICON";
 
 interface IProps {}
 
-const FilterByFunnelSelector: React.FC<IProps> = () => {
-  console.log("🚀 ~ FilterByFunnelSelector");
+const SortSelectorFilter: React.FC<IProps> = () => {
+  console.log("🚀 ~ SortSelectorFilter");
   // renders
   return (
     <Pressable style={s.container}>
@@ -17,7 +17,7 @@ const FilterByFunnelSelector: React.FC<IProps> = () => {
   );
 };
 
-export default React.memo(FilterByFunnelSelector);
+export default React.memo(SortSelectorFilter);
 
 const s = StyleSheet.create({
   _: {},
