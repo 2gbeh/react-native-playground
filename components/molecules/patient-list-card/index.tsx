@@ -28,14 +28,14 @@ const PatientListCard: React.FC<IProps> = ({ data, isBusy }) => {
     <View style={s.container(isBusy).transform}>
       <View style={s.static.header}>
         {/* HEADING */}
-        <View style={s.static.left_content}>
+        <View style={s.static.left}>
           {isBusy && <BusyIcon color={COLOR.indicator} />}
           <NameBio name={data.name} age={data.age} sex={data.sex} />
           {!isBusy && <BedNumberBadge bedNumber={data.treatment?.bed} />}
         </View>
 
         {/* MENU */}
-        <View style={s.static.right_content}>
+        <View style={s.static.right}>
           {isGeneralOutpatient ? (
             <InvestigationsSelectorSheet />
           ) : isAntenatal ? (

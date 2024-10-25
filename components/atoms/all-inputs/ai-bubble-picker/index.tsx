@@ -23,17 +23,15 @@ const AIBubblePicker: React.FC<IProps> = ({
     <View style={s.container}>
       {list.map((item, i) => {
         const isSelected = selected.includes(item);
-        // 
+        //
         return (
           <Pressable
             key={i}
             style={[
               s.bubble,
               {
-                backgroundColor: isSelected
-                  ? COLOR.selected_bubble
-                  : COLOR.white,
-                borderColor: isSelected ? COLOR.selected_bubble : COLOR.border,
+                backgroundColor: isSelected ? COLOR.surface : COLOR.white,
+                borderColor: isSelected ? COLOR.surface : COLOR.neutral_100,
               },
             ]}
             onPress={() => action(item)}

@@ -14,7 +14,7 @@ export const modalWrapperStyles = StyleSheet.create({
   },
   header: {
     borderBottomWidth: 1,
-    borderBottomColor: COLOR.border,
+    borderBottomColor: COLOR.neutral_100,
     paddingVertical: 16,
     marginHorizontal: 20,
     // marginBottom: 12,
@@ -30,7 +30,7 @@ export const modalWrapperStyles = StyleSheet.create({
   },
   cancel: {
     backgroundColor: COLOR.white,
-    borderColor: COLOR.border,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 8,
     width: 26,

@@ -11,7 +11,7 @@ const AIAudioRecorder: React.FC<IProps> = ({}) => {
   // renders
   return (
     <View style={s.container}>
-      <AudioIcon color={COLOR.primary_dark} />
+      <AudioIcon color={COLOR.primary} />
       <Text style={s.label}>Record audio</Text>
     </View>
   );
@@ -22,7 +22,7 @@ export default React.memo(AIAudioRecorder);
 const s = StyleSheet.create({
   _: {},
   container: {
-    borderColor: COLOR.border,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 10,
     paddingVertical: 8,

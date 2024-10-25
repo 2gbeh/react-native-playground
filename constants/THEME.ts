@@ -30,8 +30,7 @@ export const COLOR = {
   primary_dark: "#051438",
   background: "#EDF0F8",
   aside: "#F2F5FA",
-  surface: "#DFE2E9",
-  border: "#DFE2E9",
+  surface: "#CDD8F3",
   text_muted: "#A6AFC2",
   text_faded: "#677597",
   icon_radius: "#ECECFD",
@@ -41,14 +40,14 @@ export const COLOR = {
   error: "#FF2C2C",
   success: "#3FB772",
   warning: "#D47400",
-  accordion_border: "#CDD8F3",
-  selected_bubble: "#CDD8F3",
+  pagination_label: "#8E8FA7",
   //
+  text_200: "#58627A",
   neutral_25: "#F9F9FA",
   neutral_50: "#EFF1F4",
+  neutral_100: "#DFE2E9",
   primary_25: "#D0D1FB",
   primary_100: "#8585BE",
-  text_200: "#58627A",
   // https://rgbacolorpicker.com/rgba-to-hex
   opacity: {
     point5: "#0000000d",

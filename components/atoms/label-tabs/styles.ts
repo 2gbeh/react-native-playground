@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
-import { FONT,COLOR } from "@/constants/THEME";
+import { FONT, COLOR } from "@/constants/THEME";
 
 export const labelTabsStyles = {
   static: StyleSheet.create({
     _: {},
     container: {
-      borderBottomColor: COLOR.border,
+      borderBottomColor: COLOR.neutral_100,
       borderBottomWidth: 2,
       paddingBottom: 8,
       flexDirection: "row",

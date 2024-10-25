@@ -8,13 +8,13 @@ export const appointmentsMenuBarStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  right_content: {
+  right: {
     flexDirection: "row",
     alignItems: "center",
     columnGap: 32,
   },
   totaled_button: {
-    backgroundColor: COLOR.border,
+    backgroundColor: COLOR.neutral_100,
     borderRadius: 10,
     paddingVertical: 8,
     paddingHorizontal: 16,

@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <View style={s.container}>
       {/* LOGO */}
-      <Pressable style={s.left_content} onPress={() => router.push("/")}>
+      <Pressable style={s.left} onPress={() => router.push("/")}>
         <CentreNameLogo
           src="/assets/images/icon.png"
           name="Edo Specialist Hospital"
@@ -24,12 +24,12 @@ const Header = () => {
       </Pressable>
 
       {/* CLOCK */}
-      <View style={s.center_content}>
+      <View style={s.center}>
         <AppClock />
       </View>
 
       {/* AVATAR */}
-      <View style={s.right_content}>
+      <View style={s.right}>
         <Text style={s.greeting}>Hi, CHO Adebayo</Text>
         <BellIcon color={COLOR.primary} />
         <Text style={s.textSize}>Aa</Text>

@@ -16,7 +16,7 @@ export const labelGovtIdInputStyles = StyleSheet.create({
   },
   input: {
     backgroundColor: COLOR.white,
-    borderColor: COLOR.border,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 10,
     paddingVertical: 14,
@@ -31,7 +31,7 @@ export const labelGovtIdInputStyles = StyleSheet.create({
     columnGap: 27,
   },
   input_value: {
-    borderLeftColor: COLOR.border,
+    borderLeftColor: COLOR.neutral_100,
     borderLeftWidth: 1,
     paddingLeft: 10,
   },

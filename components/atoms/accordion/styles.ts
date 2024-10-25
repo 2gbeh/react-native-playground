@@ -7,8 +7,8 @@ export const accordionStyles = StyleSheet.create({
     marginTop: 16,
   },
   header: {
-    backgroundColor: COLOR.surface,
-    borderColor: COLOR.border,
+    backgroundColor: COLOR.neutral_100,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 8,
     paddingVertical: 12,

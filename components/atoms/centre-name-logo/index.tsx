@@ -50,7 +50,7 @@ const s = StyleSheet.create({
     fontWeight: "700",
   },
   divider: {
-    borderLeftColor: COLOR.border,
+    borderLeftColor: COLOR.neutral_100,
     borderLeftWidth: 1,
     paddingLeft: 10,
   },

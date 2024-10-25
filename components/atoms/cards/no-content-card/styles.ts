@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
-import { FONT,COLOR } from "@/constants/THEME";
+import { FONT, COLOR } from "@/constants/THEME";
 
 export const noContentCardStyles = StyleSheet.create({
   _: {},
   container: {
     backgroundColor: COLOR.white,
-    borderColor: COLOR.border,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 10,
     padding: 24,

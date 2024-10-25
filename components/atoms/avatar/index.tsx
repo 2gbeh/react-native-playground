@@ -29,7 +29,7 @@ const Avatar: React.FC<IProps> = ({
       priority="normal"
       style={{
         backgroundColor: COLOR.white,
-        borderColor: COLOR.border,
+        borderColor: COLOR.neutral_100,
         borderWidth: 1,
         borderRadius: radius,
         width: size,

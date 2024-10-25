@@ -3,7 +3,7 @@ import { FONT, COLOR } from "@/constants/THEME";
 
 export const avatarNameBioStyles = StyleSheet.create({
   container: {
-    backgroundColor: COLOR.surface,
+    backgroundColor: COLOR.neutral_100,
     borderRadius: 10,
     paddingVertical: 8,
     paddingHorizontal: 10,
@@ -11,12 +11,12 @@ export const avatarNameBioStyles = StyleSheet.create({
     alignItems: "center",
     columnGap: 16,
   },
-  left_content: {
+  left: {
     flexDirection: "row",
     alignItems: "center",
     columnGap: 8,
   },
-  right_content: {
+  right: {
     flexDirection: "row",
     alignItems: "center",
     columnGap: 16,

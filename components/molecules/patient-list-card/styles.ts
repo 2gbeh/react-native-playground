@@ -6,8 +6,8 @@ export const patientListCardStyles = {
   container: (isBusy = false) =>
     StyleSheet.create({
       transform: {
-        backgroundColor: isBusy ? COLOR.surface : COLOR.white,
-        borderColor: COLOR.border,
+        backgroundColor: isBusy ? COLOR.neutral_100 : COLOR.white,
+        borderColor: COLOR.neutral_100,
         borderWidth: 1,
         borderRadius: 10,
         marginBottom: 12,
@@ -22,12 +22,12 @@ export const patientListCardStyles = {
       alignItems: "center",
       justifyContent: "space-between",
     },
-    left_content: {
+    left: {
       flexDirection: "row",
       alignItems: "center",
       columnGap: 16,
     },
-    right_content: {
+    right: {
       flexDirection: "row",
       alignItems: "center",
       columnGap: 24,

@@ -7,17 +7,11 @@ export const aiAccordionStyles = {
     container: {
       rowGap: 19,
     },
-    heading: {
-      color: COLOR.primary_dark,
-      fontFamily: FONT.GilroyBold,
-      fontSize: 16,
-      fontWeight: "700",
-    },
   }),
   header: (collapsed?: boolean) =>
     StyleSheet.create({
       transform: {
-        borderBottomColor: COLOR.accordion_border,
+        borderBottomColor: COLOR.surface,
         borderBottomWidth: collapsed ? 1 : 0,
         paddingBottom: collapsed ? 16 : 0,
         flexDirection: "row",

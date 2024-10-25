@@ -15,7 +15,7 @@ export const centreHomeFilterStyles = {
   button: (isActive = false) =>
     StyleSheet.create({
       transform: {
-        backgroundColor: isActive ? COLOR.surface : COLOR.none,
+        backgroundColor: isActive ? COLOR.neutral_100 : COLOR.none,
         borderRadius: 23,
         paddingVertical: 8,
         paddingHorizontal: 16,

@@ -14,6 +14,7 @@ import History from "@/components/molecules/history";
 import Examination from "@/components/molecules/examination";
 import VitalSigns from "@/components/molecules/vital-signs";
 import ClinicalJudgement from "@/components/molecules/clinical-judgement";
+import LastClinicNote from "@/components/molecules/last-clinic-note";
 import { CTAButton, AccentButton } from "@/components/atoms/buttons";
 import { COLOR, FONT } from "@/constants/THEME";
 
@@ -24,17 +25,15 @@ export default function GeneralOutpatientScreen() {
     <>
       <ScrollView>
         <View style={s.container}>
-          <View style={s.left_content}>
+          <View style={s.left}>
             <Complaints />
             <History />
             <Examination />
             <VitalSigns />
             <ClinicalJudgement />
           </View>
-          <View style={s.right_content}>
-            <CardWrapper fill={COLOR.aside}>
-              <AIText h1>Last clinic note</AIText>
-            </CardWrapper>
+          <View style={s.right}>
+            <LastClinicNote />
           </View>
         </View>
       </ScrollView>
@@ -56,11 +55,11 @@ const s = StyleSheet.create({
     columnGap: 24,
     flex: 1,
   },
-  left_content: {
+  left: {
     flex: 2,
     rowGap: 32,
   },
-  right_content: {
+  right: {
     flex: 1,
   },
   footer: {

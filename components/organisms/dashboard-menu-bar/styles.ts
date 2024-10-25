@@ -14,7 +14,7 @@ export const dashboardMenuBarStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
   },
-  right_content: {
+  right: {
     flexDirection: "row",
     alignItems: "center",
     columnGap: 32,

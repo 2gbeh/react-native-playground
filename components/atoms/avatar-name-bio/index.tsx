@@ -17,11 +17,11 @@ const AvatarNameBio: React.FC<IProps> = ({ src, name, id = "", age, sex }) => {
   // renders
   return (
     <View style={s.container}>
-      <View style={s.left_content}>
+      <View style={s.left}>
         <Avatar src={src} size={36} />
         <Text style={s.text}>{name}</Text>
       </View>
-      <View style={s.right_content}>
+      <View style={s.right}>
         <Text style={s.text}>{id}</Text>
         <Text style={s.text}>{age}</Text>
         <Text style={s.text}>{sex}</Text>

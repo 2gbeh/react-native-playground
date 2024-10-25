@@ -30,7 +30,7 @@ export default React.memo(Warning);
 const s = StyleSheet.create({
   _: {},
   container: {
-    backgroundColor: COLOR.surface,
+    backgroundColor: COLOR.neutral_100,
     borderRadius: 10,
     paddingVertical: 12,
     paddingHorizontal: 12,

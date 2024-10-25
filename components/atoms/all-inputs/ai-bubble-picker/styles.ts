@@ -4,7 +4,7 @@ import { FONT, COLOR } from "@/constants/THEME";
 export const aiBubblePickerStyles = StyleSheet.create({
   _: {},
   container: {
-    borderColor: COLOR.border,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,

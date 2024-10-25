@@ -28,7 +28,7 @@ export default React.memo(JustifiedLabelSelector);
 const s = StyleSheet.create({
   _: {},
   container: {
-    borderBottomColor: COLOR.border,
+    borderBottomColor: COLOR.neutral_100,
     borderBottomWidth: 2,
     paddingBottom: 16,
     height: 36,

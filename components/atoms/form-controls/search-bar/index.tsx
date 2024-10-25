@@ -17,7 +17,7 @@ const SearchBar: React.FC<IProps> = ({
   // renders
   return (
     <View style={[s.container, { width }]}>
-      <SearchIcon color={COLOR.border} />
+      <SearchIcon color={COLOR.neutral_100} />
       <Text style={s.placeholder}>{placeholder}</Text>
     </View>
   );
@@ -29,7 +29,7 @@ const s = StyleSheet.create({
   _: {},
   container: {
     backgroundColor: COLOR.white,
-    borderColor: COLOR.border,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 10,
     // paddingVertical: 10,

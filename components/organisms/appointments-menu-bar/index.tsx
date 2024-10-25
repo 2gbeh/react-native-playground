@@ -15,7 +15,7 @@ const AppointmentsMenuBar = () => {
     <View style={s.container}>
       {/* HEADING */}
       <BackButton>Patient list</BackButton>
-      <View style={s.right_content}>
+      <View style={s.right}>
         {/* TOTALED */}
         <View style={s.totaled_button}>
           <Text style={s.totaled_label}>My patient count</Text>

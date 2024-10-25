@@ -14,7 +14,7 @@ const AllInputsFilterBar: React.FC<IProps> = ({}) => {
   // renders
   return (
     <View style={s.container}>
-      <View style={s.left_content}>
+      <View style={s.left}>
         <BackButton>All inputs</BackButton>
         <CentreHomeFilter
           tabIndex={tabIndex}
@@ -41,7 +41,7 @@ const s = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  left_content: {
+  left: {
     flexDirection: "row",
     alignItems: "center",
     columnGap: 32,

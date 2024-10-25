@@ -26,7 +26,7 @@ export default React.memo(BedNumberBadge);
 const s = StyleSheet.create({
   _: {},
   container: {
-    borderColor: COLOR.border,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 15,
     paddingVertical: 4,

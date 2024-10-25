@@ -32,7 +32,7 @@ export const paginationStyles = StyleSheet.create({
   },
   button: {
     backgroundColor: COLOR.disabled,
-    borderColor: COLOR.border,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 4,
     width: 32,

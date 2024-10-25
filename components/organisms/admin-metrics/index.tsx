@@ -33,7 +33,7 @@ const s = StyleSheet.create({
   _: {},
   container: {
     backgroundColor: COLOR.white,
-    borderColor: COLOR.border,
+    borderColor: COLOR.neutral_100,
     borderWidth: 1,
     borderRadius: 15,
     paddingVertical: 16,

@@ -17,7 +17,7 @@ const DashboardMenuBar = () => {
       <Text style={s.heading}>Hospital statistics</Text>
 
       {/* BUTTONS */}
-      <View style={s.right_content}>
+      <View style={s.right}>
         <CreateAppointmentWidget />
         <CTAButton
           action={() => router.push("/patient/create")}

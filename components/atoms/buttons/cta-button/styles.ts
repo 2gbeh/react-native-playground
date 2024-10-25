@@ -25,16 +25,16 @@ export const ctaButtonVariantStyles = (variant: Variant, disabled?: boolean) =>
     solid: {
       backgroundColor: disabled ? COLOR.disabled : COLOR.primary,
       color: disabled ? COLOR.text_muted : COLOR.white,
-      borderColor: disabled ? COLOR.border : COLOR.primary,
+      borderColor: disabled ? COLOR.neutral_100 : COLOR.primary,
     },
     outline: {
       backgroundColor: COLOR.white,
       color: disabled ? COLOR.text_muted : COLOR.primary,
-      borderColor: disabled ? COLOR.border : COLOR.primary,
+      borderColor: disabled ? COLOR.neutral_100 : COLOR.primary,
     },
     success: {
       backgroundColor: disabled ? COLOR.disabled : COLOR.success,
       color: disabled ? COLOR.text_muted : COLOR.white,
-      borderColor: disabled ? COLOR.border : COLOR.success,
+      borderColor: disabled ? COLOR.neutral_100 : COLOR.success,
     },
   }[variant]);

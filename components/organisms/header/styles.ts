@@ -5,7 +5,7 @@ export const headerStyles = StyleSheet.create({
   _: {},
   container: {
     backgroundColor: COLOR.background,
-    borderBottomColor: COLOR.border,
+    borderBottomColor: COLOR.neutral_100,
     borderBottomWidth: 2,
     paddingVertical: 8,
     paddingHorizontal: 32,
@@ -13,14 +13,14 @@ export const headerStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  left_content: {
+  left: {
     flex: 1,
   },
-  center_content: {
+  center: {
     flex: 1,
     alignItems: "center",
   },
-  right_content: {
+  right: {
     flex: 1,
     flexDirection: "row",
     alignItems: "center",

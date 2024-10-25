@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { Pressable, View, Text } from "react-native";
 //
+import AIText from "../ai-text";
 import { ChevronDownIcon, ChevronUpIcon } from "@/constants/ICON";
 import { FONT, COLOR } from "@/constants/THEME";
 //
@@ -23,7 +24,7 @@ const AIAccordion: React.FC<IProps> = ({
   return (
     <View style={s.static.container}>
       <View style={s.header(open).transform}>
-        <Text style={s.static.heading}>{heading}</Text>
+        <AIText h2>{heading}</AIText>
         <Pressable onPress={onToggle}>
           {open ? (
             <ChevronUpIcon color={COLOR.text_200} />

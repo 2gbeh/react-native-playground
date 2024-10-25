@@ -9,7 +9,7 @@ export const aiBubblesStyles = StyleSheet.create({
     gap: 10,
   },
   bubble: {
-    backgroundColor: COLOR.selected_bubble,
+    backgroundColor: COLOR.surface,
     borderRadius: 50,
     paddingVertical: 8,
     paddingHorizontal: 12,
