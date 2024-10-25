@@ -10,8 +10,8 @@ interface IProps {
   sex: string;
 }
 
-const NameAgeSex: React.FC<IProps> = ({ name, age, sex }) => {
-  console.log("🚀 ~ NameAgeSex");
+const NameBio: React.FC<IProps> = ({ name, age, sex }) => {
+  console.log("🚀 ~ NameBio");
   // renders
   return (
     <View style={s.container}>
@@ -24,7 +24,7 @@ const NameAgeSex: React.FC<IProps> = ({ name, age, sex }) => {
   );
 };
 
-export default React.memo(NameAgeSex);
+export default React.memo(NameBio);
 
 const s = StyleSheet.create({
   _: {},

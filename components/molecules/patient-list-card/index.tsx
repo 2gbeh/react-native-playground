@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Pressable } from "react-native";
 import { router } from "expo-router";
 //
-import NameAgeSex from "../../atoms/name-age-sex";
+import NameBio from "../../atoms/name-bio";
 import InvestigationsSelectorSheet from "../investigations-selector-sheet";
 import MedicationSelectorSheet from "../medication-selector-sheet";
 import BedNumberBadge from "../../atoms/bed-number-badge";
@@ -30,7 +30,7 @@ const PatientListCard: React.FC<IProps> = ({ data, isBusy }) => {
         {/* HEADING */}
         <View style={s.static.left_content}>
           {isBusy && <BusyIcon color={COLOR.indicator} />}
-          <NameAgeSex name={data.name} age={data.age} sex={data.sex} />
+          <NameBio name={data.name} age={data.age} sex={data.sex} />
           {!isBusy && <BedNumberBadge bedNumber={data.treatment?.bed} />}
         </View>
 

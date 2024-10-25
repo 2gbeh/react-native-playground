@@ -41,6 +41,7 @@ export const COLOR = {
   success: "#3FB772",
   warning: "#D47400",
   //
+  neutral_25: "#F9F9FA",
   neutral_50: "#EFF1F4",
   primary_25: "#D0D1FB",
   primary_100: "#8585BE",
