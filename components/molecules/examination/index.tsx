@@ -9,6 +9,8 @@ import {
   AIBubblePicker,
   AIPredictiveText,
 } from "@/components/atoms/all-inputs";
+//
+import { examinationStyles as s } from "./styles";
 
 interface IProps {}
 
@@ -39,7 +41,9 @@ const Examination: React.FC<IProps> = ({}) => {
             ]}
           />
           <View style={s.footer}>
-            <CTAButton variant="success" disabled>Save</CTAButton>
+            <CTAButton variant="success" disabled>
+              Save
+            </CTAButton>
           </View>
         </AIAccordion>
       </CardWrapper>
@@ -48,13 +52,3 @@ const Examination: React.FC<IProps> = ({}) => {
 };
 
 export default React.memo(Examination);
-
-const s = StyleSheet.create({
-  _: {},
-  container: {
-    rowGap: 16,
-  },
-  footer: {
-    alignSelf: "flex-end",
-  },
-});

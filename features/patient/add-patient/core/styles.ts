@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { FONT, COLOR } from "@/constants/THEME";
 
-export const addPatientScreenStyles = StyleSheet.create({
+export const addPatientStyles = StyleSheet.create({
   _: {},
   container: {},
   form_wrapper: {

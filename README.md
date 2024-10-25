@@ -106,12 +106,12 @@ module.exports = (() => {
 
   config.transformer = {
     ...transformer,
-    babelTransformerPath: require.resolve("react-native-svg-transformer/expo")
+    babelTransformerPath: require.resolve("react-native-svg-transformer/expo"),
   };
   config.resolver = {
     ...resolver,
     assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
-    sourceExts: [...resolver.sourceExts, "svg"]
+    sourceExts: [...resolver.sourceExts, "svg"],
   };
 
   return config;
@@ -128,4 +128,26 @@ declare module "*.svg" {
 
 // Export all svgs from a single file ./constants/ICON.ts
 export { default as BellIcon } from "../assets/icons/bell.svg";
+```
+
+## [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres)
+
+```bash
+$ npm install @vercel/postgres
+
+# Update .env
+EXPO_PUBLIC_POSTGRES_URL="***"
+
+# Create connection pool
+import { createPool } from "@vercel/postgres";
+
+export const vercelPgPool = createPool({
+  connectionString: process.env.EXPO_PUBLIC_POSTGRES_URL,
+});
+
+# Query database tables
+const { rows } = await vercelPgPool.sql`SELECT * FROM ${tb};`;
+return rows;
+
+# Visit https://vercel.com/docs/storage/vercel-postgres/sdk
 ```

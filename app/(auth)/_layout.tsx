@@ -6,9 +6,5 @@ import { COLOR } from "@/constants/THEME";
 export default function AuthLayout() {
   console.log("🚀 ~ AuthLayout");
   // renders
-  return (
-    <>
-      <Slot />
-    </>
-  );
+  return <Slot />;
 }

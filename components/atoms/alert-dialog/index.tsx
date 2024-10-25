@@ -1,22 +1,21 @@
-import React from "react";
-import { View, Text, Pressable } from "react-native";
-// 
+import React, { PropsWithChildren } from "react";
+import { View, Text } from "react-native";
+//
 import ModalWrapper from "../modal-wrapper";
-import CTAButton from "@/components/atoms/buttons/cta-button";
+import CTAButton from "../buttons/cta-button";
 import { CheckCircleOutlineIcon } from "@/constants/ICON";
 import { COLOR } from "@/constants/THEME";
 //
 import { alertDialogStyles as s } from "./styles";
 
-interface IProps {
-  heading?: string;
+interface IProps extends PropsWithChildren {
   open?: boolean;
   onClose?: () => void;
   onConfirm?: () => void;
 }
 
 const AlertDialog = ({
-  heading = "Confirmation",
+  children,
   open = false,
   onClose = () => {},
   onConfirm = () => {},
@@ -24,7 +23,7 @@ const AlertDialog = ({
   return (
     <ModalWrapper open={open} onClose={onClose}>
       <View style={s.container}>
-        <Text style={s.heading}>{heading}</Text>
+        <Text style={s.heading}>{children || "ConfirmationS"}</Text>
         <View style={s.success_card}>
           <CheckCircleOutlineIcon color={COLOR.success} strokeWidth={10} />
         </View>

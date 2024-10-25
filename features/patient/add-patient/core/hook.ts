@@ -4,7 +4,7 @@ import { router } from "expo-router";
 import { PromiseHelper } from "@/utils/helpers/common/promise.helper";
 import { initialValues, mockInitialValues } from "./schema";
 
-export function useAddPatientScreen() {
+export function useAddPatient() {
   const [autofill, setAutofill] = useState(false);
   const [submittingAction1, setSubmittingAction1] = useState(false);
   const [submittingAction2, setSubmittingAction2] = useState(false);
@@ -16,18 +16,16 @@ export function useAddPatientScreen() {
   const defaultValues = autofill ? mockInitialValues : initialValues;
   // const canSubmit = autofill && !submittingAction1 && !submittingAction2;
   const canSubmit = autofill;
-  //
   const toggleAutofill = () => setAutofill((prev) => !prev);
   const toggleModal = () => setShowModal((prev) => !prev);
-  //
-  function handleAfterSave() {
+  const handleAfterSave = () => {
     setShowAlert1(false);
     router.back();
-  }
-  function handleAfterCreate() {
+  };
+  const handleAfterCreate = () => {
     setShowAlert2(false);
     router.back();
-  }
+  };
   //
   async function handleSave() {
     if (!submittingAction1) {

@@ -1,17 +1,18 @@
 import React from "react";
-import { StyleSheet, Pressable, View, Text } from "react-native";
+import { View } from "react-native";
 //
+import Divider from "@/components/atoms/divider";
 import CardWrapper from "@/components/atoms/cards/card-wrapper";
 import {
-  AIText,
   AIManifestNote,
   AITitleBar,
   AIPagination,
   AIOrderedList,
   AITranscripts,
 } from "@/components/atoms/all-inputs";
-import Divider from "@/components/atoms/divider";
 import { FONT, COLOR } from "@/constants/THEME";
+// 
+import { lastClinicNoteStyles as s } from "./styles";
 
 interface IProps {}
 
@@ -60,13 +61,3 @@ const LastClinicNote: React.FC<IProps> = ({}) => {
 };
 
 export default React.memo(LastClinicNote);
-
-const s = StyleSheet.create({
-  _: {},
-  container: {
-    rowGap: 12,
-  },
-  content: {
-    rowGap: 16,
-  },
-});

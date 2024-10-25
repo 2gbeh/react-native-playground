@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <View style={s.container}>
       {/* LOGO */}
-      <Pressable style={s.left} onPress={() => router.push("/")}>
+      <Pressable style={s.left} onPress={() => router.push("/(main)")}>
         <CentreNameLogo
           src="/assets/images/icon.png"
           name="Edo Specialist Hospital"

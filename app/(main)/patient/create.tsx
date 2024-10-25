@@ -1,5 +1,4 @@
 import { View, ScrollView, Pressable } from "react-native";
-import { router } from "expo-router";
 //
 import { BackButton, CTAButton } from "@/components/atoms/buttons";
 import NokFormAccordion from "@/components/organisms/nok-form-accordion";
@@ -17,8 +16,10 @@ import ModalWrapper from "@/components/atoms/modal-wrapper";
 import Spinner from "@/components/atoms/spinner";
 import CreateAppointmentForm from "@/components/molecules/create-appointment-form";
 //
-import { addPatientScreenStyles as s } from "@/features/patient/add-patient/styles";
-import { useAddPatientScreen } from "@/features/patient/add-patient/states";
+import {
+  addPatientStyles as s,
+  useAddPatient,
+} from "@/features/patient/add-patient";
 import Warning from "@/components/atoms/warning";
 
 export default function AddPatientScreen() {
@@ -38,7 +39,7 @@ export default function AddPatientScreen() {
     creating,
     showAlert2,
     handleAfterCreate,
-  } = useAddPatientScreen();
+  } = useAddPatient();
   console.log("🚀 ~ AddPatientScreen");
   // renders
   return (
@@ -160,18 +161,16 @@ export default function AddPatientScreen() {
 
       {/* MODALS */}
       <AlertDialog
-        heading="Patient created"
         open={showAlert1}
         onClose={handleAfterSave}
         onConfirm={handleAfterSave}
-      />
+      >Patient created</AlertDialog>
 
       <AlertDialog
-        heading="Appointment created"
         open={showAlert2}
         onClose={handleAfterCreate}
         onConfirm={handleAfterCreate}
-      />
+      >Appointment created</AlertDialog>
 
       <ModalWrapper
         heading="Add new appointment"

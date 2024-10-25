@@ -9,6 +9,8 @@ import {
   AIBubblePicker,
   AIAudioRecorder,
 } from "@/components/atoms/all-inputs";
+// 
+import { historyStyles as s } from "./styles";
 
 interface IProps {}
 
@@ -37,13 +39,3 @@ const History: React.FC<IProps> = ({}) => {
 };
 
 export default React.memo(History);
-
-const s = StyleSheet.create({
-  _: {},
-  container: {
-    rowGap: 16,
-  },
-  footer: {
-    alignSelf: "flex-end",
-  },
-});

@@ -1,4 +1,4 @@
-import { FlatList, View, Text, Pressable } from "react-native";
+import { FlatList, View, Text } from "react-native";
 //
 import DashboardMenuBar from "@/components/organisms/dashboard-menu-bar";
 import Hyperlink from "@/components/atoms/hyperlink";
@@ -6,7 +6,6 @@ import PatientListCard from "@/components/molecules/patient-list-card";
 import ButtonSelectorFilter from "@/components/atoms/filters/button-selector-filter";
 import AdminMetrics from "@/components/organisms/admin-metrics";
 import LabelTabs from "@/components/atoms/label-tabs";
-import NoContentCard from "@/components/atoms/cards/no-content-card";
 //
 import { dashboardScreenStyles as s } from "@/features/dashboard/styles";
 import getAllAppointments from "@/api/getAllAppointments";

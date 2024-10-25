@@ -1,4 +1,4 @@
-import { FlatList, View, Text, Pressable } from "react-native";
+import { FlatList } from "react-native";
 //
 import AppointmentsMenuBar from "@/components/organisms/appointments-menu-bar";
 import PatientListCard from "@/components/molecules/patient-list-card";

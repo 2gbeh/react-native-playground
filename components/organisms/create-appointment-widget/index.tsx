@@ -1,12 +1,12 @@
 import React from "react";
 import { View } from "react-native";
 //
-import  CTAButton from "@/components/atoms/buttons/cta-button";
+import CTAButton from "@/components/atoms/buttons/cta-button";
 import ModalWrapper from "@/components/atoms/modal-wrapper";
 import CreateAppointmentForm from "@/components/molecules/create-appointment-form";
 import AlertDialog from "@/components/atoms/alert-dialog";
 //
-import { useCreateAppointmentWidget } from "./states";
+import { useCreateAppointmentWidget } from "./hook";
 
 const CreateAppointmentWidget = () => {
   const {
@@ -39,11 +39,12 @@ const CreateAppointmentWidget = () => {
       </ModalWrapper>
 
       <AlertDialog
-        heading="Appointment created"
         open={showAlert}
         onClose={toggleAlert}
         onConfirm={toggleAlert}
-      />
+      >
+        Appointment created
+      </AlertDialog>
     </View>
   );
 };

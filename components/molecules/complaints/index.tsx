@@ -10,6 +10,8 @@ import {
   AIBubbles,
   AIBubblePicker,
 } from "@/components/atoms/all-inputs";
+// 
+import { complaintsStyles as s } from "./styles";
 
 interface IProps {}
 
@@ -57,13 +59,3 @@ const Complaints: React.FC<IProps> = ({}) => {
 };
 
 export default React.memo(Complaints);
-
-const s = StyleSheet.create({
-  _: {},
-  container: {
-    rowGap: 16,
-  },
-  footer: {
-    alignSelf: "flex-end",
-  },
-});
