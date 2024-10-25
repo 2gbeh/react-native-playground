@@ -1,19 +1,19 @@
 import { ScrollView, View } from "react-native";
 //
-import Complaints from "@/components/molecules/complaints";
-import History from "@/components/molecules/history";
-import Examination from "@/components/molecules/examination";
-import VitalSigns from "@/components/molecules/vital-signs";
-import ClinicalJudgement from "@/components/molecules/clinical-judgement";
-import LastClinicNote from "@/components/molecules/last-clinic-note";
+import ComplaintsAccordion from "@/components/molecules/complaints-accordion";
+import HistoryAccordion from "@/components/molecules/history-accordion";
+import ExaminationAccordion from "@/components/molecules/examination-accordion";
+import VitalSignsAccordion from "@/components/molecules/vital-signs-accordion";
+import ClinicalJudgementAccordion from "@/components/molecules/clinical-judgement-accordion";
+import LastClinicNoteAside from "@/components/molecules/last-clinic-note-aside";
+import AlertDialog from "@/components/atoms/alert-dialog";
+import Spinner from "@/components/atoms/spinner";
 import { CTAButton, AccentButton } from "@/components/atoms/buttons";
 //
 import {
   generalOutpatientStyles as s,
   useGeneralOutpatient,
-} from "@/features/all-inputs/general-outpatient";
-import AlertDialog from "@/components/atoms/alert-dialog";
-import Spinner from "@/components/atoms/spinner";
+} from "@/features/all-inputs";
 
 export default function GeneralOutpatientScreen() {
   const {
@@ -31,14 +31,14 @@ export default function GeneralOutpatientScreen() {
       <ScrollView>
         <View style={s.container}>
           <View style={s.left}>
-            <Complaints />
-            <History />
-            <Examination />
-            <VitalSigns />
-            <ClinicalJudgement />
+            <ComplaintsAccordion />
+            <HistoryAccordion />
+            <ExaminationAccordion />
+            <VitalSignsAccordion />
+            <ClinicalJudgementAccordion />
           </View>
           <View style={s.right}>
-            <LastClinicNote />
+            <LastClinicNoteAside />
           </View>
         </View>
       </ScrollView>

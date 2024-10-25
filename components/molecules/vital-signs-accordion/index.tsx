@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 //
 import CardWrapper from "@/components/atoms/cards/card-wrapper";
-import CTAButton from "@/components/atoms/buttons/cta-button";
-import {
-  AIAccordion,
-  AIText,
-  AIBubblePicker,
-  AIAudioRecorder,
-} from "@/components/atoms/all-inputs";
+import { AIAccordion, AIText } from "@/components/atoms/all-inputs";
 
 interface IProps {}
 
-const VitalSigns: React.FC<IProps> = ({}) => {
+const VitalSignsAccordion: React.FC<IProps> = ({}) => {
   const [openAccordion, setOpenAccordion] = useState(false);
-  console.log("🚀 ~ VitalSigns");
+  console.log("🚀 ~ VitalSignsAccordion");
   // renders
   return (
     <View style={s.container}>
@@ -30,7 +24,7 @@ const VitalSigns: React.FC<IProps> = ({}) => {
   );
 };
 
-export default React.memo(VitalSigns);
+export default React.memo(VitalSignsAccordion);
 
 const s = StyleSheet.create({
   _: {},

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 //
 import CardWrapper from "@/components/atoms/cards/card-wrapper";
 import SearchBar from "@/components/atoms/form-controls/search-bar";
@@ -11,13 +11,13 @@ import {
   AIBubblePicker,
 } from "@/components/atoms/all-inputs";
 // 
-import { complaintsStyles as s } from "./styles";
+import { complaintsAccordionStyles as s } from "./styles";
 
 interface IProps {}
 
-const Complaints: React.FC<IProps> = ({}) => {
+const ComplaintsAccordion: React.FC<IProps> = ({}) => {
   const [openAccordion, setOpenAccordion] = useState(true);
-  console.log("🚀 ~ Complaints");
+  console.log("🚀 ~ ComplaintsAccordion");
   // renders
   return (
     <View style={s.container}>
@@ -58,4 +58,4 @@ const Complaints: React.FC<IProps> = ({}) => {
   );
 };
 
-export default React.memo(Complaints);
+export default React.memo(ComplaintsAccordion);

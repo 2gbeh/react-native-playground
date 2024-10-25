@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 //
 import CardWrapper from "@/components/atoms/cards/card-wrapper";
 import CTAButton from "@/components/atoms/buttons/cta-button";
@@ -10,13 +10,13 @@ import {
   AIPredictiveText,
 } from "@/components/atoms/all-inputs";
 //
-import { examinationStyles as s } from "./styles";
+import { examinationAccordionStyles as s } from "./styles";
 
 interface IProps {}
 
-const Examination: React.FC<IProps> = ({}) => {
+const ExaminationAccordion: React.FC<IProps> = ({}) => {
   const [openAccordion, setOpenAccordion] = useState(true);
-  console.log("🚀 ~ Examination");
+  console.log("🚀 ~ ExaminationAccordion");
   // renders
   return (
     <View style={s.container}>
@@ -51,4 +51,4 @@ const Examination: React.FC<IProps> = ({}) => {
   );
 };
 
-export default React.memo(Examination);
+export default React.memo(ExaminationAccordion);

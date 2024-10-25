@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
-import { FONT, COLOR } from "@/constants/THEME";
+import { COLOR, FONT } from "@/constants/THEME";
 
-export const aiOrderedListStyles = StyleSheet.create({
+export const aiTranscriptsStyles = StyleSheet.create({
   _: {},
   container: {
     rowGap: 12,
@@ -11,11 +11,10 @@ export const aiOrderedListStyles = StyleSheet.create({
   },
   list_item: {
     flexDirection: "row",
-    alignItems: "center",
     columnGap: 10,
   },
-  numbering: {
-    color: COLOR.primary_dark,
+  label: {
+    color: COLOR.text_muted,
     fontFamily: FONT.GilroyMedium,
     fontSize: 14,
     fontWeight: "600",
@@ -25,5 +24,6 @@ export const aiOrderedListStyles = StyleSheet.create({
     fontFamily: FONT.GilroyMedium,
     fontSize: 14,
     fontWeight: "600",
+    lineHeight: 18,
   },
 });

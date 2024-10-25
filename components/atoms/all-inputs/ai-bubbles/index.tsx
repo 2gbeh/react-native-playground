@@ -9,11 +9,13 @@ import { aiBubblesStyles as s } from "./styles";
 interface IProps {
   list?: string[];
   action?: (id: number | string) => void;
+  isStatic?: boolean;
 }
 
 const AIBubbles: React.FC<IProps> = ({
   list = [],
   action = () => undefined,
+  isStatic,
 }) => {
   console.log("🚀 ~ AIBubbles");
   // renders
@@ -22,7 +24,7 @@ const AIBubbles: React.FC<IProps> = ({
       {list.map((item, i) => (
         <Pressable key={i} style={s.bubble} onPress={() => action(item)}>
           <Text style={s.label}>{item}</Text>
-          <BubbleCancelIcon color={COLOR.text_faded} />
+          {!isStatic && <BubbleCancelIcon color={COLOR.text_faded} />}
         </Pressable>
       ))}
     </View>

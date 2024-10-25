@@ -5,14 +5,16 @@ import AIText from "../ai-text";
 import { MaximizeIcon, MinimizeIcon } from "@/constants/ICON";
 import { FONT, COLOR } from "@/constants/THEME";
 
-interface IProps {}
+interface IProps {
+  title: string;
+}
 
-const AITitleBar: React.FC<IProps> = ({}) => {
+const AITitleBar: React.FC<IProps> = ({ title }) => {
   console.log("🚀 ~ AITitleBar");
   // renders
   return (
     <View style={s.container}>
-      <AIText h1>Last clinic note</AIText>
+      <AIText h1>{title}</AIText>
       <View style={s.buttons}>
         <MinimizeIcon />
         <MaximizeIcon />

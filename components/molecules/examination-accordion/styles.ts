@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { FONT, COLOR } from "@/constants/THEME";
 
-export const historyStyles = StyleSheet.create({
+export const examinationAccordionStyles = StyleSheet.create({
   _: {},
   container: {
     rowGap: 16,

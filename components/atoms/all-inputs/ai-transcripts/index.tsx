@@ -1,8 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 //
 import AIText from "../ai-text";
-import { FONT, COLOR } from "@/constants/THEME";
+// 
+import { aiTranscriptsStyles as s  } from "./styles";
 
 interface IProps {
   messages?: Array<{ time: string; message: string }>;
@@ -27,30 +28,3 @@ const AITranscripts: React.FC<IProps> = ({ messages = [] }) => {
 };
 
 export default React.memo(AITranscripts);
-
-const s = StyleSheet.create({
-  _: {},
-  container: {
-    rowGap: 12,
-  },
-  list: {
-    rowGap: 12,
-  },
-  list_item: {
-    flexDirection: "row",
-    columnGap: 10,
-  },
-  label: {
-    color: COLOR.text_muted,
-    fontFamily: FONT.GilroyMedium,
-    fontSize: 14,
-    fontWeight: "600",
-  },
-  value: {
-    color: COLOR.text_200,
-    fontFamily: FONT.GilroyMedium,
-    fontSize: 14,
-    fontWeight: "600",
-    lineHeight: 18,
-  },
-});

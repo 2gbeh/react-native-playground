@@ -26,6 +26,7 @@ export { default as MaximizeIcon } from "../assets/icons/maximize.svg";
 export { default as MinimizeIcon } from "../assets/icons/minimize.svg";
 export { default as PillIcon } from "../assets/icons/pill.svg";
 export { default as PlusIcon } from "../assets/icons/plus.svg";
+export { default as SaveIcon } from "../assets/icons/save.svg";
 export { default as SearchIcon } from "../assets/icons/search.svg";
 export { default as SortDescIcon } from "../assets/icons/sort-desc.svg";
 export { default as UserOrientationIcon } from "../assets/icons/user-orientation.svg";

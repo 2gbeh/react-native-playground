@@ -18,7 +18,7 @@ const AIOrderedList: React.FC<IProps> = ({ list = [] }) => {
       <View style={s.list}>
         {list.map((item, i) => (
           <View key={i} style={s.list_item}>
-            <Text style={s.label}>{i + 1}.</Text>
+            <Text style={s.numbering}>{i + 1}.</Text>
             <Text style={s.value}>{item}</Text>
           </View>
         ))}

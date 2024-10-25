@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 //
 import CardWrapper from "@/components/atoms/cards/card-wrapper";
-import CTAButton from "@/components/atoms/buttons/cta-button";
-import {
-  AIAccordion,
-  AIText,
-  AIBubblePicker,
-  AIAudioRecorder,
-} from "@/components/atoms/all-inputs";
+import { AIAccordion, AIText } from "@/components/atoms/all-inputs";
 
 interface IProps {}
 
-const ClinicalJudgement: React.FC<IProps> = ({}) => {
+const ClinicalJudgementAccordion: React.FC<IProps> = ({}) => {
   const [openAccordion, setOpenAccordion] = useState(false);
-  console.log("🚀 ~ ClinicalJudgement");
+  console.log("🚀 ~ ClinicalJudgementAccordion");
   // renders
   return (
     <View style={s.container}>
@@ -30,7 +24,7 @@ const ClinicalJudgement: React.FC<IProps> = ({}) => {
   );
 };
 
-export default React.memo(ClinicalJudgement);
+export default React.memo(ClinicalJudgementAccordion);
 
 const s = StyleSheet.create({
   _: {},

@@ -11,18 +11,18 @@ import {
   AITranscripts,
 } from "@/components/atoms/all-inputs";
 import { FONT, COLOR } from "@/constants/THEME";
-// 
-import { lastClinicNoteStyles as s } from "./styles";
+//
+import { lastClinicNoteAsideStyles as s } from "./styles";
 
 interface IProps {}
 
-const LastClinicNote: React.FC<IProps> = ({}) => {
-  console.log("🚀 ~ LastClinicNote");
+const LastClinicNoteAside: React.FC<IProps> = ({}) => {
+  console.log("🚀 ~ LastClinicNoteAside");
   // renders
   return (
     <CardWrapper fill={COLOR.aside}>
       <View style={s.container}>
-        <AITitleBar />
+        <AITitleBar title="Last clinic note" />
         <View style={s.content}>
           <AIPagination />
           <AIManifestNote />
@@ -60,4 +60,4 @@ const LastClinicNote: React.FC<IProps> = ({}) => {
   );
 };
 
-export default React.memo(LastClinicNote);
+export default React.memo(LastClinicNoteAside);

@@ -1,22 +1,21 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 //
 import CardWrapper from "@/components/atoms/cards/card-wrapper";
 import CTAButton from "@/components/atoms/buttons/cta-button";
 import {
   AIAccordion,
   AIText,
-  AIBubblePicker,
   AIAudioRecorder,
 } from "@/components/atoms/all-inputs";
 // 
-import { historyStyles as s } from "./styles";
+import { historyAccordionStyles as s } from "./styles";
 
 interface IProps {}
 
-const History: React.FC<IProps> = ({}) => {
+const HistoryAccordion: React.FC<IProps> = ({}) => {
   const [openAccordion, setOpenAccordion] = useState(true);
-  console.log("🚀 ~ History");
+  console.log("🚀 ~ HistoryAccordion");
   // renders
   return (
     <View style={s.container}>
@@ -38,4 +37,4 @@ const History: React.FC<IProps> = ({}) => {
   );
 };
 
-export default React.memo(History);
+export default React.memo(HistoryAccordion);
