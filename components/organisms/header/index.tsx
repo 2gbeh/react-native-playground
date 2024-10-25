@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
+import { router } from "expo-router";
 //
 import CentreNameLogo from "@/components/atoms/centre-name-logo";
 import AppClock from "@/components/atoms/app-clock";
@@ -15,12 +16,12 @@ const Header = () => {
   return (
     <View style={s.container}>
       {/* LOGO */}
-      <View style={s.left_content}>
+      <Pressable style={s.left_content} onPress={() => router.push("/")}>
         <CentreNameLogo
           src="/assets/images/icon.png"
           name="Edo Specialist Hospital"
         />
-      </View>
+      </Pressable>
 
       {/* CLOCK */}
       <View style={s.center_content}>

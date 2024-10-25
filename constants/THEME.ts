@@ -41,6 +41,8 @@ export const COLOR = {
   error: "#FF2C2C",
   success: "#3FB772",
   warning: "#D47400",
+  accordion_border: "#CDD8F3",
+  selected_bubble: "#CDD8F3",
   //
   neutral_25: "#F9F9FA",
   neutral_50: "#EFF1F4",

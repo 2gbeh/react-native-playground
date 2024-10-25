@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Pressable } from "react-native";
+import { router } from "expo-router";
 //
 import Avatar from "../avatar";
 
@@ -11,7 +12,7 @@ const AvatarHamburgerMenu: React.FC<IProps> = ({ src }) => {
   console.log("🚀 ~ AvatarHamburgerMenu");
   // renders
   return (
-    <Pressable style={s._}>
+    <Pressable onPress={() => router.push("/(auth)/login")}>
       <Avatar src={src} size={26} radius={26} />
     </Pressable>
   );

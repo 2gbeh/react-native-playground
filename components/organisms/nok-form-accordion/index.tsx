@@ -22,7 +22,7 @@ const NokFormAccordion: React.FC<IProps> = ({ defaultValues }) => {
   // renders
   return (
     <Accordion
-      label="Next of kin details"
+      heading="Next of kin details"
       open={openAccordion}
       onToggle={() => setOpenAccordion((prev) => !prev)}
     >

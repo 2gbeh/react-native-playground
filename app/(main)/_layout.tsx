@@ -6,6 +6,8 @@ import Header from "@/components/organisms/header";
 import { COLOR } from "@/constants/THEME";
 
 export default function MainLayout() {
+  console.log("🚀 ~ MainLayout");
+  // renders
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Header />

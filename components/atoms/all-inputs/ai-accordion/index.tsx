@@ -4,26 +4,26 @@ import { Pressable, View, Text } from "react-native";
 import { ChevronDownIcon, ChevronUpIcon } from "@/constants/ICON";
 import { FONT, COLOR } from "@/constants/THEME";
 //
-import { accordionStyle as s } from "./styles";
+import { aiAccordionStyles as s } from "./styles";
 
 interface IProps extends PropsWithChildren {
-  label: string;
+  heading: string;
   open?: boolean;
   onToggle?: () => void;
 }
 
-const AIAccordionTitle: React.FC<IProps> = ({
+const AIAccordion: React.FC<IProps> = ({
   children,
-  label,
+  heading,
   open = true,
   onToggle = () => undefined,
 }) => {
-  console.log("🚀 ~ AIAccordionTitle");
+  console.log("🚀 ~ AIAccordion");
   // renders
   return (
-    <View style={s.container}>
-      <View style={s.section}>
-        <Text style={s.label}>{label}</Text>
+    <View style={s.static.container}>
+      <View style={s.header(open).transform}>
+        <Text style={s.static.heading}>{heading}</Text>
         <Pressable onPress={onToggle}>
           {open ? (
             <ChevronUpIcon color={COLOR.text_200} />
@@ -38,4 +38,4 @@ const AIAccordionTitle: React.FC<IProps> = ({
   );
 };
 
-export default React.memo(AIAccordionTitle);
+export default React.memo(AIAccordion);

@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
 import { FONT, COLOR } from "@/constants/THEME";
 
-export const accordionStyle = StyleSheet.create({
+export const accordionStyles = StyleSheet.create({
   _: {},
   container: {
     marginTop: 16,
   },
-  section: {
+  header: {
     backgroundColor: COLOR.surface,
     borderColor: COLOR.border,
     borderWidth: 1,
@@ -17,7 +17,7 @@ export const accordionStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  label: {
+  heading: {
     color: COLOR.primary_dark,
     fontFamily: FONT.GilroyMedium,
     fontSize: 14,

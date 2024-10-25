@@ -1,13 +1,10 @@
 import { StyleSheet, FlatList, View, Text, Pressable } from "react-native";
+import Tent from "@/components/atoms/tent";
 
 export default function AntenatalScreen() {
   console.log("🚀 ~ AntenatalScreen");
   // renders
-  return (
-    <>
-      <Text>AntenatalScreen</Text>
-    </>
-  );
+  return <Tent>AntenatalScreen</Tent>;
 }
 
 const s = StyleSheet.create({

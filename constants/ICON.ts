@@ -1,5 +1,8 @@
+export { default as AudioIcon } from "../assets/icons/audio.svg";
 export { default as BedIcon } from "../assets/icons/bed.svg";
 export { default as BellIcon } from "../assets/icons/bell.svg";
+export { default as BubbleAddIcon } from "../assets/icons/bubble-add.svg";
+export { default as BubbleCancelIcon } from "../assets/icons/bubble-cancel.svg";
 export { default as BulletIcon } from "../assets/icons/bullet.svg";
 export { default as BusyIcon } from "../assets/icons/busy.svg";
 export { default as CalendarIcon } from "../assets/icons/calendar.svg";

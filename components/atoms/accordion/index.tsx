@@ -4,17 +4,17 @@ import { Pressable, View, Text } from "react-native";
 import { ChevronDownIcon, ChevronUpIcon } from "@/constants/ICON";
 import { FONT, COLOR } from "@/constants/THEME";
 //
-import { accordionStyle as s } from "./styles";
+import { accordionStyles as s } from "./styles";
 
 interface IProps extends PropsWithChildren {
-  label: string;
+  heading: string;
   open?: boolean;
   onToggle?: () => void;
 }
 
 const Accordion: React.FC<IProps> = ({
   children,
-  label,
+  heading,
   open = true,
   onToggle = () => undefined,
 }) => {
@@ -22,8 +22,8 @@ const Accordion: React.FC<IProps> = ({
   // renders
   return (
     <View style={s.container}>
-      <View style={s.section}>
-        <Text style={s.label}>{label}</Text>
+      <View style={s.header}>
+        <Text style={s.heading}>{heading}</Text>
         <Pressable onPress={onToggle}>
           {open ? (
             <ChevronUpIcon color={COLOR.text_200} />

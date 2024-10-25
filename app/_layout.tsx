@@ -18,7 +18,7 @@ export default function RootLayout() {
       {/* <ReduxProvider store={store}> */}
       <RootSiblingParent>
         <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(main)" />
+          <Slot />
         </Stack>
       </RootSiblingParent>
       {/* </ReduxProvider> */}
