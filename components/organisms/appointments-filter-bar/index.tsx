@@ -1,10 +1,10 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 //
-import Pagination from "@/components/atoms/pagination";
-import FilterByButtonSelector from "@/components/atoms/filter-by-button-selector";
-import FilterByLabelSelector from "@/components/atoms/filter-by-label-selector";
-import FilterByFunnelSelector from "@/components/atoms/filter-by-funnel-selector";
+import Pagination from "@/components/atoms/filters/pagination";
+import FilterByButtonSelector from "@/components/atoms/filters/filter-by-button-selector";
+import FilterByLabelSelector from "@/components/atoms/filters/filter-by-label-selector";
+import FilterByFunnelSelector from "@/components/atoms/filters/filter-by-funnel-selector";
 
 const AppointmentsFilterBar = () => {
   console.log("🚀 ~ AppointmentsFilterBar");

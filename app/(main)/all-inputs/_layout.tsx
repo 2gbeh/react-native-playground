@@ -1,11 +1,11 @@
 import { Stack, Slot } from "expo-router";
-// 
-import AllInputsMenuBar from "@/components/organisms/all-inputs-menu-bar";
+//
+import AllInputsFilterBar from "@/components/organisms/all-inputs-filter-bar";
 
 export default function AllInputsLayout() {
   return (
     <>
-      <AllInputsMenuBar />
+      <AllInputsFilterBar />
       <Slot />
     </>
   );

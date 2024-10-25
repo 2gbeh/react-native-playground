@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 //
-import KpiCard from "@/components/atoms/kpi-card";
+import KpiCard from "@/components/atoms/cards/kpi-card";
 import { COLOR } from "@/constants/THEME";
 import {
   ClockIcon,

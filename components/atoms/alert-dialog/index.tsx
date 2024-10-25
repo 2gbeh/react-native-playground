@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Pressable } from "react-native";
 import ModalWrapper from "../modal-wrapper";
-import CTAButton from "@/components/atoms/cta-button";
+import CTAButton from "@/components/atoms/buttons/cta-button";
 import { CheckCircleOutlineIcon } from "@/constants/ICON";
 //
 import { alertDialogStyles as s } from "./styles";

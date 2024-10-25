@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 //
-import NoContentCard from "../../atoms/no-content-card";
+import NoContentCard from "../../atoms/cards/no-content-card";
 import { FONT, COLOR } from "@/constants/THEME";
 import { GridIcon } from "@/constants/ICON";
 //

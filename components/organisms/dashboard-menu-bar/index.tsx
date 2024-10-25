@@ -2,9 +2,9 @@ import React from "react";
 import { View, Text } from "react-native";
 import { router } from "expo-router";
 //
-import SearchBar from "@/components/atoms/search-bar";
+import SearchBar from "@/components/atoms/form-controls/search-bar";
 import CreateAppointmentWidget from "@/components/organisms/create-appointment-widget";
-import CTAButton from "@/components/atoms/cta-button";
+import CTAButton from "@/components/atoms/buttons/cta-button";
 //
 import { dashboardMenuBarStyles as s } from "./styles";
 

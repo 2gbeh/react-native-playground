@@ -5,7 +5,7 @@ import { router } from "expo-router";
 import NameBio from "../../atoms/name-bio";
 import InvestigationsSelectorSheet from "../investigations-selector-sheet";
 import MedicationSelectorSheet from "../medication-selector-sheet";
-import BedNumberBadge from "../../atoms/bed-number-badge";
+import BedNumberBadge from "../../atoms/bed/bed-number-badge";
 import { COLOR } from "@/constants/THEME";
 import { BusyIcon, EllipsisVIcon } from "@/constants/ICON";
 import { IAppointment } from "@/api/getAllAppointments";

@@ -29,6 +29,7 @@ export const COLOR = {
   primary: "#0B0C7D",
   primary_dark: "#051438",
   background: "#EDF0F8",
+  aside: "#F2F5FA",
   surface: "#DFE2E9",
   border: "#DFE2E9",
   text_muted: "#A6AFC2",
@@ -37,7 +38,7 @@ export const COLOR = {
   indicator: "#020219",
   tab_text: "#7A90C2",
   disabled: "#E6E8EB",
-  error: "#e11",
+  error: "#FF2C2C",
   success: "#3FB772",
   warning: "#D47400",
   //

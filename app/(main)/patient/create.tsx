@@ -1,15 +1,15 @@
 import { View, ScrollView, Pressable } from "react-native";
 import { router } from "expo-router";
 //
-import BackButton from "@/components/atoms/back-button";
+import BackButton from "@/components/atoms/buttons/back-button";
 import LabelTextInput from "@/components/atoms/label-text-input";
-import LabelSelectorInput from "@/components/atoms/label-selector-input";
-import CTAButton from "@/components/atoms/cta-button";
-import LabelGovtIdInput from "@/components/atoms/label-govt-id-input";
+import LabelSelectorInput from "@/components/atoms/form-controls/label-selector-input";
+import CTAButton from "@/components/atoms/buttons/cta-button";
+import LabelGovtIdInput from "@/components/atoms/form-controls/label-govt-id-input";
 import NokFormAccordion from "@/components/organisms/nok-form-accordion";
-import LabelPatientIdInput from "@/components/atoms/label-patient-id-input";
+import LabelPatientIdInput from "@/components/atoms/form-controls/label-patient-id-input";
 import AvatarUploader from "@/components/atoms/avatar-uploader";
-import LabelDateInput from "@/components/atoms/label-date-input";
+import LabelDateInput from "@/components/atoms/form-controls/label-date-input";
 import WhiteSpace from "@/components/atoms/white-space";
 import AlertDialog from "@/components/atoms/alert-dialog";
 import ModalWrapper from "@/components/atoms/modal-wrapper";
