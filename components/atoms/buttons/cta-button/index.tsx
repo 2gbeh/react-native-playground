@@ -32,8 +32,8 @@ const CTAButton: React.FC<IProps> = ({
   return (
     <Pressable
       onPress={action}
-      style={[{ backgroundColor, borderColor, height, minWidth }, s.button]}
       disabled={disabled}
+      style={[{ backgroundColor, borderColor, height, minWidth }, s.button]}
     >
       <Text style={[{ color }, s.button_text]}>{children}</Text>
     </Pressable>

@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { FONT, COLOR } from "@/constants/THEME";
 
-export type Variant = "solid" | "outline";
+export type Variant = "solid" | "outline" | "success";
 
 export const ctaButtonStyles = StyleSheet.create({
   _: {},
@@ -31,5 +31,10 @@ export const ctaButtonVariantStyles = (variant: Variant, disabled?: boolean) =>
       backgroundColor: COLOR.white,
       color: disabled ? COLOR.text_muted : COLOR.primary,
       borderColor: disabled ? COLOR.border : COLOR.primary,
+    },
+    success: {
+      backgroundColor: disabled ? COLOR.disabled : COLOR.success,
+      color: disabled ? COLOR.text_muted : COLOR.white,
+      borderColor: disabled ? COLOR.border : COLOR.success,
     },
   }[variant]);

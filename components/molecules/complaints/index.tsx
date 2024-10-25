@@ -49,7 +49,7 @@ const Complaints: React.FC<IProps> = ({}) => {
             selected={["Not breathing or gasping"]}
           />
           <View style={s.footer}>
-            <CTAButton disabled>Save</CTAButton>
+            <CTAButton variant="success">Save</CTAButton>
           </View>
         </AIAccordion>
       </CardWrapper>
