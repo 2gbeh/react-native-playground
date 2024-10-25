@@ -1,27 +1,22 @@
 import { StyleSheet } from "react-native";
 import { FONT, COLOR } from "@/constants/THEME";
 
-export const aiBubblePickerStyles = StyleSheet.create({
-  _: {},
+export const aiBubblesStyles = StyleSheet.create({
   container: {
-    borderColor: COLOR.border,
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 10,
     flexDirection: "row",
     alignItems: "center",
     flexWrap: "wrap",
     gap: 10,
   },
   bubble: {
-    borderWidth: 1,
-    borderRadius: 20,
-    paddingVertical: 4,
-    paddingHorizontal: 8,
-    height: 26,
+    backgroundColor: COLOR.selected_bubble,
+    borderRadius: 50,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    height: 32,
     flexDirection: "row",
     alignItems: "center",
-    columnGap: 4,
+    columnGap: 8,
   },
   label: {
     color: COLOR.primary_dark,

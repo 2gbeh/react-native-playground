@@ -7,6 +7,7 @@ import CTAButton from "@/components/atoms/buttons/cta-button";
 import {
   AIAccordion,
   AIText,
+  AIBubbles,
   AIBubblePicker,
 } from "@/components/atoms/all-inputs";
 
@@ -33,6 +34,7 @@ const Complaints: React.FC<IProps> = ({}) => {
             placeholder="i.e. migraine, severe headcahe etc"
             width="100%"
           />
+          <AIBubbles list={["Not breathing or gasping"]} />
           <AIBubblePicker
             list={[
               "Not breathing or gasping",
@@ -44,6 +46,7 @@ const Complaints: React.FC<IProps> = ({}) => {
               "Wet umbilicus",
               "Retained umbilical stump",
             ]}
+            selected={["Not breathing or gasping"]}
           />
           <View style={s.footer}>
             <CTAButton disabled>Save</CTAButton>

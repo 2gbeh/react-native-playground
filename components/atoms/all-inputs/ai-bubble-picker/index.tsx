@@ -8,11 +8,13 @@ import { aiBubblePickerStyles as s } from "./styles";
 
 interface IProps {
   list?: string[];
+  selected?: string[];
   action?: (id: number | string) => void;
 }
 
 const AIBubblePicker: React.FC<IProps> = ({
   list = [],
+  selected = [],
   action = () => undefined,
 }) => {
   console.log("🚀 ~ AIBubblePicker");
@@ -20,7 +22,8 @@ const AIBubblePicker: React.FC<IProps> = ({
   return (
     <View style={s.container}>
       {list.map((item, i) => {
-        const isSelected = i < 1;
+        const isSelected = selected.includes(item);
+        // 
         return (
           <Pressable
             key={i}
@@ -30,6 +33,7 @@ const AIBubblePicker: React.FC<IProps> = ({
                 backgroundColor: isSelected
                   ? COLOR.selected_bubble
                   : COLOR.white,
+                borderColor: isSelected ? COLOR.selected_bubble : COLOR.border,
               },
             ]}
             onPress={() => action(item)}
