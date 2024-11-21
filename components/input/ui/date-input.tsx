@@ -2,15 +2,16 @@ import React from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { Calendar1Icon } from "lucide-react-native";
 //
-import DateWidget from "@/components/date-widget";
-import { useDateTimePickerReducer } from "@/hooks/useDateTimePickerReducer";
+import DateTimeWidget, {
+  useDateTimeWidgetReducer,
+} from "@/components/date-time-widget";
 import { inputStyles as S, inputIconProps } from "../styles";
 
 interface IProps {}
 
 const DateInput: React.FC<IProps> = ({}) => {
-  const { showDate, toggleShowDate, date, setDate, dateChanged, isoDate } =
-    useDateTimePickerReducer();
+  const { showDate, toggleShowDate, date, setDate, dateChanged, isoDate, formatDate } =
+    useDateTimeWidgetReducer();
   console.log("🚀 ~ DateInput");
   // renders
   return (
@@ -19,12 +20,12 @@ const DateInput: React.FC<IProps> = ({}) => {
         <Text style={S.label}>Enter date</Text>
         <Pressable style={S.input} onPress={toggleShowDate}>
           <Text style={dateChanged ? S.value : S.placeholder}>
-            {dateChanged ? isoDate : "Ex. 01 Jan, 1970"}
+            {dateChanged ? formatDate() : "Ex. 01 Jan, 1970"}
           </Text>
           <Calendar1Icon {...inputIconProps} />
         </Pressable>
       </View>
-      {showDate && <DateWidget value={date} onChange={setDate} />}
+      {showDate && <DateTimeWidget value={date} onChange={setDate} />}
     </View>
   );
 };

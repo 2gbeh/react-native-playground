@@ -3,6 +3,7 @@ import {
   DateTimePickerEvent,
   EvtTypes,
 } from "@react-native-community/datetimepicker";
+import { format } from "date-fns";
 
 type TDateTime = Date;
 type TModeType = "date" | "time";
@@ -24,13 +25,13 @@ enum Action {
 }
 
 const initialDateArg = {
-  showDate: false,
+  showDate: true,
   date: new Date(),
   dateChanged: false,
 };
 
 const initialTimeArg = {
-  showTime: false,
+  showTime: true,
   time: new Date(),
   timeChanged: false,
 };
@@ -73,7 +74,7 @@ function reducer(
   }
 }
 
-export function useDateTimePickerReducer() {
+export function useDateTimeWidgetReducer() {
   const [state, dispatch] = useReducer(reducer, initialArg);
   const isoDate = state.date.toJSON().split("T")[0];
   const isoTime = state.time.toJSON().split("T")[1].split(".")[0];
@@ -118,13 +119,10 @@ export function useDateTimePickerReducer() {
       type: Action.RESET,
       payload: "time",
     });
-  //
-  const formatDate = (as = "d M, Y") => {
-    // 01 Jan, 1970
-  };
-  const formatTime = (as = "h:i A") => {
-    // 12:00 AM
-  };
+  // 01 Jan, 1970
+  const formatDate = (as = "d M, Y") => format(state.date, "dd MMM, yyyy");
+  // 12:00 AM
+  const formatTime = (as = "h:i A") => format(state.time, "hh:mm a");
 
   return {
     ...state,

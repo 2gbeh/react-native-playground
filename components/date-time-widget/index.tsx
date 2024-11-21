@@ -1,38 +1,43 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { Platform, StyleSheet, View } from "react-native";
 import DateTimePicker, {
   DateTimePickerEvent,
 } from "@react-native-community/datetimepicker";
 
+export { useDateTimeWidgetReducer } from "./hook";
+
 interface IProps {
   value?: Date;
   onChange?: (event: DateTimePickerEvent, date?: Date | undefined) => void;
+  variant?: "date" | "time";
 }
 
-const TimeWidget: React.FC<IProps> = ({
+const DateTimeWidget: React.FC<IProps> = ({
   value,
   onChange = () => undefined,
+  variant = "date",
 }) => {
-  console.log("🚀 ~ TimeWidget");
+  console.log("🚀 ~ DateTimeWidget");
   // renders
   return (
     <View style={s.container}>
       <DateTimePicker
         value={value || new Date()}
         onChange={onChange}
-        mode="date"
-        display="inline"
+        mode={variant}
+        display={Platform.OS === "ios" ? "spinner" : "default"}
+        textColor="#fff"
       />
     </View>
   );
 };
 
-export default React.memo(TimeWidget);
+export default React.memo(DateTimeWidget);
 
 const s = StyleSheet.create({
   _: {},
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#677597",
     borderColor: "#ddd",
     borderWidth: 1,
     borderRadius: 10,
