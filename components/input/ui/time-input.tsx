@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
-import { ClockIcon } from "lucide-react-native";
+import { ClockIcon, ListRestartIcon } from "lucide-react-native";
 //
 import DateTimeWidget, {
   useDateTimeWidgetReducer,
@@ -16,7 +16,7 @@ const TimeInput: React.FC<IProps> = ({}) => {
     time,
     setTime,
     timeChanged,
-    isoTime,
+    resetTime,
     formatTime,
   } = useDateTimeWidgetReducer();
   console.log("🚀 ~ TimeInput");
@@ -25,12 +25,17 @@ const TimeInput: React.FC<IProps> = ({}) => {
     <View style={s.container}>
       <View style={S.container}>
         <Text style={S.label}>Enter time</Text>
-        <Pressable style={S.input} onPress={toggleShowTime}>
-          <Text style={timeChanged ? S.value : S.placeholder}>
-            {timeChanged ? formatTime() : "Ex. 12:00 AM"}
-          </Text>
-          <ClockIcon {...inputIconProps} />
-        </Pressable>
+        <View style={S.input_wrapper}>
+          <Pressable style={S.input} onPress={toggleShowTime}>
+            <Text style={timeChanged ? S.value : S.placeholder}>
+              {timeChanged ? formatTime() : "Ex. 12:00 AM"}
+            </Text>
+            <ClockIcon {...inputIconProps} />
+          </Pressable>
+          <Pressable style={S.icon} onPress={resetTime}>
+            <ListRestartIcon {...inputIconProps} color="#fff" />
+          </Pressable>
+        </View>
       </View>
       {showTime && (
         <DateTimeWidget value={time} onChange={setTime} variant="time" />

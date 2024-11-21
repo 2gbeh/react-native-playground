@@ -25,13 +25,13 @@ enum Action {
 }
 
 const initialDateArg = {
-  showDate: true,
+  showDate: false,
   date: new Date(),
   dateChanged: false,
 };
 
 const initialTimeArg = {
-  showTime: true,
+  showTime: false,
   time: new Date(),
   timeChanged: false,
 };

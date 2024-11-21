@@ -11,7 +11,7 @@ export default function HomeScreen() {
     <View style={s.container}>
       <DateInput />
       <TimeInput />
-      <DateTimeInput />
+      {/* <DateTimeInput /> */}
     </View>
   );
 }
