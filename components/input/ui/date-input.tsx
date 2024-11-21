@@ -1,23 +1,39 @@
 import React from "react";
-import { View, Text, Pressable } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
 import { Calendar1Icon } from "lucide-react-native";
-// 
-import { inputStyles as s, inputIconProps } from "../styles";
+//
+import DateWidget from "@/components/date-widget";
+import { useDateTimePickerReducer } from "@/hooks/useDateTimePickerReducer";
+import { inputStyles as S, inputIconProps } from "../styles";
 
 interface IProps {}
 
 const DateInput: React.FC<IProps> = ({}) => {
+  const { showDate, toggleShowDate, date, setDate, dateChanged, isoDate } =
+    useDateTimePickerReducer();
   console.log("🚀 ~ DateInput");
   // renders
   return (
     <View style={s.container}>
-      <Text style={s.label}>Enter date</Text>
-      <View style={s.input}>
-        <Text style={s.placeholder}>Ex. 01 Jan, 1970</Text>
-        <Calendar1Icon {...inputIconProps} />
+      <View style={S.container}>
+        <Text style={S.label}>Enter date</Text>
+        <Pressable style={S.input} onPress={toggleShowDate}>
+          <Text style={dateChanged ? S.value : S.placeholder}>
+            {dateChanged ? isoDate : "Ex. 01 Jan, 1970"}
+          </Text>
+          <Calendar1Icon {...inputIconProps} />
+        </Pressable>
       </View>
+      {showDate && <DateWidget value={date} onChange={setDate} />}
     </View>
   );
 };
 
 export default React.memo(DateInput);
+
+const s = StyleSheet.create({
+  _: {},
+  container: {
+    rowGap: 8,
+  },
+});
