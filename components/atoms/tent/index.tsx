@@ -1,12 +1,13 @@
 import React, { PropsWithChildren } from "react";
 import { StyleSheet, Text, View } from "react-native";
+// 
 import { containerStyles } from "@/styles/container.styles";
 import { typographyStyles } from "@/styles/typography.styles";
 
 interface IProps extends PropsWithChildren {}
 
 const Tent: React.FC<IProps> = ({ children }) => {
-  console.log("🚀 ~ Tent:");
+  console.log("🚀 ~ Tent");
   // renders
   return (
     <View style={s.container}>
