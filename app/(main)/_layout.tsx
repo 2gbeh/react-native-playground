@@ -11,14 +11,23 @@ export default function MainLayout() {
   console.log("🚀 ~ MainLayout");
   // renders
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        headerShadowVisible: false,
+        tabBarActiveTintColor: "black",
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
           headerShown: false,
           title: "Home",
           tabBarIcon: ({ color, focused }) =>
-            focused ? <HomeIcon /> : <HomeOutlineIcon />,
+            focused ? (
+              <HomeIcon color={color} />
+            ) : (
+              <HomeOutlineIcon color={color} />
+            ),
         }}
       />
       <Tabs.Screen
@@ -26,7 +35,11 @@ export default function MainLayout() {
         options={{
           title: "Bills",
           tabBarIcon: ({ color, focused }) =>
-            focused ? <HandshakeIcon /> : <HandshakeOutlineIcon />,
+            focused ? (
+              <HandshakeIcon color={color} />
+            ) : (
+              <HandshakeOutlineIcon color={color} />
+            ),
         }}
       />
     </Tabs>
