@@ -9,12 +9,5 @@ export default function HomeScreen() {
 
 const s = StyleSheet.create({
   _: {},
-  container: {
-    backgroundColor: "#EDF0F8",
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    rowGap: 16,
-  },
-  logo: { alignSelf: "center" },
+  container: {},
 });

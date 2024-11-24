@@ -25,6 +25,6 @@ const s = StyleSheet.create({
     rowGap: 16,
   },
   h1: {
-    ...typographyStyles.display_lg,
+    ...typographyStyles.body_lg,
   },
 });
