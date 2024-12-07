@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Calendar",
-    "slug": "calendar",
+    "name": "Fedora",
+    "slug": "fedora",
     "version": "1.0.0",
     "orientation": "landscape",
     "icon": "./assets/images/icon.png",
@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.x2gbeh.fedora"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +37,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "9738698b-389a-4127-a3ea-47fdeac7d101"
+      }
     }
   }
 }
