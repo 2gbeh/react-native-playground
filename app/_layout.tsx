@@ -1,3 +1,5 @@
+import "expo-dev-client"; 
+
 import {
   DarkTheme,
   DefaultTheme,

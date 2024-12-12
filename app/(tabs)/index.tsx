@@ -16,9 +16,10 @@ import { router } from "expo-router";
 import { AccountService } from "@/store/services/accounts/account.service";
 import { useEffect, useState } from "react";
 import { AccountEntity } from "@/store/services/accounts/account.interface";
+import { QueryResultRow } from "@vercel/postgres";
 
 export default function HomeScreen() {
-  const [data, setData] = useState<AccountEntity[]>([]);
+  const [data, setData] = useState<QueryResultRow[]>([]);
   useEffect(() => {
     (async () => {
       const res = await AccountService.getAll();
@@ -26,8 +27,15 @@ export default function HomeScreen() {
     })();
   }, []);
   return (
-    <View>
-      {/* <FlatList
+    <View
+      style={{
+        backgroundColor: "#dd4a00",
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <FlatList
         data={data}
         keyExtractor={(item) => String(item.id)}
         renderItem={({ item }) => (
@@ -35,7 +43,7 @@ export default function HomeScreen() {
             <Text>{item.name}</Text>
           </View>
         )}
-      /> */}
+      />
     </View>
   );
 }
