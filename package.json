@@ -9,13 +9,19 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "jest": {
     "preset": "jest-expo"
   },
+  "prisma": {
+    "seed": "ts-node --transpile-only prisma/seed.ts",
+    "seed:next": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
+    "@prisma/client": "^6.0.1",
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/native": "^7.0.0",
     "expo": "~52.0.17",
@@ -30,6 +36,7 @@
     "expo-symbols": "~0.2.0",
     "expo-system-ui": "~4.0.5",
     "expo-web-browser": "~14.0.1",
+    "prisma": "^6.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.76.3",
