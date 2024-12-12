@@ -1,0 +1,33 @@
+model shopera_brands {
+  id               Int                @id @unique @default(autoincrement())
+  logo             String?            @db.VarChar(255)
+  name             String             @unique @db.VarChar(255)
+  website          String?            @db.VarChar(255)
+  created_at       DateTime           @default(now())
+  updated_at       DateTime?
+  deleted_at       DateTime?
+  uuid             String             @db.Uuid
+  shopera_products shopera_products[]
+}
+
+model shopera_products {
+  id             Int            @id @unique @default(autoincrement())
+  thumbnail      String?        @db.VarChar(255)
+  name           String         @db.VarChar(255)
+  price          Float          @default(0)
+  summary        String?
+  description    String?
+  barcode        String         @unique @db.VarChar(255)
+  color          String?        @db.VarChar(255)
+  weight         Float?
+  discount       Float          @default(0)
+  units          Int            @default(1)
+  brand_id       Int
+  created_at     DateTime       @default(now())
+  updated_at     DateTime?
+  deleted_at     DateTime?
+  uuid           String         @db.Uuid
+  shopera_brands shopera_brands @relation(fields: [brand_id], references: [id])
+
+  @@index([name])
+}

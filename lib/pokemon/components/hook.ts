@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { PokemonListEntity } from "./utils/interfaces";
+import { PokemonListEntity } from "../utils/pokemon.interface";
 
 export function usePokemon() {
   const [data, setData] = useState<PokemonListEntity["results"]>([]);

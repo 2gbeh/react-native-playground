@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
 //
-import { COLOR } from "./utils/constants";
-import { colorPaletteStyles } from "./utils/styles";
+import { COLOR } from "../utils/pokemon.constant";
+import { colorPaletteStyles } from "./styles";
 
 interface ColorPaletteProps {}
 

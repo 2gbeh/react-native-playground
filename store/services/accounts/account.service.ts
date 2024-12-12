@@ -1,4 +1,4 @@
-import { prismaClient } from "@/lib/prisma/prisma.config";
+import { prisma } from "@/lib/prisma/prisma.config";
 
 export class AccountService {
   static async getAll() {
@@ -9,7 +9,7 @@ export class AccountService {
     //   },
     // });
 
-    const users = await prismaClient.user.findMany();
+    const users = await prisma.shopera_products.findMany();
     console.log("🚀 ~ AccountService ~ getAll ~ users:", users)
   }
 }

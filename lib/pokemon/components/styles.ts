@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLOR } from "./constants";
+import { COLOR } from "../utils/pokemon.constant";
 
 export const colorPaletteStyles = StyleSheet.create({
   container: {
