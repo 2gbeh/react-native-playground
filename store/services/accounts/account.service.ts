@@ -10,6 +10,7 @@ export class AccountService {
     // });
 
     const users = await prisma.shopera_products.findMany();
-    console.log("🚀 ~ AccountService ~ getAll ~ users:", users)
+    // console.log("🚀 ~ AccountService ~ getAll ~ users:", users)
+    return users
   }
 }
