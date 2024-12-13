@@ -1,4 +1,4 @@
-import "expo-dev-client"; 
+import "expo-dev-client";
 
 import {
   DarkTheme,
@@ -14,15 +14,14 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { Platform } from "react-native";
+import { FONTS } from "@/constants/THEME";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-  });
+  const [loaded] = useFonts(FONTS);
 
   useEffect(() => {
     if (loaded) {

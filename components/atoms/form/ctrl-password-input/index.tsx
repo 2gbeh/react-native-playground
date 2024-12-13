@@ -7,7 +7,7 @@ import {
   FieldValues,
   Path,
 } from "react-hook-form";
-import { EyeIcon, EyeOffIcon } from "lucide-react-native";
+import { EyeOffIcon, EyeOnIcon } from "@/constants/ICON";
 //
 import { formStyles as s } from "@/styles/form.styles";
 
@@ -56,7 +56,7 @@ export const CtrlPasswordInput = <T extends FieldValues>({
             />
             <Pressable style={s.password_icon} onPress={toggleMasked}>
               {masked ? (
-                <EyeIcon {...iconProps} />
+                <EyeOnIcon {...iconProps} />
               ) : (
                 <EyeOffIcon {...iconProps} />
               )}
