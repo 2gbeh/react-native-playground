@@ -20,8 +20,8 @@ export const formStyles = StyleSheet.create({
   },
   password_icon: {
     position: "absolute",
-    top: 5,
-    right: 5,
+    top: 10,
+    right: 10,
   },
   error: {
     color: "red",

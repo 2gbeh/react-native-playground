@@ -26,7 +26,7 @@ export const CtrlPasswordInput = <T extends FieldValues>({
   control,
   errors,
 }: IProps<T>): JSX.Element => {
-  const iconProps = { color: "red", size: 24 };
+  const iconProps = { color: "#888", size: 24 };
   const [masked, setMasked] = useState(true);
   const toggleMasked = () => setMasked((prev) => !prev);
   console.log("🚀 ~ CtrlPasswordInput");
@@ -50,7 +50,7 @@ export const CtrlPasswordInput = <T extends FieldValues>({
               onChangeText={onChange}
               onBlur={onBlur}
               placeholder={placeholder}
-              placeholderTextColor="#555"
+              placeholderTextColor="#888"
               style={s.input}
               secureTextEntry={masked}
             />
