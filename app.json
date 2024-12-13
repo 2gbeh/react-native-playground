@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Pokemon",
-    "slug": "pokemon",
+    "name": "Fedora",
+    "slug": "fedora",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -10,14 +10,16 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.hwplabs.pokemon"
+      "bundleIdentifier": "com.hwplabs.fedora",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.hwplabs.pokemon",
+      "package": "com.hwplabs.fedora",
+      "googleServicesFile": "./google-services.json",
       "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
