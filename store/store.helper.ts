@@ -1,5 +1,4 @@
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
-import { FirebaseError } from "firebase/app";
 
 export class StoreHelper {
   static isFetchBaseQueryError(error: unknown): error is FetchBaseQueryError {

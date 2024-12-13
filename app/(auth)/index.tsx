@@ -33,7 +33,7 @@ export default function LoginScreen() {
           />
           <View />
           <Button title="Login" onPress={handleSubmit(onSubmit)} />
-          <Navigation label="Don't have an account?" path="/register" />
+          <Navigation label="Don't have an account?" path="/" />
         </View>
       </KeyboardWrapper>
     </View>

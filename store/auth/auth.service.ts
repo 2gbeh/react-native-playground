@@ -36,8 +36,8 @@ export class AuthService {
 
   static async signOut() {
     try {
-      await signOut(auth);
-      return transformResponse(1, true);
+      const res = await signOut(auth);
+      return transformResponse(res, true);
     } catch (err) {
       return transformResponse(err);
     }
@@ -79,7 +79,7 @@ export class AuthService {
         default:
           res = await updateProfile(this.me()!, payload as UpdateUserDTO);
       }
-      return transformResponse(1, true);
+      return transformResponse(res, true);
     } catch (err) {
       return transformResponse(err);
     }

@@ -1,78 +1,18 @@
-import {
-  Image,
-  StyleSheet,
-  Platform,
-  Pressable,
-  View,
-  FlatList,
-  Text,
-} from "react-native";
-
-import { HelloWave } from "@/components/HelloWave";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import { router } from "expo-router";
-import { useEffect, useState } from "react";
-import { AuthService } from "@/store/auth/auth.service";
-import { auth } from "@/lib/firebase/firebase.config";
-import {
-  CurrentUserEntity,
-  UserCredentialEntity,
-} from "@/store/auth/auth.interface";
+import { StyleSheet, View, Text } from "react-native";
+import Tent from "@/components/atoms/tent";
 import Avatar from "@/components/atoms/avatar";
+import { AuthService } from "@/store/auth/auth.service";
 
 export default function HomeScreen() {
-  const [data, setData] = useState<{ id: number; name: string }[]>([]);
   const me = AuthService.me();
-  useEffect(() => {
-    (async () => {
-      const res = await AuthService.updateProfile({
-        photoURL: "https://github.com/2gbeh.png",
-      });
-    })();
-  }, []);
   console.log("🚀 ~ HomeScreen", me);
   // RENDER
   return (
-    <View
-      style={{
-        backgroundColor: "#dd4a00",
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Avatar src={me?.photoURL} />
-      <Text>{me?.email}</Text>
-      <FlatList
-        data={data}
-        keyExtractor={(item) => String(item.id)}
-        renderItem={({ item }) => (
-          <View>
-            <Text>{item.name}</Text>
-          </View>
-        )}
-      />
-    </View>
+    <Tent>
+      <View style={{ rowGap: 16, alignItems: "center" }}>
+        <Avatar src={me?.photoURL} />
+        <Text>{me?.email}</Text>
+      </View>
+    </Tent>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
-  },
-});

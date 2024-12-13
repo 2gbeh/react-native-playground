@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
+import { router } from "expo-router";
 //
 import { COLOR, FONT } from "@/constants/THEME";
 
@@ -8,16 +9,12 @@ interface IProps extends PropsWithChildren {
   auth?: boolean;
 }
 
-const Tent: React.FC<IProps> = ({
-  children,
-  action = () => undefined,
-  auth,
-}) => {
+const Tent: React.FC<IProps> = ({ children, action, auth }) => {
   console.log("🚀 ~ Tent");
   // RENDER
   return (
     <View style={s.container}>
-      <Pressable onPress={action}>
+      <Pressable onPress={() => (!!action ? action() : router.back())}>
         <Text style={[s.h1, { color: auth ? COLOR.white : COLOR.black }]}>
           {children}
         </Text>

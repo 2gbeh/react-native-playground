@@ -1,3 +1,5 @@
+export { default as PieChartIcon } from "../assets/icons/pie-chart.svg";
+export { default as PieChartOutlineIcon } from "../assets/icons/pie-chart-outline.svg";
 export { default as CartIcon } from "../assets/icons/cart.svg";
 export { default as CartOutlineIcon } from "../assets/icons/cart-outline.svg";
 export { default as EyeOffIcon } from "../assets/icons/eye-off.svg";
