@@ -13,19 +13,13 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { router } from "expo-router";
-import { AccountService } from "@/store/services/accounts/account.service";
 import { useEffect, useState } from "react";
-import { AccountEntity } from "@/store/services/accounts/account.interface";
-import { QueryResultRow } from "@vercel/postgres";
 
 export default function HomeScreen() {
-  const [data, setData] = useState<QueryResultRow[]>([]);
-  useEffect(() => {
-    (async () => {
-      const res = await AccountService.getAll();
-      if (res && Array.isArray(res)) setData(res);
-    })();
-  }, []);
+  const [data, setData] = useState<{ id: number; name: string }[]>([]);
+  useEffect(() => {}, []);
+  console.log("🚀 ~ HomeScreen")
+  // renders
   return (
     <View
       style={{
