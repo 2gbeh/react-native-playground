@@ -32,6 +32,19 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Gilroy-Black.ttf",
+            "./assets/fonts/Gilroy-Bold.ttf",
+            "./assets/fonts/Gilroy-Medium.ttf",
+            "./assets/fonts/Gilroy-Regular.ttf",
+            "./assets/fonts/Gilroy-Light.ttf",
+            "./assets/fonts/Gilroy-Thin.ttf"
+          ]
+        }
       ]
     ],
     "experiments": {

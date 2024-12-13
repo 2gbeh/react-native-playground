@@ -15,6 +15,14 @@ export const formStyles = StyleSheet.create({
     paddingHorizontal: 12,
     height: 40,
   },
+  password_wrapper: {
+    position: "relative",
+  },
+  password_icon: {
+    position: "absolute",
+    top: 5,
+    right: 5,
+  },
   error: {
     color: "red",
   },

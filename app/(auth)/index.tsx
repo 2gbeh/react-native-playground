@@ -19,11 +19,13 @@ export default function LoginScreen() {
       <View style={s.content}>
         <CtrlEmailInput<LoginSchema>
           name="email"
+          placeholder="Enter name"
           control={control}
           errors={errors}
         />
         <CtrlPasswordInput<LoginSchema>
           name="password"
+          placeholder="Enter password"
           control={control}
           errors={errors}
         />

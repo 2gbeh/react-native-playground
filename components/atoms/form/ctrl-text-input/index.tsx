@@ -18,14 +18,14 @@ interface IProps<T extends FieldValues> {
   errors: FieldErrors<T>;
 }
 
-export const CtrlEmailInput = <T extends FieldValues>({
+export const CtrlTextInput = <T extends FieldValues>({
   label,
   placeholder = "",
   name,
   control,
   errors,
 }: IProps<T>): JSX.Element => {
-  console.log("🚀 ~ CtrlEmailInput");
+  console.log("🚀 ~ CtrlTextInput");
   // renders
   return (
     <View style={s.form_control}>
@@ -40,7 +40,6 @@ export const CtrlEmailInput = <T extends FieldValues>({
         }}
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
-            inputMode="email"
             value={value}
             onChangeText={onChange}
             onBlur={onBlur}

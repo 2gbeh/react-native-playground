@@ -1,5 +1,5 @@
-import React from "react";
-import { Text, TextInput, View } from "react-native";
+import React, { useState } from "react";
+import { Pressable, Text, TextInput, View } from "react-native";
 import {
   Control,
   Controller,
@@ -7,6 +7,7 @@ import {
   FieldValues,
   Path,
 } from "react-hook-form";
+import { EyeIcon, EyeOffIcon } from "lucide-react-native";
 //
 import { formStyles as s } from "@/styles/form.styles";
 
@@ -25,6 +26,9 @@ export const CtrlPasswordInput = <T extends FieldValues>({
   control,
   errors,
 }: IProps<T>): JSX.Element => {
+  const iconProps = { color: "red", size: 24 };
+  const [masked, setMasked] = useState(true);
+  const toggleMasked = () => setMasked((prev) => !prev);
   console.log("🚀 ~ CtrlPasswordInput");
   // renders
   return (
@@ -39,14 +43,25 @@ export const CtrlPasswordInput = <T extends FieldValues>({
           required: true,
         }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            placeholder={placeholder}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            style={s.input}
-            placeholderTextColor="#555"
-          />
+          <View style={s.password_wrapper}>
+            <TextInput
+              inputMode="email" // show special-chars keyword
+              value={value}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              placeholder={placeholder}
+              placeholderTextColor="#555"
+              style={s.input}
+              secureTextEntry={masked}
+            />
+            <Pressable style={s.password_icon} onPress={toggleMasked}>
+              {masked ? (
+                <EyeIcon {...iconProps} />
+              ) : (
+                <EyeOffIcon {...iconProps} />
+              )}
+            </Pressable>
+          </View>
         )}
       />
       {/* ERROR */}
