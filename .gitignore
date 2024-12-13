@@ -40,3 +40,4 @@ app-example
 .env*
 android/
 ios/
+__stash/

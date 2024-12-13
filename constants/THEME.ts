@@ -1,4 +1,4 @@
-export type TFont = "black" | "bold" | "medium" | "regular" | "light" | "thin";
+export type FontType = "black" | "bold" | "medium" | "regular" | "light" | "thin";
 
 export enum FONT {
   GilroyBlack = "GilroyBlack",

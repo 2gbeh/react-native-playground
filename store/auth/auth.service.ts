@@ -10,12 +10,12 @@ import {
   deleteUser,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase/firebase.config";
-import { UpdateUserDTO } from "./auth.interface";
+import { CreateUserDTO, SignInDTO, UpdateUserDTO } from "./auth.interface";
 
 export class AuthService {
   static me = auth.currentUser;
 
-  static async createUser(email: string, password: string) {
+  static async createUser({ email, password }: CreateUserDTO) {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       console.log("🚀 ~ AuthService ~ createUser ~ res:", res);
@@ -24,12 +24,12 @@ export class AuthService {
     }
   }
 
-  static async signIn(email: string, password: string) {
+  static async signIn({ email, password }: SignInDTO) {
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
-      console.log("🚀 ~ AuthService ~ signIn ~ res:", res);
+      console.log("🚀 ~ AuthService ~ signIn ~ res:", JSON.stringify(res));
     } catch (err) {
-      console.log("🚀 ~ AuthService ~ signIn ~ err:", err);
+      console.log("🚀 ~ AuthService ~ signIn ~ err:", JSON.stringify(err));
     }
   }
 

@@ -45,7 +45,7 @@ export const CtrlEmailInput = <T extends FieldValues>({
             onChangeText={onChange}
             onBlur={onBlur}
             placeholder={placeholder}
-            placeholderTextColor="#555"
+            placeholderTextColor="#888"
             style={s.input}
           />
         )}
