@@ -5,12 +5,12 @@ interface IProps extends PropsWithChildren {}
 
 const KeyboardWrapper: React.FC<IProps> = ({ children }) => {
   console.log("🚀 ~ KeyboardWrapper");
-  // renders
+  // RENDER
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : undefined}
-      keyboardVerticalOffset={60}
-      style={{ flex: 1 }}
+      // keyboardVerticalOffset={60}
+      // style={{ flex: 1 }}
     >
       {children}
     </KeyboardAvoidingView>

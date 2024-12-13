@@ -8,7 +8,7 @@ interface ColorPaletteProps {}
 
 export const ColorPalette: React.FC<ColorPaletteProps> = React.memo(({}) => {
   console.log("🚀 ~ ColorPalette");
-  // renders
+  // RENDER
   return (
     <View style={colorPaletteStyles.container}>
       {Object.entries(COLOR).map(([key, value]) => (

@@ -8,7 +8,7 @@ interface IProps extends PropsWithChildren {
 
 const FlexBetween: React.FC<IProps> = ({ children, column, start }) => {
   console.log("🚀 ~ FlexBetween");
-  // renders
+  // RENDER
   return (
     <View
       style={{

@@ -20,7 +20,7 @@ const DateTimeWidget: React.FC<IProps> = ({
   variant = "date",
 }) => {
   console.log("🚀 ~ DateTimeWidget");
-  // renders
+  // RENDER
   return (
     <View style={s.container}>
       <DateTimePicker
@@ -33,7 +33,6 @@ const DateTimeWidget: React.FC<IProps> = ({
     </View>
   );
 };
-
 
 export default React.memo(DateTimeWidget);
 

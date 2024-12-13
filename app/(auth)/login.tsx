@@ -2,6 +2,6 @@ import { Redirect } from "expo-router";
 
 export default function LoginRedirectScreen() {
   console.log("🚀 ~ LoginRedirectScreen");
-  // renders
+  // RENDER
   return <Redirect href="/" />;
 }

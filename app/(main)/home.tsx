@@ -18,8 +18,8 @@ import { useEffect, useState } from "react";
 export default function HomeScreen() {
   const [data, setData] = useState<{ id: number; name: string }[]>([]);
   useEffect(() => {}, []);
-  console.log("🚀 ~ HomeScreen")
-  // renders
+  console.log("🚀 ~ HomeScreen");
+  // RENDER
   return (
     <View
       style={{

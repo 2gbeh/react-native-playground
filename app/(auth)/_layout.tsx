@@ -1,10 +1,12 @@
 import { View } from "react-native";
 import { Stack } from "expo-router";
+import { useAuthGuard } from "@/hooks/useAuthGuard";
 //
 
 export default function AuthLayout() {
-  console.log("🚀 ~ AuthLayout");
-  // renders
+  const { verifying, user } = useAuthGuard();
+  console.log("🚀 ~ AuthLayout", verifying, user);
+  // RENDER
   return (
     <View style={{ flex: 1 }}>
       <Stack

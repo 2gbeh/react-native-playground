@@ -18,7 +18,7 @@ export default function MainLayout() {
   const iconProps = { color: "#888", size: 24 };
   const colorScheme = useColorScheme();
   console.log("🚀 ~ MainLayout");
-  // renders
+  // RENDER
   return (
     <Tabs
       screenOptions={{

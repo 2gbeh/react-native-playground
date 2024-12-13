@@ -14,16 +14,11 @@ const Tent: React.FC<IProps> = ({
   auth,
 }) => {
   console.log("🚀 ~ Tent");
-  // renders
+  // RENDER
   return (
     <View style={s.container}>
       <Pressable onPress={action}>
-        <Text
-          style={[
-            s.h1,
-            { color: auth ? COLOR.white : COLOR.black },
-          ]}
-        >
+        <Text style={[s.h1, { color: auth ? COLOR.white : COLOR.black }]}>
           {children}
         </Text>
       </Pressable>

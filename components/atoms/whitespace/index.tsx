@@ -7,7 +7,7 @@ interface IProps {
 
 const Whitespace: React.FC<IProps> = ({ length = 1 }) => {
   console.log("🚀 ~ Whitespace");
-  // renders
+  // RENDER
   return Array.from({ length }).map((_, i) => (
     <View key={i} style={{ flex: 1 }} />
   ));

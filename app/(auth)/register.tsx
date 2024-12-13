@@ -16,7 +16,7 @@ import {
 export default function LoginScreen() {
   const { control, errors, handleSubmit, onSubmit } = useRegister();
   console.log("🚀 ~ LoginScreen");
-  // renders
+  // RENDER
   return (
     <View style={s.container}>
       <Text style={s.heading}>Create account</Text>

@@ -30,7 +30,7 @@ export const CtrlPasswordInput = <T extends FieldValues>({
   const [masked, setMasked] = useState(true);
   const toggleMasked = () => setMasked((prev) => !prev);
   console.log("🚀 ~ CtrlPasswordInput");
-  // renders
+  // RENDER
   return (
     <View style={s.form_control}>
       {/* LABEL */}

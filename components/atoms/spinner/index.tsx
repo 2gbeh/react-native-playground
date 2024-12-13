@@ -10,7 +10,7 @@ interface IProps {
 
 const Spinner: React.FC<IProps> = ({ primary, large, absolute }) => {
   console.log("🚀 ~ Spinner");
-  // renders
+  // RENDER
   return absolute ? (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <ActivityIndicator color={COLOR.brand} size="large" />

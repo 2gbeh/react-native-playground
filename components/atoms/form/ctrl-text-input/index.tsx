@@ -26,7 +26,7 @@ export const CtrlTextInput = <T extends FieldValues>({
   errors,
 }: IProps<T>): JSX.Element => {
   console.log("🚀 ~ CtrlTextInput");
-  // renders
+  // RENDER
   return (
     <View style={s.form_control}>
       {/* LABEL */}

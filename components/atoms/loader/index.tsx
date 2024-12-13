@@ -8,7 +8,7 @@ interface IProps extends PropsWithChildren {
 
 const Loader: React.FC<IProps> = ({ children, loading }) => {
   console.log("🚀 ~ Loader");
-  // renders
+  // RENDER
   return loading ? (
     <View
       style={[

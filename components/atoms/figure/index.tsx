@@ -21,7 +21,7 @@ const Figure: React.FC<IProps> = ({
 }) => {
   const [width, height] = Array.isArray(size) ? size : [size, size];
   console.log("🚀 ~ Figure");
-  // renders
+  // RENDER
   return (
     <Image
       source={src}

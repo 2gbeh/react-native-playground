@@ -9,7 +9,7 @@ interface IProps {
 
 const Navigation: React.FC<IProps> = ({ path, label }) => {
   console.log("🚀 ~ Navigation");
-  // renders
+  // RENDER
   return (
     <View style={s.container}>
       <Link style={s.link} href={path}>
