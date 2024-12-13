@@ -5,20 +5,14 @@ export interface ISlice {
 }
 
 export interface IApiResponse<T> {
-  result: null | T;
-  targetUrl: null | string;
-  success: boolean;
-  error: null | {
-    code: number;
-    message: string;
-    details: null;
-    validationErrors: null;
-  };
-  unAuthorizedRequest: boolean;
-  __abp: boolean;
+  data: T;
 }
 
-export type UploadPhotoDto = {
+export interface IApiResponseError {
+  error: string;
+}
+
+export type UploadPhotoDTO = {
   id: number | string;
   image: string;
 };

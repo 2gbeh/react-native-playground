@@ -1,4 +1,5 @@
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
+import { FirebaseError } from "firebase/app";
 
 export class StoreHelper {
   static isFetchBaseQueryError(error: unknown): error is FetchBaseQueryError {
@@ -14,7 +15,7 @@ export class StoreHelper {
     );
   }
 
-  static fileUploadQuery(url: string, value: string, name = 'image') {
+  static fileUploadQuery(url: string, value: string, name = "image") {
     const body = new FormData();
     body.append(name, value);
     return {

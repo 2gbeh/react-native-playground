@@ -1,8 +1,8 @@
-import { UserCredential, User } from "firebase/auth";
+import { User, UserCredential } from "firebase/auth";
+
+export type CurrentUserEntity = User | null;
 
 export type UserCredentialEntity = UserCredential | null;
-
-export type UserEntity = User | null;
 
 export interface CreateUserDTO {
   email: string;

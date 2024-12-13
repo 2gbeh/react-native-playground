@@ -1,4 +1,3 @@
-import { View } from "react-native";
 import { Redirect, Stack } from "expo-router";
 //
 import Loader from "@/components/atoms/loader";

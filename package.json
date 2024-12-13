@@ -54,7 +54,9 @@
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
     "react-redux": "^9.2.0",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "expo-screen-orientation": "~8.0.1",
+    "@react-native-community/netinfo": "11.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

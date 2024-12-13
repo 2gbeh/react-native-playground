@@ -7,7 +7,7 @@ import {
 } from "react-native";
 
 interface IProps {
-  src: ImageSourcePropType | undefined;
+  src: ImageSourcePropType;
   size: DimensionValue | [DimensionValue, DimensionValue];
   borderRadius?: number;
   resizeMode?: ImageResizeMode;

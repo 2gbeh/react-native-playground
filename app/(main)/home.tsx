@@ -14,11 +14,25 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
+import { AuthService } from "@/store/auth/auth.service";
+import { auth } from "@/lib/firebase/firebase.config";
+import {
+  CurrentUserEntity,
+  UserCredentialEntity,
+} from "@/store/auth/auth.interface";
+import Avatar from "@/components/atoms/avatar";
 
 export default function HomeScreen() {
   const [data, setData] = useState<{ id: number; name: string }[]>([]);
-  useEffect(() => {}, []);
-  console.log("🚀 ~ HomeScreen");
+  const me = AuthService.me();
+  useEffect(() => {
+    (async () => {
+      const res = await AuthService.updateProfile({
+        photoURL: "https://github.com/2gbeh.png",
+      });
+    })();
+  }, []);
+  console.log("🚀 ~ HomeScreen", me);
   // RENDER
   return (
     <View
@@ -29,6 +43,8 @@ export default function HomeScreen() {
         justifyContent: "center",
       }}
     >
+      <Avatar src={me?.photoURL} />
+      <Text>{me?.email}</Text>
       <FlatList
         data={data}
         keyExtractor={(item) => String(item.id)}
