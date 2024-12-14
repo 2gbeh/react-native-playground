@@ -3,35 +3,35 @@ import { StyleSheet, Text, View, Pressable } from "react-native";
 //
 import FlexBox from "../flex-box";
 import Avatar from "../avatar";
-import { AuthService } from "@/store/auth/auth.service";
-import { COLOR } from "@/constants/THEME";
 import { OptionsMenuIcon, SearchIcon } from "@/constants/ICON";
+import { COLOR } from "@/constants/THEME";
 import { useAppSelector } from "@/store/store.config";
-import { selectTheme } from "@/store/theme/theme.slice";
+import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
 import { typographyStyles } from "@/styles/typography.styles";
+import mockCurrentUserData from "@/store/auth/data/currentUser.json";
 
 interface IProps {}
 
 const AppBar: React.FC<IProps> = ({}) => {
+  const me = mockCurrentUserData;
   const theme = useAppSelector(selectTheme);
-  const me = AuthService.me();
-  const iconProps = { color: COLOR[theme].icon };
+  const iconProps = { color: COLOR[theme].onSurfaceVariant };
   console.log("🚀 ~ AppBar");
-  // RENDERS
+  // RENDER
   return (
-    <FlexBox sx={s.container}>
-      <FlexBox sx={s.left}>
-        <Avatar src={me?.photoURL} />
+    <FlexBox sx={sx(theme).container}>
+      <FlexBox sx={sx(theme).left}>
+        <Avatar src={me?.photoURL} size={56} />
         <View>
-          <Text style={s.subtitle}>{theme}</Text>
-          <Text style={s.title}>{me?.email?.split('@')[0]}</Text>
+          <Text style={sx(theme).title}>{me?.displayName}</Text>
+          <Text style={sx(theme).subtitle}>{me?.email}</Text>
         </View>
       </FlexBox>
-      <FlexBox sx={s.right} start>
-        <Pressable style={s.icon}>
+      <FlexBox sx={sx(theme).right} end>
+        <Pressable>
           <SearchIcon {...iconProps} />
         </Pressable>
-        <Pressable style={s.icon}>
+        <Pressable>
           <OptionsMenuIcon {...iconProps} />
         </Pressable>
       </FlexBox>
@@ -41,23 +41,25 @@ const AppBar: React.FC<IProps> = ({}) => {
 
 export default React.memo(AppBar);
 
-export const s = StyleSheet.create({
-  _: {},
-  container: {
-    paddingHorizontal: 16,
-    height: 64,
-  },
-  left: {
-    columnGap: 16,
-  },
-  right: {
-    columnGap: 12,
-  },
-  title: {
-    ...typographyStyles.title_md,
-  },
-  subtitle: {
-    ...typographyStyles.title_sm,
-  },
-  icon: {},
-});
+export const sx = (theme: ThemeType) =>
+  StyleSheet.create({
+    _: {},
+    container: {
+      marginVertical: 16,
+      height: 64,
+    },
+    left: {
+      columnGap: 16,
+    },
+    right: {
+      columnGap: 12,
+    },
+    title: {
+      color: COLOR[theme][theme === "light" ? "onSurfaceVariant" : "onSurface"],
+      ...typographyStyles.bodyLarge,
+    },
+    subtitle: {
+      color: COLOR[theme].onSurfaceVariant,
+      ...typographyStyles.bodyMedium,
+    },
+  });

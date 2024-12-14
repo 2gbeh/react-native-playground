@@ -5,16 +5,17 @@ interface IProps extends PropsWithChildren {
   sx?: ViewStyle;
   column?: boolean;
   start?: boolean;
+  end?: boolean;
 }
 
-const FlexBox: React.FC<IProps> = ({ children, sx, column, start }) => {
+const FlexBox: React.FC<IProps> = ({ children, sx, column, start, end }) => {
   console.log("🚀 ~ FlexBox");
   // RENDER
   return (
     <View
       style={{
         flexDirection: column ? "column" : "row",
-        alignItems: start ? "flex-start" : "center",
+        alignItems: start ? "flex-start" : end ? "flex-end" : "center",
         justifyContent: "space-between",
         ...sx,
       }}

@@ -13,7 +13,7 @@ interface IProps {
 
 const Avatar: React.FC<IProps> = ({
   src,
-  size = 48,
+  size = 40,
   borderRadius = 100,
 }) => {
   const { hasInternet } = useDeviceManager();

@@ -21,7 +21,12 @@ export default function MainLayout() {
   console.log("🚀 ~ MainLayout");
   // RENDER
   return (
-    <Tabs screenOptions={tabBarLayoutOptions(theme)}>
+    <Tabs
+      screenOptions={{
+        ...tabBarLayoutOptions(theme),
+        tabBarItemStyle: { backgroundColor: "red" },
+      }}
+    >
       <Tabs.Screen
         name="home/index"
         options={{
@@ -45,10 +50,9 @@ const tabBarLayoutOptions = (theme: ThemeType) => ({
   headerShadowVisible: false,
   headerStyle: {
     backgroundColor: COLOR[theme].surface,
-    height: 64,
   },
   headerTitleStyle: {
-    ...typographyStyles.titleLarge,
+    // ...typographyStyles.titleLarge,
     color: COLOR[theme].onSurface,
   },
   sceneStyle: {
@@ -68,7 +72,8 @@ const tabBarScreenOptions = (title: string, theme: ThemeType) => ({
   title: capitalize(title),
   tabBarIcon: ({ focused }: { focused: boolean }) => {
     const iconProps = {
-      color: COLOR[theme][true ? "onSecondaryContainer" : "onSurfaceVariant"],
+      color:
+        COLOR[theme][focused ? "onSecondaryContainer" : "onSurfaceVariant"],
     };
     const renderIcon = {
       active: <HomeIcon {...iconProps} />,
