@@ -4,7 +4,7 @@ export const formStyles = StyleSheet.create({
   form: {
     rowGap: 16,
   },
-  form_control: {
+  formControl: {
     rowGap: 8,
   },
   label: {
@@ -15,10 +15,10 @@ export const formStyles = StyleSheet.create({
     paddingHorizontal: 12,
     height: 40,
   },
-  password_wrapper: {
+  passwordWrapper: {
     position: "relative",
   },
-  password_icon: {
+  passwordIcon: {
     position: "absolute",
     top: 10,
     right: 10,

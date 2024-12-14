@@ -34,7 +34,7 @@ const s = StyleSheet.create({
     rowGap: 16,
   },
   h1: {
-    fontFamily: FONT.GilroyRegular,
+    fontFamily: FONT.RobotoRegular,
     fontWeight: "400",
     fontSize: 16,
     lineHeight: 20,

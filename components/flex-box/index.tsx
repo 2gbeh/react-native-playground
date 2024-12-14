@@ -1,22 +1,22 @@
 import React, { PropsWithChildren } from "react";
-import { View } from "react-native";
+import { View, ViewStyle } from "react-native";
 
 interface IProps extends PropsWithChildren {
+  sx?: ViewStyle;
   column?: boolean;
   start?: boolean;
 }
 
-const FlexBox: React.FC<IProps> = ({ children, column, start }) => {
+const FlexBox: React.FC<IProps> = ({ children, sx, column, start }) => {
   console.log("🚀 ~ FlexBox");
   // RENDER
   return (
     <View
       style={{
-        display: "flex",
-        // flex: 1,
         flexDirection: column ? "column" : "row",
         alignItems: start ? "flex-start" : "center",
         justifyContent: "space-between",
+        ...sx,
       }}
     >
       {children}
