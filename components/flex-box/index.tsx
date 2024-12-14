@@ -6,8 +6,8 @@ interface IProps extends PropsWithChildren {
   start?: boolean;
 }
 
-const FlexBetween: React.FC<IProps> = ({ children, column, start }) => {
-  console.log("🚀 ~ FlexBetween");
+const FlexBox: React.FC<IProps> = ({ children, column, start }) => {
+  console.log("🚀 ~ FlexBox");
   // RENDER
   return (
     <View
@@ -24,4 +24,4 @@ const FlexBetween: React.FC<IProps> = ({ children, column, start }) => {
   );
 };
 
-export default React.memo(FlexBetween);
+export default React.memo(FlexBox);

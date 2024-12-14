@@ -1,6 +1,6 @@
 import { Redirect, Stack } from "expo-router";
 //
-import Loader from "@/components/atoms/loader";
+import Loader from "@/components/loader";
 import { useAuthGuard } from "@/hooks/useAuthGuard";
 
 export default function AuthLayout() {

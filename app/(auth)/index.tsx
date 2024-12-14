@@ -1,13 +1,13 @@
 import { Text, View, Button, Alert } from "react-native";
 //
-import KeyboardWrapper from "@/components/atoms/keyboard-wrapper";
-import { CtrlEmailInput, CtrlPasswordInput } from "@/components/atoms/form";
+import KeyboardWrapper from "@/components/keyboard-wrapper";
+import { CtrlEmailInput, CtrlPasswordInput } from "@/components/inputs";
 //
 import {
   authStyles as s,
   LoginSchema,
   useLogin,
-  Navigation,
+  Hyperlink,
 } from "@/features/auth";
 
 export default function LoginScreen() {
@@ -33,7 +33,7 @@ export default function LoginScreen() {
           />
           <View />
           <Button title="Login" onPress={handleSubmit(onSubmit)} />
-          <Navigation label="Don't have an account?" path="/" />
+          <Hyperlink label="Don't have an account?" path="/" />
         </View>
       </KeyboardWrapper>
     </View>

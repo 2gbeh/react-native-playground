@@ -1,6 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import {
+  getAuth,
+  browserLocalPersistence,
+  setPersistence,
+} from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import ReactNativeAsyncStorage from "@react-native-async-storage/async-storage";
 
 const firebaseConfig = {
   projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID!,
@@ -16,3 +21,11 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+
+setPersistence(auth, browserLocalPersistence)
+  .then((res) => {
+    console.log("🚀 ~ setPersistence ~ res:", res);
+  })
+  .catch((err) => {
+    console.log("🚀 ~ setPersistence ~ err:", err);
+  });

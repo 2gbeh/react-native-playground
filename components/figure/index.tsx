@@ -25,7 +25,6 @@ const Figure: React.FC<IProps> = ({
   return (
     <Image
       source={src}
-      alt=""
       fadeDuration={100}
       resizeMode={resizeMode}
       style={{ width, height, borderRadius }}

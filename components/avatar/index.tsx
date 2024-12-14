@@ -11,7 +11,11 @@ interface IProps {
   borderRadius?: number;
 }
 
-const Avatar: React.FC<IProps> = ({ src, size = 48, borderRadius = 100 }) => {
+const Avatar: React.FC<IProps> = ({
+  src,
+  size = 48,
+  borderRadius = 100,
+}) => {
   const { hasInternet } = useDeviceManager();
   console.log("🚀 ~ Avatar");
   // RENDER

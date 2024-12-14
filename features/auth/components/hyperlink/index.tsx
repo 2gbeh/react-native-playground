@@ -7,8 +7,8 @@ interface IProps {
   path: Href;
 }
 
-const Navigation: React.FC<IProps> = ({ path, label }) => {
-  console.log("🚀 ~ Navigation");
+const Hyperlink: React.FC<IProps> = ({ path, label }) => {
+  console.log("🚀 ~ Hyperlink");
   // RENDER
   return (
     <View style={s.container}>
@@ -19,7 +19,7 @@ const Navigation: React.FC<IProps> = ({ path, label }) => {
   );
 };
 
-export default React.memo(Navigation);
+export default React.memo(Hyperlink);
 
 const s = StyleSheet.create({
   container: {

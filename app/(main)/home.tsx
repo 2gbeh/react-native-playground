@@ -1,6 +1,6 @@
-import { StyleSheet, View, Text } from "react-native";
-import Tent from "@/components/atoms/tent";
-import Avatar from "@/components/atoms/avatar";
+import { StyleSheet, View, Text, Image } from "react-native";
+import Tent from "@/components/tent";
+import Avatar from "@/components/avatar";
 import { AuthService } from "@/store/auth/auth.service";
 
 export default function HomeScreen() {
@@ -9,7 +9,13 @@ export default function HomeScreen() {
   // RENDER
   return (
     <Tent>
-      <View style={{ rowGap: 16, alignItems: "center" }}>
+      <View
+        style={{
+          rowGap: 16,
+          alignItems: "center",
+          width: 480,
+        }}
+      >
         <Avatar src={me?.photoURL} />
         <Text>{me?.email}</Text>
       </View>

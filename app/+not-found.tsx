@@ -1,5 +1,5 @@
 import { StyleSheet, View, Text } from "react-native";
-import Tent from "@/components/atoms/tent";
+import Tent from "@/components/tent";
 
 export default function NotFoundScreen() {
   console.log("🚀 ~ NotFoundScreen");
