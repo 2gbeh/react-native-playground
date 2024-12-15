@@ -9,6 +9,7 @@ import { typographyStyles } from "@/styles/typography.styles";
 import { TransactionType } from "@/store/transactions/transaction.interface";
 import { TransactionHelper } from "@/store/transactions/transaction.helper";
 import FlexBox from "../flex-box";
+import { SYMBOL } from "@/constants/SYMBOL";
 
 interface IProps {
   data: TransactionType[];
@@ -23,16 +24,18 @@ const Hero: React.FC<IProps> = ({ data }) => {
     <View style={sx(theme).container}>
       <View style={sx(theme).top}>
         <Text style={sx(theme).label}>Balance</Text>
-        <Text style={sx(theme).heading}>₦ {totals.net.toLocaleString()}</Text>
+        <Text style={sx(theme).heading}>
+          {SYMBOL.naira} {totals.creditAsStr}
+        </Text>
       </View>
       <FlexBox>
         <FlexBox column start>
           <Text style={sx(theme).label}>Credit</Text>
-          <Text style={sx(theme).valueSuccess}>{totals.credit.toLocaleString()}</Text>
+          <Text style={sx(theme).valueSuccess}>{totals.debitAsStr}</Text>
         </FlexBox>
         <FlexBox column start>
           <Text style={sx(theme).label}>Debit</Text>
-          <Text style={sx(theme).valueError}>{totals.debit.toLocaleString()}</Text>
+          <Text style={sx(theme).valueError}>{totals.netAsStr}</Text>
         </FlexBox>
       </FlexBox>
     </View>

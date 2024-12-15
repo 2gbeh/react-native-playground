@@ -23,6 +23,11 @@ export class TransactionHelper {
       if (amount < 0) totals.debit += amount;
       else totals.credit += amount;
     });
-    return totals;
+    return {
+      ...totals,
+      creditAsStr: totals.credit.toLocaleString(),
+      debitAsStr: totals.debit.toLocaleString(),
+      netAsStr: totals.net.toLocaleString(),
+    };
   }
 }

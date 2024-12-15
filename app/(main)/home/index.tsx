@@ -26,6 +26,6 @@ const sx = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
     flex: 1,
-    rowGap: 8,
+    rowGap: 16,
   },
 });
