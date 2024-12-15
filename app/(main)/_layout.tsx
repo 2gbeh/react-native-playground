@@ -24,7 +24,6 @@ export default function MainLayout() {
     <Tabs
       screenOptions={{
         ...tabBarLayoutOptions(theme),
-        tabBarItemStyle: { backgroundColor: "red" },
       }}
     >
       <Tabs.Screen
@@ -59,11 +58,12 @@ const tabBarLayoutOptions = (theme: ThemeType) => ({
     backgroundColor: COLOR[theme].surface,
   },
   tabBarStyle: {
-    backgroundColor: COLOR[theme].surface,
+    backgroundColor: COLOR[theme].surfaceContainer,
     borderTopWidth: 0,
     height: 80,
     flexDirection: "row",
     alignItems: "center",
+    columnGap: 8,
   } as ViewStyle,
   tabBarShowLabel: false,
 });
@@ -95,8 +95,9 @@ const tabBarScreenOptions = (title: string, theme: ThemeType) => ({
       <View style={{ alignItems: "center", rowGap: 4 }}>
         <View
           style={{
-            backgroundColor:
-              COLOR[theme][focused ? "secondaryContainer" : "surface"],
+            backgroundColor: focused
+              ? COLOR[theme]["secondaryContainer"]
+              : COLOR.none,
             borderRadius: 100,
             width: 64,
             height: 32,

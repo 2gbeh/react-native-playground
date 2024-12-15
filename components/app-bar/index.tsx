@@ -45,7 +45,7 @@ export const sx = (theme: ThemeType) =>
   StyleSheet.create({
     _: {},
     container: {
-      marginVertical: 16,
+      marginTop: 16,
       height: 64,
     },
     left: {

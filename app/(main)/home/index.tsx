@@ -10,9 +10,9 @@ export default function HomeScreen() {
   console.log("🚀 ~ HomeScreen");
   // RENDER
   return (
-    <View style={{ paddingHorizontal: 16, flex: 1 }}>
+    <View style={sx.container}>
       <AppBar />
-      <Hero />
+      <Hero data={mockTransactionsData} />
       <FlatList
         data={mockTransactionsData}
         keyExtractor={(item) => TransactionHelper.constructUID(item)}
@@ -21,3 +21,11 @@ export default function HomeScreen() {
     </View>
   );
 }
+
+const sx = StyleSheet.create({
+  container: {
+    paddingHorizontal: 16,
+    flex: 1,
+    rowGap: 8,
+  },
+});

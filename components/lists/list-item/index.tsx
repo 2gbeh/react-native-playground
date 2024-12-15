@@ -29,7 +29,7 @@ const ListItem: React.FC<IProps> = ({ data }) => {
         </View>
       </FlexBox>
       <FlexBox column end>
-        <Text style={sx(theme)[transformed.isDebit ? "titleError" : "title"]}>
+        <Text style={sx(theme)[transformed.isDebit ? "titleError" : "titleSuccess"]}>
           {transformed.amount}
         </Text>
         <Text style={sx(theme).subtitle}>{transformed.dateShort}</Text>
@@ -53,6 +53,10 @@ export const sx = (theme: ThemeType) =>
     },
     title: {
       color: COLOR[theme][theme === "light" ? "onSurfaceVariant" : "onSurface"],
+      ...typographyStyles.bodyLarge,
+    },
+    titleSuccess: {
+      color: COLOR[theme].success,
       ...typographyStyles.bodyLarge,
     },
     titleError: {
