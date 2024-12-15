@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image, FlatList } from "react-native";
 import AppBar from "@/components/app-bar";
 import Hero from "@/components/hero";
 import ListItem from "@/components/lists/list-item";
+import FAB from "@/components/fab";
 import { TransactionHelper } from "@/store/transactions/transaction.helper";
 import mockTransactionsData from "@/store/transactions/data/getTransactions.json";
 
@@ -18,6 +19,7 @@ export default function HomeScreen() {
         keyExtractor={(item) => TransactionHelper.constructUID(item)}
         renderItem={({ item }) => <ListItem data={item} />}
       />
+      <FAB />
     </View>
   );
 }

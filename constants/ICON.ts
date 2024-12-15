@@ -10,4 +10,5 @@ export { default as HomeIcon } from "../assets/icons/home.svg";
 export { default as OptionsMenuIcon } from "../assets/icons/options-menu.svg";
 export { default as PieChartOutlineIcon } from "../assets/icons/pie-chart-outline.svg";
 export { default as PieChartIcon } from "../assets/icons/pie-chart.svg";
+export { default as PlusIcon } from "../assets/icons/plus.svg";
 export { default as SearchIcon } from "../assets/icons/search.svg";

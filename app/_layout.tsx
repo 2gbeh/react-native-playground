@@ -37,9 +37,9 @@ export default function RootLayout() {
           options={{
             title: "Add Transaction",
             headerShown: true,
-            headerLargeTitle: false,
-            // presentation: "formSheet",
-            // animation: "slide_from_bottom",
+            headerLargeTitle: true,
+            presentation: "formSheet",
+            animation: "slide_from_bottom",
           }}
         />
         <Stack.Screen name="+not-found" />

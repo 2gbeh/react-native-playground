@@ -18,7 +18,7 @@ interface IProps {
 const Hero: React.FC<IProps> = ({ data }) => {
   const theme = useAppSelector(selectTheme);
   const totals = TransactionHelper.computeTotals(data);
-  console.log("🚀 ~ Hero", totals);
+  console.log("🚀 ~ Hero");
   // RENDER
   return (
     <View style={sx(theme).container}>
