@@ -15,7 +15,7 @@ export default function HomeScreen() {
       <Hero />
       <FlatList
         data={mockTransactionsData}
-        keyExtractor={(item) => TransactionHelper.constructId(item)}
+        keyExtractor={(item) => TransactionHelper.constructUID(item)}
         renderItem={({ item }) => <ListItem data={item} />}
       />
     </View>

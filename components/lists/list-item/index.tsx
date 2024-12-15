@@ -1,12 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { format as formatDate } from "date-fns";
 //
 import FlexBox from "../../flex-box";
 import Avatar from "../../avatar";
 import { useAppSelector } from "@/store/store.config";
 import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
 import { TransactionType } from "@/store/transactions/transaction.interface";
+import { TransactionPipe } from "@/store/transactions/transaction.pipe";
 import { COLOR } from "@/constants/THEME";
 import { typographyStyles } from "@/styles/typography.styles";
 
@@ -16,24 +16,23 @@ interface IProps {
 
 const ListItem: React.FC<IProps> = ({ data }) => {
   const theme = useAppSelector(selectTheme);
+  const transformed = TransactionPipe.transform(data);
   console.log("🚀 ~ ListItem");
   // RENDER
   return (
     <FlexBox sx={sx(theme).container}>
       <FlexBox sx={sx(theme).left}>
-        <Avatar src={require(`@/assets/uploads/${data.account.avatar}`)} />
+        <Avatar src={transformed.avatar} />
         <View>
-          <Text style={sx(theme).title}>
-            {data.account?.display_name || data.account.name}
-          </Text>
-          <Text style={sx(theme).subtitle}>{data.narration}</Text>
+          <Text style={sx(theme).title}>{transformed.displayName}</Text>
+          <Text style={sx(theme).subtitle}>{transformed.narrationShort}</Text>
         </View>
       </FlexBox>
       <FlexBox column end>
-        <Text style={sx(theme)[data.type === "CR" ? "title" : "titleError"]}>
-          {data.amount.toLocaleString()}
+        <Text style={sx(theme)[transformed.isDebit ? "titleError" : "title"]}>
+          {transformed.amount}
         </Text>
-        <Text style={sx(theme).subtitle}>{formatDate(data.date, "MMM d")}</Text>
+        <Text style={sx(theme).subtitle}>{transformed.dateShort}</Text>
       </FlexBox>
     </FlexBox>
   );
