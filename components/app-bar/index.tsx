@@ -9,6 +9,7 @@ import { useAppSelector } from "@/store/store.config";
 import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
 import { typographyStyles } from "@/styles/typography.styles";
 import mockCurrentUserData from "@/store/auth/data/currentUser.json";
+import { AuthService } from "@/store/auth/auth.service";
 
 interface IProps {}
 
@@ -31,7 +32,7 @@ const AppBar: React.FC<IProps> = ({}) => {
         <Pressable>
           <SearchIcon {...iconProps} />
         </Pressable>
-        <Pressable>
+        <Pressable onPress={AuthService.signOut}>
           <OptionsMenuIcon {...iconProps} />
         </Pressable>
       </FlexBox>

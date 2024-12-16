@@ -20,27 +20,13 @@ export default function RootLayout() {
       SplashScreen.hideAsync();
     }
   }, [loaded]);
-
   console.log("🚀 ~ RootLayout");
   // RENDER
   return !loaded ? null : (
     <ReduxProvider store={store}>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="(auth)" />
-        <Stack.Screen name="(main)" />
-        <Stack.Screen
-          name="transactions/create"
-          options={{
-            title: "Add Transaction",
-            headerShown: true,
-            presentation: "formSheet",
-            animation: "slide_from_bottom",
-          }}
-        />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(stack)" />
+        <Stack.Screen name="(tabs)" />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

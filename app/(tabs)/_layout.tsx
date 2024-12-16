@@ -1,22 +1,26 @@
 import React from "react";
 import { ViewStyle } from "react-native";
-import { Tabs } from "expo-router";
+import { Redirect, Tabs } from "expo-router";
 //
 import TabBarIcon from "@/components/tab-bar-icon";
-import { COLOR } from "@/constants/THEME";
 import { useDeviceManager } from "@/hooks/useDeviceManager";
 import { useAppSelector } from "@/store/store.config";
 import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
+import { selectCurrentUser } from "@/store/auth/auth.slice";
+import { COLOR } from "@/constants/THEME";
 
-export default function MainLayout() {
-  const { isTablet } = useDeviceManager();
+export default function TabsLayout() {
+  const me = useAppSelector(selectCurrentUser);
   const theme = useAppSelector(selectTheme);
-  console.log("🚀 ~ MainLayout");
+  const { isTablet } = useDeviceManager();
+  console.log("🚀 ~ TabsLayout");
   // RENDER
-  return (
+  return !me ? (
+    <Redirect href="/login" />
+  ) : (
     <Tabs screenOptions={tabBarLayoutOptions(theme)}>
       <Tabs.Screen
-        name="home/index"
+        name="home"
         options={{
           headerShown: false,
           title: "Home",
@@ -26,7 +30,7 @@ export default function MainLayout() {
         }}
       />
       <Tabs.Screen
-        name="bills/index"
+        name="bills"
         options={{
           title: "Bills",
           tabBarIcon: ({ focused }) => (
@@ -35,7 +39,7 @@ export default function MainLayout() {
         }}
       />
       <Tabs.Screen
-        name="reports/index"
+        name="reports"
         options={{
           title: "Reports",
           tabBarIcon: ({ focused }) => (

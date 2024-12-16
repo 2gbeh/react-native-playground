@@ -23,7 +23,7 @@ const Loader: React.FC<IProps> = ({ children, loading }) => {
       <ActivityIndicator color="white" size="small" />
     </View>
   ) : (
-    children
+    <>{children}</>
   );
 };
 
