@@ -22,16 +22,11 @@ export function useDeviceManager() {
       let newOrientation = await getOrientationAsync();
       setOrientation(newOrientation);
     })();
-
-    const unsubscribe = NetInfo.addEventListener(
-      (state: { isConnected: boolean }) => {
-        setHasInternet(state.isConnected);
-      }
+    //
+    const sub = NetInfo.addEventListener((state) =>
+      setHasInternet(!!state.isConnected)
     );
-
-    return () => {
-      unsubscribe();
-    };
+    return sub;
   }, []);
 
   return {

@@ -2,6 +2,8 @@ import React, { PropsWithChildren } from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import { router } from "expo-router";
 //
+import { useAppSelector } from "@/store/store.config";
+import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
 import { COLOR, FONT } from "@/constants/THEME";
 
 interface IProps extends PropsWithChildren {
@@ -10,12 +12,13 @@ interface IProps extends PropsWithChildren {
 }
 
 const Tent: React.FC<IProps> = ({ children, action, auth }) => {
+  const theme = useAppSelector(selectTheme);
   console.log("🚀 ~ Tent");
   // RENDER
   return (
-    <View style={s.container}>
+    <View style={sx.container}>
       <Pressable onPress={() => (!!action ? action() : router.back())}>
-        <Text style={[s.h1, { color: auth ? COLOR.white : COLOR.black }]}>
+        <Text style={[sx.label, { color: COLOR[theme].onSurface }]}>
           {children}
         </Text>
       </Pressable>
@@ -25,7 +28,7 @@ const Tent: React.FC<IProps> = ({ children, action, auth }) => {
 
 export default React.memo(Tent);
 
-const s = StyleSheet.create({
+const sx = StyleSheet.create({
   _: {},
   container: {
     flex: 1,
@@ -33,7 +36,7 @@ const s = StyleSheet.create({
     justifyContent: "center",
     rowGap: 16,
   },
-  h1: {
+  label: {
     fontFamily: FONT.RobotoRegular,
     fontWeight: "400",
     fontSize: 16,

@@ -12,11 +12,13 @@ import {
   PieChartOutlineIcon,
 } from "@/constants/ICON";
 import { COLOR } from "@/constants/THEME";
+import { useDeviceManager } from "@/hooks/useDeviceManager";
 import { useAppSelector } from "@/store/store.config";
 import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
 import { typographyStyles } from "@/styles/typography.styles";
 
 export default function MainLayout() {
+  const { isTablet } = useDeviceManager();
   const theme = useAppSelector(selectTheme);
   console.log("🚀 ~ MainLayout");
   // RENDER
@@ -30,16 +32,16 @@ export default function MainLayout() {
         name="home/index"
         options={{
           headerShown: false,
-          ...tabBarScreenOptions("home", theme),
+          ...tabBarScreenOptions("home", theme, isTablet),
         }}
       />
       <Tabs.Screen
         name="bills/index"
-        options={tabBarScreenOptions("bills", theme)}
+        options={tabBarScreenOptions("bills", theme, isTablet)}
       />
       <Tabs.Screen
         name="reports/index"
-        options={tabBarScreenOptions("reports", theme)}
+        options={tabBarScreenOptions("reports", theme, isTablet)}
       />
     </Tabs>
   );
@@ -68,7 +70,11 @@ const tabBarLayoutOptions = (theme: ThemeType) => ({
   tabBarShowLabel: false,
 });
 
-const tabBarScreenOptions = (title: string, theme: ThemeType) => ({
+const tabBarScreenOptions = (
+  title: string,
+  theme: ThemeType,
+  isTablet?: boolean
+) => ({
   title: capitalize(title),
   tabBarIcon: ({ focused }: { focused: boolean }) => {
     const iconProps = {
@@ -92,12 +98,20 @@ const tabBarScreenOptions = (title: string, theme: ThemeType) => ({
         break;
     }
     return (
-      <View style={{ alignItems: "center", rowGap: 4 }}>
+      <View
+        style={{
+          flexDirection: isTablet ? "row" : "column",
+          alignItems: "center",
+          rowGap: 4,
+        }}
+      >
         <View
           style={{
-            backgroundColor: focused
-              ? COLOR[theme]["secondaryContainer"]
-              : COLOR.none,
+            ...(!isTablet && {
+              backgroundColor: focused
+                ? COLOR[theme]["secondaryContainer"]
+                : COLOR.none,
+            }),
             borderRadius: 100,
             width: 64,
             height: 32,
@@ -109,7 +123,14 @@ const tabBarScreenOptions = (title: string, theme: ThemeType) => ({
         </View>
         <Text
           style={{
-            color: COLOR[theme][focused ? "onSurface" : "onSurfaceVariant"],
+            color:
+              COLOR[theme][
+                focused
+                  ? isTablet
+                    ? "onSecondaryContainer"
+                    : "onSurface"
+                  : "onSurfaceVariant"
+              ],
             ...typographyStyles[focused ? "labelMediumBold" : "labelMedium"],
           }}
         >
