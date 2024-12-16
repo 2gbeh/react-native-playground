@@ -20,7 +20,7 @@ export default function TabsLayout() {
   ) : (
     <Tabs screenOptions={tabBarLayoutOptions(theme)}>
       <Tabs.Screen
-        name="home"
+        name="home/index"
         options={{
           headerShown: false,
           title: "Home",
@@ -30,7 +30,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="bills"
+        name="bills/index"
         options={{
           title: "Bills",
           tabBarIcon: ({ focused }) => (
@@ -39,7 +39,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="reports"
+        name="reports/index"
         options={{
           title: "Reports",
           tabBarIcon: ({ focused }) => (
