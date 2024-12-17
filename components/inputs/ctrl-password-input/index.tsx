@@ -9,7 +9,9 @@ import {
 } from "react-hook-form";
 import { EyeOffIcon, EyeOnIcon } from "@/constants/ICON";
 //
-import { formStyles as s } from "@/styles/form.styles";
+import { useAppSelector } from "@/store/store.config";
+import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
+import { formStyles as sx } from "@/styles/form.styles";
 
 interface IProps<T extends FieldValues> {
   label?: string;
@@ -27,14 +29,15 @@ export const CtrlPasswordInput = <T extends FieldValues>({
   errors,
 }: IProps<T>): JSX.Element => {
   const iconProps = { color: "#888", size: 24 };
+  const theme = useAppSelector(selectTheme);
   const [masked, setMasked] = useState(true);
   const toggleMasked = () => setMasked((prev) => !prev);
   console.log("🚀 ~ CtrlPasswordInput");
   // RENDER
   return (
-    <View style={s.form_control}>
+    <View style={sx(theme).formControl}>
       {/* LABEL */}
-      {!!label && <Text style={s.label}>{label}</Text>}
+      {!!label && <Text style={sx(theme).label}>{label}</Text>}
       {/* INPUT */}
       <Controller
         control={control}
@@ -43,7 +46,7 @@ export const CtrlPasswordInput = <T extends FieldValues>({
           required: true,
         }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <View style={s.password_wrapper}>
+          <View style={sx(theme).passwordWrapper}>
             <TextInput
               inputMode="email" // show special-chars keyword
               value={value}
@@ -51,10 +54,10 @@ export const CtrlPasswordInput = <T extends FieldValues>({
               onBlur={onBlur}
               placeholder={placeholder}
               placeholderTextColor="#888"
-              style={s.input}
+              style={sx(theme).input}
               secureTextEntry={masked}
             />
-            <Pressable style={s.password_icon} onPress={toggleMasked}>
+            <Pressable style={sx(theme).passwordIcon} onPress={toggleMasked}>
               {masked ? (
                 <EyeOnIcon {...iconProps} />
               ) : (
@@ -66,7 +69,7 @@ export const CtrlPasswordInput = <T extends FieldValues>({
       />
       {/* ERROR */}
       {!!errors[name] && (
-        <Text style={s.error}>{errors[name] as React.ReactNode}</Text>
+        <Text style={sx(theme).error}>{errors[name] as React.ReactNode}</Text>
       )}
     </View>
   );

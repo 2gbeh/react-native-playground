@@ -2,7 +2,7 @@ import "expo-dev-client";
 import "react-native-reanimated";
 
 import { useEffect } from "react";
-import { Stack } from "expo-router";
+import { Slot, Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
@@ -24,11 +24,12 @@ export default function RootLayout() {
   // RENDER
   return !loaded ? null : (
     <ReduxProvider store={store}>
-      <Stack screenOptions={{ headerShown: false }}>
+      <Slot />
+      {/* <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(stack)" />
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="+not-found" />
-      </Stack>
+      </Stack> */}
       <StatusBar style="auto" />
     </ReduxProvider>
   );

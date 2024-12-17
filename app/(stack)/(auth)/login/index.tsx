@@ -2,6 +2,7 @@ import { Text, View, Button, Alert } from "react-native";
 //
 import KeyboardWrapper from "@/components/keyboard-wrapper";
 import { CtrlEmailInput, CtrlPasswordInput } from "@/components/inputs";
+import { FilledSearchField } from "@/components/inputs/filled-search-field";
 //
 import {
   authStyles as s,
@@ -19,9 +20,15 @@ export default function LoginScreen() {
       <Text style={s.heading}>Welcome back</Text>
       <KeyboardWrapper>
         <View style={s.content}>
-          <CtrlEmailInput<LoginSchema>
+          <FilledSearchField
+            label="Enter name"
+            name="name"
+            control={control}
+            errors={errors}
+          />
+          {/* <CtrlEmailInput<LoginSchema>
             name="email"
-            placeholder="Enter name"
+            placeholder="Enter email"
             control={control}
             errors={errors}
           />
@@ -30,7 +37,7 @@ export default function LoginScreen() {
             placeholder="Enter password"
             control={control}
             errors={errors}
-          />
+          /> */}
           <View />
           <Button title="Login" onPress={handleSubmit(onSubmit)} />
           <Hyperlink label="Don't have an account?" path="/" />

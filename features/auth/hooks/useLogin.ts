@@ -23,16 +23,19 @@ export function useLogin() {
 }
 
 export interface LoginSchema {
+  name: string;
   email: string;
   password: string;
 }
 
-const defaultValues = MOCK.auth.formData
+const defaultValues = !MOCK.auth.formData
   ? {
+      name: "Emanuel",
       email: "dehphantom@yahoo.com",
       password: "RxyPeDhrD74SMNS",
     }
   : {
+      name: "",
       email: "",
       password: "",
     };

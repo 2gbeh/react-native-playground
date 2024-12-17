@@ -1,7 +1,9 @@
 export { default as Icon } from "../assets/icons/command-key.svg";
-// 
+//
+export { default as CancelCircleOutlineIcon } from "../assets/icons/cancel-circle-outline.svg";
 export { default as CartOutlineIcon } from "../assets/icons/cart-outline.svg";
 export { default as CartIcon } from "../assets/icons/cart.svg";
+export { default as ExclamationCircleIcon } from "../assets/icons/exclamation-circle.svg";
 export { default as EyeOffIcon } from "../assets/icons/eye-off.svg";
 export { default as EyeOnIcon } from "../assets/icons/eye-on.svg";
 export { default as HamburgerMenuIcon } from "../assets/icons/hamburger-menu.svg";

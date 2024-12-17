@@ -8,7 +8,9 @@ import {
   Path,
 } from "react-hook-form";
 //
-import { formStyles as s } from "@/styles/form.styles";
+import { useAppSelector } from "@/store/store.config";
+import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
+import { formStyles as sx } from "@/styles/form.styles";
 
 interface IProps<T extends FieldValues> {
   label?: string;
@@ -25,12 +27,13 @@ export const CtrlTextInput = <T extends FieldValues>({
   control,
   errors,
 }: IProps<T>): JSX.Element => {
+  const theme = useAppSelector(selectTheme);
   console.log("🚀 ~ CtrlTextInput");
   // RENDER
   return (
-    <View style={s.form_control}>
+    <View style={sx(theme).formControl}>
       {/* LABEL */}
-      {!!label && <Text style={s.label}>{label}</Text>}
+      {!!label && <Text style={sx(theme).label}>{label}</Text>}
       {/* INPUT */}
       <Controller
         control={control}
@@ -45,13 +48,13 @@ export const CtrlTextInput = <T extends FieldValues>({
             onBlur={onBlur}
             placeholder={placeholder}
             placeholderTextColor="#888"
-            style={s.input}
+            style={sx(theme).input}
           />
         )}
       />
       {/* ERROR */}
       {!!errors[name] && (
-        <Text style={s.error}>{errors[name] as React.ReactNode}</Text>
+        <Text style={sx(theme).error}>{errors[name] as React.ReactNode}</Text>
       )}
     </View>
   );
