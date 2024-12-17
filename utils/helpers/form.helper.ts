@@ -7,7 +7,7 @@ export class FormHelper {
         requiredFields.includes(name) && String(value).trim().length > 0
     ).length === requiredFields.length;
 
-  static touched = <T>(formData: unknown) => {
+  static isDirty = <T>(formData: unknown) => {
     let newFormData: TFormData = {};
     Object.entries(formData as TFormData).filter(([name, value]) => {
       if (String(value).trim().length > 0 && ![-1, "-1"].includes(value))

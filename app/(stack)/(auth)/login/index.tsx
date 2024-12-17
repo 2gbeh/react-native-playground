@@ -20,11 +20,10 @@ export default function LoginScreen() {
       <Text style={s.heading}>Welcome back</Text>
       <KeyboardWrapper>
         <View style={s.content}>
-          <FilledSearchField
+          <FilledSearchField<LoginSchema>
             label="Enter name"
             name="name"
             control={control}
-            errors={errors}
           />
           {/* <CtrlEmailInput<LoginSchema>
             name="email"

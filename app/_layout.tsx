@@ -6,12 +6,26 @@ import { Slot, Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
+import {
+  MD3LightTheme as DefaultTheme,
+  PaperProvider,
+} from "react-native-paper";
 import { Provider as ReduxProvider } from "react-redux";
 //
 import { store } from "@/store/store.config";
-import { FONTS } from "@/constants/THEME";
+import { COLOR, FONTS } from "@/constants/THEME";
 
 SplashScreen.preventAutoHideAsync();
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: COLOR.light.primary,
+    secondary: COLOR.light.secondary,
+    tertiary: COLOR.light.tertiary,
+  },
+};
 
 export default function RootLayout() {
   const [loaded] = useFonts(FONTS);
@@ -23,14 +37,16 @@ export default function RootLayout() {
   console.log("🚀 ~ RootLayout");
   // RENDER
   return !loaded ? null : (
-    <ReduxProvider store={store}>
-      <Slot />
-      {/* <Stack screenOptions={{ headerShown: false }}>
+    <PaperProvider>
+      <ReduxProvider store={store}>
+        <Slot />
+        {/* <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(stack)" />
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="+not-found" />
       </Stack> */}
-      <StatusBar style="auto" />
-    </ReduxProvider>
+        <StatusBar style="auto" />
+      </ReduxProvider>
+    </PaperProvider>
   );
 }

@@ -22,47 +22,39 @@ interface IProps<T extends FieldValues> {
   label?: string;
   name: Path<T>;
   control: Control<T, any>;
-  errors: FieldErrors<T>;
 }
 
 export const FilledSearchField = <T extends FieldValues>({
   label,
   name,
   control,
-  errors,
 }: IProps<T>): JSX.Element => {
   const theme = useAppSelector(selectTheme);
   console.log("🚀 ~ FilledSearchField");
   // RENDER
   return (
     <View>
-      {/* LABEL */}
-      {/* {!!label && <Text style={sx(theme).label}>{label}</Text>} */}
-      {/* INPUT */}
       <Controller
         control={control}
         name={name}
         render={({
           field: { onChange, onBlur, value, disabled },
-          fieldState: { invalid, isDirty, isTouched, isValidating },
+          fieldState: { error, invalid, isDirty },
         }) => {
-          let iconProps = (trailingIcon?: boolean) => ({
+          let iconProps = {
             color:
               COLOR[theme][
-                trailingIcon && invalid
-                  ? "error"
-                  : disabled
-                  ? "onSurface"
-                  : "onSurfaceVariant"
+                invalid ? "error" : disabled ? "onSurface" : "onSurfaceVariant"
               ],
-          });
+          };
           //
           return (
             <>
               <View style={sx(theme).container(disabled).leftRightIcon}>
                 <View style={sx(theme).wrapper.default}>
-                  <SearchIcon {...iconProps()} />
+                  <SearchIcon {...iconProps} />
                   <View>
+                    {/* LABEL */}
                     {isDirty && (
                       <Text
                         style={
@@ -72,6 +64,7 @@ export const FilledSearchField = <T extends FieldValues>({
                         {label}
                       </Text>
                     )}
+                    {/* INPUT */}
                     <TextInput
                       inputMode="search"
                       value={value}
@@ -85,11 +78,17 @@ export const FilledSearchField = <T extends FieldValues>({
                     />
                   </View>
                 </View>
-                <Pressable
-                  onPress={() => onChange(value === "" ? "Emanuel" : "")}
-                >
-                  <CancelCircleOutlineIcon {...iconProps(true)} />
-                </Pressable>
+                {invalid ? (
+                  <ExclamationCircleIcon {...iconProps} />
+                ) : isDirty ? (
+                  <Pressable
+                    onPress={() => onChange(value === "" ? "Emanuel" : "")}
+                  >
+                    <CancelCircleOutlineIcon {...iconProps} />
+                  </Pressable>
+                ) : (
+                  null
+                )}
               </View>
               {/* INDICATOR */}
               <View
@@ -101,7 +100,7 @@ export const FilledSearchField = <T extends FieldValues>({
               {invalid && (
                 <View style={sx(theme).errorWrapper.default}>
                   <Text style={sx(theme).error(disabled).default}>
-                    {errors[name]?.message as string}
+                    {error?.message as string}
                   </Text>
                 </View>
               )}
