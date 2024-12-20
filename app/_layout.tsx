@@ -1,31 +1,23 @@
 import "expo-dev-client";
 import "react-native-reanimated";
 
-import { useEffect } from "react";
 import { Slot, Stack } from "expo-router";
-import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
-import { Provider as ReduxProvider } from "react-redux";
 //
-import RNPaperProvider from "@/components/RNPaperProvider";
-import { store } from "@/store/store.config";
-import { FONTS } from "@/constants/THEME";
+import ReduxProviderWrapper from "@/components/_providers/ReduxProviderWrapper";
+import PaperProviderWrapper from "@/components/_providers/PaperProviderWrapper";
+import { useRootLayout } from "@/hooks/useRootLayout";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded] = useFonts(FONTS);
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
+  const { fontsLoaded } = useRootLayout();
   console.log("🚀 ~ RootLayout");
   // RENDER
-  return !loaded ? null : (
-    <ReduxProvider store={store}>
-      <RNPaperProvider>
+  return !fontsLoaded ? null : (
+    <ReduxProviderWrapper>
+      <PaperProviderWrapper>
         <Slot />
         {/* <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(stack)" />
@@ -33,7 +25,7 @@ export default function RootLayout() {
         <Stack.Screen name="+not-found" />
       </Stack> */}
         <StatusBar style="auto" />
-      </RNPaperProvider>
-    </ReduxProvider>
+      </PaperProviderWrapper>
+    </ReduxProviderWrapper>
   );
 }
