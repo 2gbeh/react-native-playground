@@ -1,6 +1,6 @@
 export { loginStyles } from "./styles/login.styles";
 // 
-export { LoginSchema, useLogin } from "./hooks/useLogin";
+export { LoginSchemaType, useLogin } from "./hooks/useLogin";
 // 
 export { default as Footer } from "./components/footer";
 export { default as Header } from "./components/header";

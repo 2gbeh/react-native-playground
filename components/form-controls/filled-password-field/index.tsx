@@ -16,41 +16,41 @@ export const FilledPasswordField = <T extends FieldValues>({
   placeholder,
   control,
 }: IProps<T>): JSX.Element => {
-  const [showPassword, setShowPassword] = useState(true);
-  const toggleShowPassword = () => setShowPassword((prev) => !prev);
+  const [hidePassword, setHidePassword] = useState(true);
+  const toggleHidePassword = () => setHidePassword((prev) => !prev);
   console.log("🚀 ~ FilledPasswordField");
   // RENDER
   return (
-    <View>
-      <Controller
-        control={control}
-        name={name}
-        render={({
-          field: { onChange, value },
-          fieldState: { error, invalid },
-        }) => (
-          <View style={{}}>
-            <TextInput
-              inputMode="email"
-              label={label}
-              value={value}
-              onChangeText={onChange}
-              placeholder={placeholder}
-              secureTextEntry={showPassword}
-              autoCapitalize="none"
-              right={
-                <TextInput.Icon
-                  icon={showPassword ? "eye" : "eye-off"}
-                  onPress={toggleShowPassword}
-                />
-              }
-            />
+    <Controller
+      control={control}
+      name={name}
+      render={({
+        field: { onChange, value },
+        fieldState: { error, invalid },
+      }) => (
+        <View>
+          <TextInput
+            inputMode="email"
+            label={label}
+            value={value}
+            onChangeText={onChange}
+            placeholder={placeholder}
+            secureTextEntry={hidePassword}
+            autoCapitalize="none"
+            right={
+              <TextInput.Icon
+                icon={hidePassword ? "eye" : "eye-off"}
+                onPress={toggleHidePassword}
+              />
+            }
+          />
+          {invalid && (
             <HelperText type="error" visible={invalid}>
               {error?.message}
             </HelperText>
-          </View>
-        )}
-      />
-    </View>
+          )}
+        </View>
+      )}
+    />
   );
 };

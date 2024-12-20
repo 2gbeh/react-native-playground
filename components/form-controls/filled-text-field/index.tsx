@@ -21,29 +21,29 @@ export const FilledTextField = <T extends FieldValues>({
   console.log("🚀 ~ FilledTextField");
   // RENDER
   return (
-    <View>
-      <Controller
-        control={control}
-        name={name}
-        render={({
-          field: { onChange, value },
-          fieldState: { error, invalid },
-        }) => (
-          <View style={{}}>
-            <TextInput
-              inputMode={as}
-              label={label}
-              value={value}
-              onChangeText={onChange}
-              placeholder={placeholder}
-              autoCapitalize="none"
-            />
+    <Controller
+      control={control}
+      name={name}
+      render={({
+        field: { onChange, value },
+        fieldState: { error, invalid },
+      }) => (
+        <View>
+          <TextInput
+            inputMode={as}
+            label={label}
+            value={value}
+            onChangeText={onChange}
+            placeholder={placeholder}
+            autoCapitalize="none"
+          />
+          {invalid && (
             <HelperText type="error" visible={invalid}>
               {error?.message}
             </HelperText>
-          </View>
-        )}
-      />
-    </View>
+          )}
+        </View>
+      )}
+    />
   );
 };
