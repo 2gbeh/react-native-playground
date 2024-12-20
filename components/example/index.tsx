@@ -3,6 +3,8 @@ import { Text, View, TextStyle, ViewStyle } from "react-native";
 //
 import { useAppSelector } from "@/store/store.config";
 import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
+import { containerStyles } from "@/styles/container.styles";
+import { typographyStyles } from "@/styles/typography.styles";
 import { COLOR } from "@/constants/THEME";
 
 interface IProps {}
@@ -23,8 +25,8 @@ export default React.memo(Example);
 const themedStyles = (theme: ThemeType) => ({
   container: {
     flex: 1,
-  } as ViewStyle,
+  } satisfies ViewStyle,
   label: {
     color: COLOR[theme].onSurface,
-  } as TextStyle,
+  } satisfies TextStyle,
 });

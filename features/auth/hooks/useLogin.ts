@@ -1,27 +1,43 @@
 import { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { AuthService } from "@/store/auth/auth.service";
 import { mockApiCall } from "@/utils/mockApiCall";
+import { MOCK } from "@/constants/MOCK";
 
 export function useLogin() {
-  const [formData, setFormData] = useState({ username: "", password: "" });
-  const [showPassword, setShowPassword] = useState(true);
+  const { control, handleSubmit } = useForm<LoginSchema>({
+    defaultValues,
+  });
   const [submitting, setSubmitting] = useState(false);
   //
-  const toggleShowPassword = () => setShowPassword((prev) => !prev);
-  const handleChange = (name: keyof typeof formData, value?: string) =>
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  //
-  async function handleSubmit() {
+  const onSubmit: SubmitHandler<LoginSchema> = async (formData) => {
     setSubmitting(true);
-    await mockApiCall();
+    await AuthService.signIn(formData);
     setSubmitting(false);
-  }
+  };
 
   return {
-    formData,
-    showPassword,
-    toggleShowPassword,
-    handleChange,
+    control,
     handleSubmit,
+    onSubmit,
     submitting,
   };
 }
+
+export interface LoginSchema {
+  name: string;
+  email: string;
+  password: string;
+}
+
+const defaultValues = MOCK.auth.formData
+  ? {
+      name: "Emanuel",
+      email: "dehphantom@yahoo.com",
+      password: "RxyPeDhrD74SMNS",
+    }
+  : {
+      name: "",
+      email: "",
+      password: "",
+    };

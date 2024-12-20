@@ -1,65 +1,60 @@
 import { View, Text } from "react-native";
-import { Button, TextInput } from "react-native-paper";
+import { Button } from "react-native-paper";
 //
 import Hyperlink from "@/components/hyperlink";
 import { useAppSelector } from "@/store/store.config";
 import { selectTheme } from "@/store/theme/theme.slice";
 //
-import { loginStyles, useLogin } from "@/features/auth";
+import {
+  loginStyles,
+  LoginSchema,
+  useLogin,
+  Header,
+  Legend,
+  Footer,
+} from "@/features/auth";
+import {
+  FilledTextField,
+  FilledPasswordField,
+} from "@/components/form-controls";
 
 export default function LoginScreen() {
   const sx = loginStyles(useAppSelector(selectTheme));
-  const {
-    formData,
-    showPassword,
-    toggleShowPassword,
-    handleChange,
-    handleSubmit,
-    submitting,
-  } = useLogin();
+  const { control, handleSubmit, onSubmit, submitting } = useLogin();
   console.log("🚀 ~ LoginScreen");
   // RENDER
   return (
     <View style={sx.container}>
-      <View style={sx.header}>
-        <Text style={sx.h1}>Log in</Text>
-      </View>
+      <Header heading="Log in" />
       <View style={sx.main}>
-        <View>
-          <Text style={sx.h2}>Welcome back!</Text>
-          <Text style={sx.p}>Enter your log in details to continue</Text>
-        </View>
-        <TextInput
-          inputMode="email"
-          label="Username"
-          value={formData.username}
-          onChangeText={(text) => handleChange("username", text)}
-          placeholder="Email or Phone number"
+        <Legend
+          title="Welcome back!"
+          subtitle="Enter your log in details to continue"
         />
-        <TextInput
-          // inputMode="email"
+        <FilledTextField<LoginSchema>
+          name="email"
+          label="Username"
+          placeholder="Email or Phone number"
+          control={control}
+          as="email"
+        />
+        <FilledPasswordField<LoginSchema>
+          name="password"
           label="Password"
-          value={formData.password}
-          onChangeText={(text) => handleChange("password", text)}
-          secureTextEntry={showPassword}
-          right={
-            <TextInput.Icon
-              icon={showPassword ? "eye" : "eye-off"}
-              onPress={toggleShowPassword}
-            />
-          }
+          placeholder="Enter password"
+          control={control}
         />
         <Hyperlink href="/" right>
           Forgot password?
         </Hyperlink>
-        <Button mode="contained" onPress={handleSubmit} loading={submitting}>
+        <Button
+          mode="contained"
+          onPress={handleSubmit(onSubmit)}
+          loading={submitting}
+        >
           Log in
         </Button>
-        <View />
-        <View style={sx.nav}>
-          <Text style={sx.navLabel}>Don't have an account?</Text>
-          <Hyperlink href="/">Create account</Hyperlink>
-        </View>
+        <Footer title="Don't have an account?" subtitle="Create account" />
       </View>
     </View>
   );
