@@ -15,6 +15,7 @@ export enum FONT {
   RobotoThin = "RobotoThin",
 }
 
+// https://fonts.google.com/specimen/Roboto
 export const FONTS = {
   RobotoBlack: require("@/assets/fonts/Roboto-Black.ttf"),
   RobotoBold: require("@/assets/fonts/Roboto-Bold.ttf"),

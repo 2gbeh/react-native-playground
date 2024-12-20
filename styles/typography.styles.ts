@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLOR, FONT } from "@/constants/THEME";
+import { FONT } from "@/constants/THEME";
 
 export const typographyStyles = StyleSheet.create({
   displayLarge: {

@@ -6,9 +6,5 @@ export default function StackLayout() {
   const { verifying } = useAuthGuard();
   console.log("🚀 ~ StackLayout");
   // RENDER
-  return (
-    <Loader loading={verifying}>
-      <Slot />
-    </Loader>
-  );
+  return verifying ? <Loader /> : <Slot />;
 }
