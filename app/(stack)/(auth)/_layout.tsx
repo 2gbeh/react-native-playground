@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 import { useAppSelector } from "@/store/store.config";
-import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
+import { selectTheme } from "@/store/theme/theme.slice";
 import { COLOR } from "@/constants/THEME";
 
 export default function StackAuthLayout() {
@@ -11,11 +11,7 @@ export default function StackAuthLayout() {
     <Stack
       screenOptions={{
         headerShown: false,
-        contentStyle: {
-          backgroundColor: COLOR[theme].surface,
-          paddingHorizontal: 16,
-          justifyContent: "center",
-        },
+        contentStyle: { backgroundColor: COLOR[theme].surface },
       }}
     />
   );

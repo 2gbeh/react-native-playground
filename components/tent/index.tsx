@@ -1,41 +1,35 @@
-import React, { PropsWithChildren } from "react";
-import { Text, View, Pressable, TextStyle, ViewStyle } from "react-native";
+import React from "react";
+import { Text, View, Pressable, StyleSheet } from "react-native";
 import { router } from "expo-router";
-//
-import { useAppSelector } from "@/store/store.config";
-import { ThemeType, selectTheme } from "@/store/theme/theme.slice";
-import { containerStyles } from "@/styles/container.styles";
-import { typographyStyles } from "@/styles/typography.styles";
-import { COLOR } from "@/constants/THEME";
+import { StatusBar } from "expo-status-bar";
 
-interface IProps extends PropsWithChildren {
-  action?: () => void;
-  auth?: boolean;
-}
-
-const Tent: React.FC<IProps> = ({ children, action, auth }) => {
-  const sx = themedStyles(useAppSelector(selectTheme));
+const Tent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   console.log("🚀 ~ Tent");
   // RENDER
   return (
-    <View style={sx.container}>
-      <Pressable onPress={() => (!!action ? action() : router.back())}>
-        <Text style={sx.label}>{children}</Text>
-      </Pressable>
-    </View>
+    <>
+      <View style={styles.container}>
+        <Pressable onPress={router.back}>
+          <Text style={styles.label}>{children}</Text>
+        </Pressable>
+      </View>
+      <StatusBar style="dark" />
+    </>
   );
 };
 
 export default React.memo(Tent);
 
-const themedStyles = (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   container: {
-    ...containerStyles.centered,
+    backgroundColor: "#fafafa",
     flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
     rowGap: 16,
-  } as ViewStyle,
+  },
   label: {
-    ...typographyStyles.titleLarge,
-    color: COLOR[theme].onSurface,
-  } as TextStyle,
+    color: "#555",
+    fontSize: 16,
+  },
 });

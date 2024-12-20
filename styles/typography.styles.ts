@@ -23,6 +23,13 @@ export const typographyStyles = StyleSheet.create({
     letterSpacing: 0,
     lineHeight: 44,
   },
+  headlineLargeBold: {
+    fontFamily: FONT.RobotoBold,
+    fontWeight: "700",
+    fontSize: 32,
+    letterSpacing: 0,
+    lineHeight: 40,
+  },
   headlineLarge: {
     fontFamily: FONT.RobotoRegular,
     fontWeight: "400",
@@ -86,13 +93,6 @@ export const typographyStyles = StyleSheet.create({
     letterSpacing: 0.4,
     lineHeight: 16,
   },
-  labelLarge: {
-    fontFamily: FONT.RobotoMedium,
-    fontWeight: "500",
-    fontSize: 14,
-    letterSpacing: 0.1,
-    lineHeight: 20,
-  },
   labelLargeBold: {
     fontFamily: FONT.RobotoBold,
     fontWeight: "700",
@@ -100,16 +100,23 @@ export const typographyStyles = StyleSheet.create({
     letterSpacing: 0.1,
     lineHeight: 20,
   },
-  labelMedium: {
+  labelLarge: {
     fontFamily: FONT.RobotoMedium,
     fontWeight: "500",
-    fontSize: 12,
-    letterSpacing: 0.5,
-    lineHeight: 16,
+    fontSize: 14,
+    letterSpacing: 0.1,
+    lineHeight: 20,
   },
   labelMediumBold: {
     fontFamily: FONT.RobotoBold,
     fontWeight: "700",
+    fontSize: 12,
+    letterSpacing: 0.5,
+    lineHeight: 16,
+  },
+  labelMedium: {
+    fontFamily: FONT.RobotoMedium,
+    fontWeight: "500",
     fontSize: 12,
     letterSpacing: 0.5,
     lineHeight: 16,
