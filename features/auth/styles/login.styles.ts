@@ -7,6 +7,7 @@ import { COLOR } from "@/constants/THEME";
 export const loginStyles = (theme: ThemeType) => ({
   _: {},
   container: {
+    backgroundColor: COLOR.dark.surface,
     flex: 1,
   } satisfies ViewStyle,
   header: {
@@ -17,7 +18,7 @@ export const loginStyles = (theme: ThemeType) => ({
   } satisfies ViewStyle,
   h1: {
     ...typographyStyles.headlineLargeBold,
-    color: COLOR[theme].onSurface,
+    color: COLOR.dark.onSurface,
   } satisfies TextStyle,
   h2: {
     ...typographyStyles.bodyLarge,

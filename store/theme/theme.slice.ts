@@ -8,7 +8,7 @@ interface SliceState {
 }
 
 const initialState = {
-  theme: "dark",
+  theme: "light",
 } satisfies SliceState as SliceState;
 
 const slice = createSlice({

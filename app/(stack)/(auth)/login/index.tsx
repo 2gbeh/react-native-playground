@@ -27,7 +27,7 @@ export default function LoginScreen() {
       <View style={sx.main}>
         <View>
           <Text style={sx.h2}>Welcome back!</Text>
-          <Text style={sx.p}>Login with your Kredi Bank details</Text>
+          <Text style={sx.p}>Enter your log in details to continue</Text>
         </View>
         <TextInput
           inputMode="email"
@@ -50,13 +50,14 @@ export default function LoginScreen() {
           }
         />
         <Hyperlink href="/" right>
-          Forgot Password?
+          Forgot password?
         </Hyperlink>
         <Button mode="contained" onPress={handleSubmit} loading={submitting}>
           Log in
         </Button>
+        <View />
         <View style={sx.nav}>
-          <Text style={sx.navLabel}>Have no account yet?</Text>
+          <Text style={sx.navLabel}>Don't have an account?</Text>
           <Hyperlink href="/">Create account</Hyperlink>
         </View>
       </View>
