@@ -24,7 +24,9 @@ const PaperProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
   // RENDER
   return (
     <>
-      <PaperProvider theme={paperTheme}>{children}</PaperProvider>
+      <PaperProvider theme={paperTheme}>
+        {children}
+      </PaperProvider>
       <StatusBar style={theme === "light" ? "dark" : "light"} />
     </>
   );

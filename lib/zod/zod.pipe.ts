@@ -26,7 +26,7 @@ export class ZodPipe {
       .email({ message: `Enter a valid email address.` })
       .min(8, `${label} must be at least 8 char(s) long.`);
 
-  // $Tr0ngpw
+  // _Strongp@ssw0rd
   static password = (label = "Password") =>
     z
       .string({
@@ -40,4 +40,16 @@ export class ZodPipe {
         /[^0-9a-zA-Z]/,
         `${label} must contain at least a special character.`
       );
+
+  // RxyPeDhrD74SMNS
+  static generatedPassword = (label = "Password") =>
+    z
+      .string({
+        required_error: `${label} is a required field.`,
+      })
+      // .trim()
+      .min(8, `${label} must be at least 8 char(s) long.`)
+      .regex(/[0-9]/, `${label} must contain at least a number.`)
+      .regex(/[A-Z]/, `${label} must contain at least a capital letter`)
+      
 }

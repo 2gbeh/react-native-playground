@@ -1,7 +1,7 @@
 export type TArrayList = unknown[];
 export type THashMap = Record<string | number, unknown>;
 
-export class ArrayListHelper {
+export class ArrayHelper {
   static intSort(list: Array<number>, asc = true) {
     return asc
       ? list.toSorted((a: number, b: number) => a - b)

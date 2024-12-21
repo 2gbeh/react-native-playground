@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    rowGap: 16,
   },
   label: {
     color: "#555",

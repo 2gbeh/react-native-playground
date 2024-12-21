@@ -6,6 +6,7 @@ import * as SplashScreen from "expo-splash-screen";
 //
 import ReduxProviderWrapper from "@/components/_providers/ReduxProviderWrapper";
 import PaperProviderWrapper from "@/components/_providers/PaperProviderWrapper";
+import DispatchNotice from "@/components/dispatch-notice";
 import { useRootLayout } from "@/hooks/useRootLayout";
 
 SplashScreen.preventAutoHideAsync();
@@ -18,6 +19,7 @@ export default function RootLayout() {
     <ReduxProviderWrapper>
       <PaperProviderWrapper>
         <Slot />
+        <DispatchNotice />
       </PaperProviderWrapper>
     </ReduxProviderWrapper>
   );

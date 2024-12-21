@@ -10,8 +10,8 @@ import {
   deleteUser,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase/firebase.config";
+import { StoreHelper as SH } from "../store.helper";
 import { CreateUserDTO, SignInDTO, UpdateUserDTO } from "./auth.interface";
-import { transformResponse } from "@/utils/transformResponse";
 
 export class AuthService {
   static me = () => auth.currentUser;
@@ -28,18 +28,18 @@ export class AuthService {
   static async signIn({ email, password }: SignInDTO) {
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
-      return transformResponse(res, true);
+      return SH.transformResponse(res, true);
     } catch (err) {
-      return transformResponse(err);
+      return SH.transformResponse(err);
     }
   }
 
   static async signOut() {
     try {
       const res = await signOut(auth);
-      return transformResponse(res, true);
+      return SH.transformResponse(res, true);
     } catch (err) {
-      return transformResponse(err);
+      return SH.transformResponse(err);
     }
   }
 
@@ -79,9 +79,9 @@ export class AuthService {
         default:
           res = await updateProfile(this.me()!, payload as UpdateUserDTO);
       }
-      return transformResponse(res, true);
+      return SH.transformResponse(res, true);
     } catch (err) {
-      return transformResponse(err);
+      return SH.transformResponse(err);
     }
   }
 

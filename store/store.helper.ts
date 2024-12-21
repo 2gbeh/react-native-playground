@@ -1,4 +1,5 @@
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
+import { FirebaseError } from "firebase/app";
 
 export class StoreHelper {
   static isFetchBaseQueryError(error: unknown): error is FetchBaseQueryError {
@@ -13,6 +14,19 @@ export class StoreHelper {
       typeof (error as any).message === "string"
     );
   }
+
+  static transformResponse = (response: unknown, responseOK = false) => {
+    return responseOK
+      ? { data: response }
+      : {
+          error:
+            response instanceof FirebaseError
+              ? response.code
+              : typeof response === "string"
+              ? response
+              : JSON.stringify(response),
+        };
+  };
 
   static fileUploadQuery(url: string, value: string, name = "image") {
     const body = new FormData();

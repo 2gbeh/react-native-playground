@@ -4,6 +4,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 //
 import { baseApi } from "./base/base.api";
 import theme from "./theme/theme.slice";
+import notice from "./notice/notice.slice";
 import auth from "./auth/auth.slice";
 
 
@@ -11,6 +12,7 @@ export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
     theme,
+    notice,
     auth,
   },
   middleware: (getDefaultMiddleware) =>
