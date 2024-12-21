@@ -1,8 +1,16 @@
-import { useAppDispatch } from "@/store/store.config";
+import { useAppDispatch, useAppSelector } from "@/store/store.config";
 import { noticeActions } from "@/store/notice/notice.slice";
 
 export function useDispatchNotice() {
   const dispatch = useAppDispatch();
+  const { visible, as, title, message } = useAppSelector(
+    (state) => state.notice
+  );
+
+  const dispatchReset = () => {
+    let thunkAction = noticeActions.reset();
+    dispatch(thunkAction);
+  };
 
   const dispatchAlert = (title: string, message = "") => {
     let thunkAction = noticeActions.showAlert([title, message]);
@@ -14,5 +22,5 @@ export function useDispatchNotice() {
     dispatch(thunkAction);
   };
 
-  return { dispatchAlert, dispatchToast };
+  return { visible, as, title, message, dispatchReset, dispatchAlert, dispatchToast };
 }

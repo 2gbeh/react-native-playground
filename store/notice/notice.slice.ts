@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type SliceState = {
   visible: boolean;
-  as: "alert" | "toast";
+  as: "alert" | "toast" | "modal";
   title: string;
   message: string;
 };
@@ -31,9 +31,6 @@ const slice = createSlice({
       state.visible = true;
       state.as = "toast";
       state.message = message;
-    },
-    dismiss: (state) => {
-      state.visible = false;
     },
   },
 });
