@@ -7,6 +7,7 @@ interface IProps<T extends FieldValues> {
   name: Path<T>;
   label?: string;
   placeholder?: string;
+  info?: string;
   control: Control<T, any>;
 }
 
@@ -14,6 +15,7 @@ export const FilledPasswordField = <T extends FieldValues>({
   name,
   label,
   placeholder,
+  info = "",
   control,
 }: IProps<T>): JSX.Element => {
   const [hidePassword, setHidePassword] = useState(true);
@@ -44,11 +46,9 @@ export const FilledPasswordField = <T extends FieldValues>({
               />
             }
           />
-          {invalid && (
-            <HelperText type="error" visible={invalid}>
-              {error?.message}
-            </HelperText>
-          )}
+          <HelperText type={invalid ? "error" : "info"}>
+            {error?.message || info}
+          </HelperText>
         </View>
       )}
     />

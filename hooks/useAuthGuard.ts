@@ -38,7 +38,7 @@ export function useAuthGuard() {
       if (user) {
         if (segments.includes("(auth)" as never)) router.replace("/home");
       } else {
-        router.replace("/login");
+        // router.replace("/login");
       }
     }
   }, [verifying]);

@@ -30,5 +30,6 @@ const sx = StyleSheet.create({
   label: {
     ...typographyStyles.headlineLargeBold,
     color: COLOR.dark.onSurface,
+    width: 160,
   },
 });

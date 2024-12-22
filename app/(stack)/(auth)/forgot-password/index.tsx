@@ -18,18 +18,18 @@ import {
   Footer,
 } from "@/features/auth";
 
-export default function LoginScreen() {
+export default function ForgotPasswordScreen() {
   const sx = authStyles(useAppSelector(selectTheme));
   const { control, handleSubmit, onSubmit, submitting } = useLogin();
-  console.log("🚀 ~ LoginScreen");
+  console.log("🚀 ~ ForgotPasswordScreen");
   // RENDER
   return (
     <View style={sx.container}>
-      <Header heading="Sign in" />
+      <Header heading="Forgot password" />
       <View style={sx.content}>
         <Legend
-          title="Welcome back"
-          subtitle="Enter your details below to continue"
+          title="Enter your account email"
+          subtitle="Your password reset link will be sent to your email"
         />
         <FilledTextField<LoginSchemaType>
           name="email"
@@ -37,26 +37,18 @@ export default function LoginScreen() {
           placeholder="Email email"
           control={control}
         />
-        <FilledPasswordField<LoginSchemaType>
-          name="password"
-          label="Password"
-          placeholder="Enter password"
-          control={control}
-        />
-        <Hyperlink href="/forgot-password" right>
-          Forgot password?
-        </Hyperlink>
         <Button
           mode="contained"
           onPress={handleSubmit(onSubmit)}
           loading={submitting}
+          icon="send"
         >
-          Log in
+          Send
         </Button>
         <Footer
-          title="Don't have an account?"
-          subtitle="Create account"
-          href="/register"
+          title="Already have an account?"
+          subtitle="Log in"
+          href="/login"
         />
       </View>
     </View>

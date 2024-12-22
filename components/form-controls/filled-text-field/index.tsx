@@ -7,6 +7,7 @@ interface IProps<T extends FieldValues> {
   name: Path<T>;
   label?: string;
   placeholder?: string;
+  info?: string;
   control: Control<T, any>;
   as?: InputModeOptions;
 }
@@ -15,8 +16,9 @@ export const FilledTextField = <T extends FieldValues>({
   name,
   label,
   placeholder,
+  info = "",
   control,
-  as = "text",
+  as = "email",
 }: IProps<T>): JSX.Element => {
   console.log("🚀 ~ FilledTextField");
   // RENDER
@@ -37,11 +39,9 @@ export const FilledTextField = <T extends FieldValues>({
             placeholder={placeholder}
             autoCapitalize="none"
           />
-          {invalid && (
-            <HelperText type="error" visible={invalid}>
-              {error?.message}
-            </HelperText>
-          )}
+          <HelperText type={invalid ? "error" : "info"}>
+            {error?.message || info}
+          </HelperText>
         </View>
       )}
     />

@@ -14,6 +14,7 @@ export type CurrentUserEntity = User | null;
 export type UserCredentialEntity = UserCredential | null;
 
 export interface CreateUserDTO {
+  name?: string;
   email: string;
   password: string;
 }

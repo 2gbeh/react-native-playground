@@ -16,12 +16,12 @@ import { CreateUserDTO, SignInDTO, UpdateUserDTO } from "./auth.interface";
 export class AuthService {
   static me = () => auth.currentUser;
 
-  static async _createUser({ email, password }: CreateUserDTO) {
+  static async createUser({ name, email, password }: CreateUserDTO) {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
-      console.log("🚀 ~ AuthService ~ createUser ~ res:", res);
+      return SH.transformResponse(res, true);
     } catch (err) {
-      console.log("🚀 ~ AuthService ~ createUser ~ err:", err);
+      return SH.transformResponse(err);
     }
   }
 

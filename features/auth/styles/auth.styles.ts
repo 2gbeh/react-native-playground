@@ -1,8 +1,9 @@
 import { ViewStyle } from "react-native";
 import { ThemeType } from "@/store/theme/theme.slice";
+import { containerStyles } from "@/styles/container.styles";
 import { COLOR } from "@/constants/THEME";
 
-export const loginStyles = (theme: ThemeType) => ({
+export const authStyles = (theme: ThemeType) => ({
   _: {},
   container: {
     backgroundColor: COLOR.dark.surface,
@@ -14,7 +15,16 @@ export const loginStyles = (theme: ThemeType) => ({
     borderTopRightRadius: 28,
     paddingVertical: 24,
     paddingHorizontal: 16,
-    flex: 2,
-    rowGap: 24,
+    rowGap: 16,
   } satisfies ViewStyle,
+  checkboxWrapper: {
+    ...containerStyles.rowCenter,
+    columnGap: 4,
+  } satisfies ViewStyle,
+  checkboxProps: {
+    color: COLOR[theme].tertiary,
+    uncheckedColor: COLOR[theme].tertiary,
+    position: "leading" as "leading",
+    labelVariant: "bodyMedium" as "bodyMedium",
+  },
 });
