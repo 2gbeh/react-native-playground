@@ -9,14 +9,7 @@ export default function WelcomeScreen() {
   const gotoRegister = () => router.replace("/register");
   // RENDER
   return (
-    <View
-      style={{
-        padding: 16,
-        flex: 1,
-        justifyContent: "flex-end",
-        rowGap: 24,
-      }}
-    >
+    <View style={sx.container}>
       <Button mode="contained" onPress={gotoLogin}>
         Log in
       </Button>
@@ -26,3 +19,12 @@ export default function WelcomeScreen() {
     </View>
   );
 }
+
+const sx = StyleSheet.create({
+  container: {
+    padding: 16,
+    flex: 1,
+    justifyContent: "flex-end",
+    rowGap: 24,
+  },
+});

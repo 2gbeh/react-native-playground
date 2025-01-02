@@ -18,7 +18,7 @@ export default function RootLayout() {
   return !fontsLoaded ? null : (
     <ReduxProviderWrapper>
       <PaperProviderWrapper>
-        <Slot />
+        <Stack screenOptions={{ headerShown: false }} />
         <DispatchNotice />
       </PaperProviderWrapper>
     </ReduxProviderWrapper>

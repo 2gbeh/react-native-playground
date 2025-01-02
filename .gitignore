@@ -40,4 +40,6 @@ app-example
 .env*
 android/
 ios/
+coverage/
+
 __stash/

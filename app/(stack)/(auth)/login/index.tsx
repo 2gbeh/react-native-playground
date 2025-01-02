@@ -34,7 +34,7 @@ export default function LoginScreen() {
         <FilledTextField<LoginSchemaType>
           name="email"
           label="Email"
-          placeholder="Email email"
+          placeholder="Enter email"
           control={control}
         />
         <FilledPasswordField<LoginSchemaType>
